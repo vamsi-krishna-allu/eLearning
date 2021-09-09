@@ -1,0 +1,24 @@
+.toolbarLabel {
+    min-width: 20%;
+    justify-content: center;
+    display: flex;
+    color:white;
+}
+.image-page {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    height: 25%;
+}
+.imageLogo {
+    height: 100%;
+    width: 25%;
+}
+.buttonHome {
+    height: 25%;
+    font-size: large;
+}
+.example-tab-icon {
+    margin-right: 10%;
+    color:indigo;
+}

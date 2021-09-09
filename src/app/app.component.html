@@ -1,0 +1,40 @@
+<div class="image-page">
+    <button class="buttonHome" mat-button color="primary">New Users? Register</button>
+    <img class = "imageLogo" src="../assets/learningLogo.jpg">
+    <button class="buttonHome" mat-button color="primary">Existing Users? Login</button>
+</div>
+<mat-tab-group mat-align-tabs="center" color="primary" backgroundColor="accent">
+    <mat-tab label="Home"><ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">home</mat-icon>
+        Home
+      </ng-template> Content 1 </mat-tab>
+    <mat-tab><ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">library_books</mat-icon>
+        Courses
+      </ng-template> Content 2 </mat-tab>
+    <mat-tab><ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">question_answer</mat-icon>
+        FAQ
+      </ng-template> Content 3 </mat-tab>
+    <mat-tab><ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">contact_support</mat-icon>
+        About
+      </ng-template> Content 4 </mat-tab>
+    <mat-tab><ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Credits
+      </ng-template> Content 5 </mat-tab>
+      <mat-tab><ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">call</mat-icon>
+        Contact Us
+      </ng-template> Content 5 </mat-tab>
+</mat-tab-group>
+<!-- <mat-toolbar color="accent">
+    <div class="toolbarLabel">Home</div>
+    <div class="toolbarLabel">Courses</div>
+    <div class="toolbarLabel">FAQ</div>
+    <div class="toolbarLabel">About</div>
+    <div class="toolbarLabel">Credits</div>
+</mat-toolbar>  -->
+
+<router-outlet></router-outlet>
