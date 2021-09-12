@@ -3,7 +3,7 @@
     color: #027095;
     text-transform: uppercase;
     font-size : 40px;
-    font-family: Bebas Neue;
+    font-family: Source Sans Pro;
     padding-left: 40%;
     padding-top: 3%;
 }
@@ -21,7 +21,7 @@
   }
   .has-text-color {
     color: #027095;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     font-size: 1.3rem;
     margin: 0 0 21px;
     display: block;
@@ -35,7 +35,7 @@
     color: #027095;
     font: bold;
     font-weight: 550;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     font-size: 28px;
     margin: 0 0 21px;
     display: block;
@@ -51,7 +51,7 @@
     display: block;
     text-align: center;
     margin-bottom: 1.3em;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     font-size: 1.5rem;
     line-height: 1.3;
     padding-left: 8%;
@@ -74,14 +74,14 @@
     color: #027095;
     font-size: 40px;
     font-weight: bold;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     padding-left: 36.5%;
     line-height: 1.3em;
 }
 .telephone1 {
     font-size: 40px;
     font-weight: bold;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     padding-left: 40%;
     line-height: 1.3em;
 }
@@ -89,21 +89,21 @@
     color: #027095;
     font-size: 40px;
     font-weight: bold;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     padding-left: 37.5%;
     line-height: 2em;
 }
 .support-holidays-text {
     font-size: 2rem;
     color: #027095;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     text-align: center;
     font-weight: 600;
     line-height: 2.9em;
 }
 .hours-text {
     color: #027095;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Source Sans Pro;
     font-size: 1.5rem;
     text-align: center;
     line-height: 1.3em;
