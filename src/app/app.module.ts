@@ -14,6 +14,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MockTestsComponent } from './mock-tests/mock-tests.component';
+import { LoginComponent } from './login/login.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MockTestsComponent } from './mock-tests/mock-tests.component';
     CreditsComponent,
     ContactsComponent,
     MockTestsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { MockTestsComponent } from './mock-tests/mock-tests.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

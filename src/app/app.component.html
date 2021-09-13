@@ -1,7 +1,7 @@
 <div class="image-page">
     <button class="buttonHome" mat-button color="primary">New Users? Register</button>
     <img class = "imageLogo" src="../assets/learningLogo.jpg">
-    <button class="buttonHome" mat-button color="primary">Existing Users? Login</button>
+    <button class="buttonHome" mat-button color="primary" (click)="signInDialog()">Existing Users? Login</button>
 </div>
 <mat-tab-group mat-align-tabs="center" color="primary" backgroundColor="accent">
     <mat-tab label="Home"><ng-template mat-tab-label>

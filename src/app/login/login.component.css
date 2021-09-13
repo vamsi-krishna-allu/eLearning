@@ -1,0 +1,114 @@
+.login-modal-div {
+    height: 100%;
+    font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+    height: 100%;
+    background-color:white;
+}
+.modal-content{
+    margin: auto;
+    width: 550px;
+    border-radius: 5px;
+}
+::placeholder {
+    color:black;
+    opacity: 1;
+}
+.close {
+    color: black;
+    padding-left: 97%;
+}
+.close-div {
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.7em;
+    text-shadow: 0 1px 0 rgb(41, 100, 209);
+    opacity: .5;
+    background-color: #eee;
+}
+.modal-header {
+    padding: 0px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    margin-top: 3%;
+}
+.login-register-div {
+    width: 100%!important;  
+    display: flex;
+    flex-direction: row;
+}
+.login-modal-div .modal-header input:checked + label.tab-label {
+    color: #555;
+    border: 1px solid #ddd;
+    border-top: 2px solid #0f9d58;
+    border-bottom: 3px solid #fff;
+    background-color: #fff;
+}
+.login-modal-div .modal-header label.tab-label:first-of-type {
+    float: left;
+}
+.login-modal-div .modal-header label.tab-label {
+    display: inline-block;
+    padding: 15px 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #888;
+    border: 1px solid transparent;
+    width: 39.8%;
+    padding-bottom: 12px;
+    font-size: 20px;
+    border-bottom-width: 4px;
+    background-color: #e9ebee;
+}
+.label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+.login-modal-div .modal-header input[type=radio] {
+    display: none;
+}
+.input-icon {
+    z-index: 1;
+    color: #979faf;
+    font-size: 25px;
+    margin-top: 50%;
+    font-style: normal;
+}
+.login-form {
+    padding-top: 4%;
+}
+.example-full-width {
+    padding-left: 7%;
+    width: 86%;
+    color: black;
+}
+.username-text {
+    padding-left: 5%;
+}
+.btn-login {
+    color: #fff;
+    background-color: rgb(96, 175, 96);
+    font-size: 100%;
+    font-weight: normal;
+    border: 1px solid black;
+    width: 86%;
+    margin-left: 7%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.forgotPwdText {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 72%;
+}
+.error-text {
+    line-height: 1.5em;
+}
+.backToLoginText {
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 7%;
+}
+
