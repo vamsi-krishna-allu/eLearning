@@ -5,12 +5,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ConnectionService {
-  url : string = '';
+  url : string = 'http://localhost:4200/';
   constructor(private http: HttpClient) { }
 
   sendMessage(messageContent: any) {
-    /*return this.http.post(this.url,
+    console.log(JSON.stringify(messageContent));
+    return this.http.post(this.url,
     JSON.stringify(messageContent),
-    { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'text' });*/
+    { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'json' });
   }
 }

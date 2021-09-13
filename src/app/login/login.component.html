@@ -16,7 +16,7 @@
                         <mat-label>Username or email</mat-label>
                         <mat-icon matPrefix class="input-icon">account_circle</mat-icon>
                         <input class="username-text" type="text" [formControl]="username" matInput
-                            placeholder="Username or email" required>
+                            [(ngModel)]='loginDetails.userName' placeholder="Username or email" required>
                         <mat-error class="error-text" *ngIf="username.hasError('required')">
                             <strong>Field can not be empty.</strong>
                         </mat-error>
@@ -24,8 +24,8 @@
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Password</mat-label>
                         <mat-icon matPrefix class="input-icon">lock</mat-icon>
-                        <input class="username-text" type="text" [formControl]="password" matInput
-                            placeholder="Password" required>
+                        <input class="username-text" type="password" [formControl]="password" matInput
+                            [(ngModel)]='loginDetails.password' placeholder="Password" required>
                         <mat-error class="error-text" *ngIf="password.hasError('required')">
                             <strong>Field can not be empty.</strong>
                         </mat-error>
@@ -34,7 +34,8 @@
                         <a (click)='forgotPassword()'>Forgot Password</a>
                     </div>
                     <div>
-                        <button mat-button class="btn-login">Login</button>
+                        <button mat-button class="btn-login" (click)='userLogin()'
+                            [disabled]="username.hasError('required') || password.hasError('required')">Login</button>
                     </div>
                 </form>
             </section>
@@ -43,8 +44,12 @@
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>E-mail</mat-label>
                         <mat-icon matPrefix class="input-icon">email</mat-icon>
-                        <input class="username-text" type="text" [formControl]="username" matInput placeholder="E-mail"
-                            required>
+                        <input class="username-text" type="text" [formControl]="username" matInput
+                            [(ngModel)]='loginDetails.userName' placeholder="E-mail" required>
+                        <mat-error class="error-text"
+                            *ngIf="username.hasError('email') && !username.hasError('required')">
+                            <strong>Please enter a valid email address</strong>
+                        </mat-error>
                         <mat-error class="error-text" *ngIf="username.hasError('required')">
                             <strong>Field can not be empty.</strong>
                         </mat-error>
@@ -52,22 +57,23 @@
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label>Password</mat-label>
                         <mat-icon matPrefix class="input-icon">lock</mat-icon>
-                        <input class="username-text" type="text" [formControl]="password" matInput
-                            placeholder="Password" required>
+                        <input class="username-text" type="password" [formControl]="password" matInput
+                            [(ngModel)]='loginDetails.password' placeholder="Password" required>
                         <mat-error class="error-text" *ngIf="password.hasError('required')">
                             <strong>Field can not be empty.</strong>
                         </mat-error>
                     </mat-form-field>
                     <div>
-                        <button mat-button class="btn-login">Sign Up</button>
+                        <button mat-button class="btn-login" (click)='userLogin()'
+                            [disabled]="username.hasError('required') || password.hasError('required')">Sign Up</button>
                     </div>
                 </form>
             </section>
 
         </div>
     </div>
-    </mat-card>
-    <mat-card class="login-modal-div" *ngIf='enableResetPwd'>
+</mat-card>
+<mat-card class="login-modal-div" *ngIf='enableResetPwd'>
     <div class="modal-content">
         <div class="modal-header">
             <section id="content2">
@@ -76,7 +82,7 @@
                         <mat-label>Username/Email</mat-label>
                         <mat-icon matPrefix class="input-icon">account_circle</mat-icon>
                         <input class="username-text" type="text" [formControl]="username" matInput placeholder="E-mail"
-                            required>
+                            [(ngModel)]='loginDetails.userName' required>
                         <mat-error class="error-text" *ngIf="username.hasError('required')">
                             <strong>Field can not be empty.</strong>
                         </mat-error>
@@ -85,7 +91,8 @@
                         <a (click)='backToLogin()'>Back to Login</a>
                     </div>
                     <div>
-                        <button mat-button class="btn-login">Reset Password</button>
+                        <button mat-button class="btn-login" (click)='userLogin()'
+                            [disabled]="username.hasError('required')">Reset Password</button>
                     </div>
                 </form>
             </section>
