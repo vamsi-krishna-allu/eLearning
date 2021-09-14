@@ -43,14 +43,14 @@
     <mat-card class="contactsProfileGrid">
         <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Full Name</mat-label>
-            <input matInput placeholder="Full Name" [formControl]="nameFormControl" required>
+            <input matInput placeholder="Full Name" [(ngModel)]="emailMessage.username" [formControl]="nameFormControl" required>
             <mat-error *ngIf="nameFormControl.hasError('required')">
                 Please enter name
             </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>E-mail</mat-label>
-            <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com" required>
+            <input matInput [formControl]="emailFormControl" [(ngModel)]="emailMessage.mailId" placeholder="Ex. pat@example.com" required>
             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
                 Please enter a valid email address
             </mat-error>
@@ -60,13 +60,13 @@
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Message</mat-label>
-            <textarea matInput placeholder="Ex. 100 Main St" rows="10" cols="50" [formControl]="messageFormControl" required></textarea>
+            <textarea matInput placeholder="Ex. 100 Main St" rows="10" cols="50" [(ngModel)]="emailMessage.message" [formControl]="messageFormControl" required></textarea>
             <mat-error *ngIf="messageFormControl.hasError('required')">
                 Please enter message
             </mat-error>
         </mat-form-field>
         <div>
-            <button mat-button class="btn-primary">SUMBIT</button>
+            <button mat-button class="btn-primary" (click)="onSubmit('sendMessage')">SUMBIT</button>
         </div>
     </mat-card>
 

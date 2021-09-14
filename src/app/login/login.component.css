@@ -2,7 +2,7 @@
     height: 100%;
     font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
     height: 100%;
-    background-color:white;
+    background:#fff;
 }
 .modal-content{
     margin: auto;
@@ -73,6 +73,9 @@
     font-size: 25px;
     margin-top: 50%;
     font-style: normal;
+}
+.label-text {
+    color: black;
 }
 .login-form {
     padding-top: 4%;

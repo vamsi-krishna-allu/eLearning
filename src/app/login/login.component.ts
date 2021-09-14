@@ -55,8 +55,8 @@ export class LoginComponent implements OnInit {
     this.enableResetPwd = false;
     this.enableLogInSignupSection = false;
   }
-  userLogin() {
-    this.connectionService.sendMessage(this.loginDetails).subscribe(() => {
+  userLogin(action : string) {
+    this.connectionService.sendMessage(this.loginDetails, action).subscribe(() => {
       alert('Your message has been sent.');
       this.contactForm.reset();
     }, (error: any) => {

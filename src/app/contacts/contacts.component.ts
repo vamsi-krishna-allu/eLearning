@@ -1,17 +1,21 @@
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit, HostListener } from '@angular/core';
 import { ConnectionService } from '../connection.service';
+import { EmailMessage } from 'src/emailMessage';
+
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css']
 })
+
 export class ContactsComponent implements OnInit {
 
-  contactForm: FormGroup;
-  disabledSubmitButton: boolean = true;
-  optionsSelect: Array<any> = [];
+  contactForm : FormGroup;
+  disabledSubmitButton : boolean = true;
+  optionsSelect : Array<any> = [];
+  emailMessage : EmailMessage = new EmailMessage();
 
   emailFormControl = new FormControl('', [
     Validators.required,
@@ -45,14 +49,14 @@ export class ContactsComponent implements OnInit {
   }
 
   ngOnInit() {}
-  onSubmit() {
-    /*this.connectionService.sendMessage(this.contactForm.value).subscribe(() => {
+
+  onSubmit(action : string) {
+    this.connectionService.sendMessage(this.emailMessage, action).subscribe(() => {
       alert('Your message has been sent.');
       this.contactForm.reset();
-      this.disabledSubmitButton = true;
     }, (error: any) => {
       console.log('Error', error);
-    });*/
+    });
   }
 
 }
