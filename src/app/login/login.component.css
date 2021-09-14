@@ -89,11 +89,10 @@
     padding-left: 5%;
 }
 .btn-login {
-    color: #fff;
-    background-color: rgb(96, 175, 96);
     font-size: 100%;
+    background-color: steelblue;
+    color: white;
     font-weight: normal;
-    border: 1px solid black;
     width: 86%;
     margin-left: 7%;
     margin-bottom: 5%;
