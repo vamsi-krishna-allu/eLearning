@@ -11,3 +11,10 @@ $my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
   $alternate-theme: mat-light-theme($alternate-primary, $alternate-accent);
   @include angular-material-theme($alternate-theme);
 }
+.mat-form-field-infix {
+  display: flex !important;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 225px;
+}

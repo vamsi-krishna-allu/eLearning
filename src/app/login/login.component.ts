@@ -1,10 +1,12 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { NEVER } from 'rxjs';
+import { ConfirmedValidator } from '../confirmed.validator';
 import { ConnectionService } from '../connection.service';
 import { LocalstorageService } from '../localstorage.service';
 import { LoginDetails } from '../LoginDetails';
 import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-login',
@@ -19,20 +21,38 @@ export class LoginComponent implements OnInit {
   enableLogInSignupSection : boolean = true;
   loginDetails: LoginDetails = new LoginDetails();
   contactForm!: FormGroup;
-  constructor(private connectionService : ConnectionService, private localStorageService: LocalstorageService,
+  form: FormGroup = new FormGroup({});
+  constructor(private connectionService : ConnectionService, private fb: FormBuilder,  private localStorageService: LocalstorageService,
     private matSnackBar: MatSnackBar) { 
+    this.form = fb.group({
+      username: ['',[Validators.required]],
+      emailId: ['',[Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+      confirm_password: ['', [Validators.required]]
+    }, { 
+      validator: ConfirmedValidator('password', 'confirm_password')
+    })
   }
+
+  get f(){
+    return this.form.controls;
+  }
+ 
 
   ngOnInit(): void {
   }
 
-  username = new FormControl('', [
+  
+ /* username = new FormControl('', [
     Validators.required,
     Validators.email,
   ]);
   password = new FormControl('', [
     Validators.required
   ]);
+  confirm_password = new FormControl('', [
+    Validators.required
+  ]);*/
   logIn() {
     this.enableLoginSection = true;
     this.enableSignUpSection = false;
