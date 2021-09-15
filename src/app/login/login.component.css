@@ -3,10 +3,11 @@
     font-family: 'RobotoDraft', 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
     height: 100%;
     background:#fff;
+    box-shadow: none !important;
 }
 .modal-content{
     margin: auto;
-    width: 550px;
+    width: 100%;
     border-radius: 5px;
 }
 ::placeholder {
@@ -15,7 +16,8 @@
 }
 .close {
     color: black;
-    padding-left: 97%;
+    padding-right: 0%;
+    float: right;
 }
 .close-div {
     height: 40px;
@@ -74,6 +76,13 @@
     margin-top: 50%;
     font-style: normal;
 }
+.input-icon1 {
+    z-index: 1;
+    color: green;
+    font-size: 25px;
+    margin-top: -50%;
+    font-style: normal;
+}
 .label-text {
     color: black;
 }
@@ -102,7 +111,8 @@
     color: black;
     font-size: 15px;
     font-weight: bold;
-    padding-left: 72%;
+    padding-left: 7%;
+    width: 86%;
 }
 .error-text {
     line-height: 1.5em;
@@ -112,5 +122,6 @@
     font-size: 15px;
     font-weight: bold;
     padding-left: 7%;
+    width: 86%;
 }
 
