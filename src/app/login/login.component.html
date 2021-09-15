@@ -34,7 +34,7 @@
                         <a (click)='forgotPassword()'>Forgot Password</a>
                     </div>
                     <div>
-                        <button mat-button class="btn-login" (click)="userLogin('login')"
+                        <button mat-raised-button class="btn-login" (click)="userLogin('login')"
                             [disabled]="username.hasError('required') || password.hasError('required')">Login</button>
                     </div>
                 </form>
@@ -64,7 +64,7 @@
                         </mat-error>
                     </mat-form-field>
                     <div>
-                        <button mat-button class="btn-login" (click)="userLogin('signUp')"
+                        <button mat-raised-button class="btn-login" (click)="userLogin('signUp')"
                             [disabled]="username.hasError('required') || password.hasError('required')">Sign Up</button>
                     </div>
                 </form>
