@@ -34,4 +34,9 @@ export class ConnectionService {
     return this.http.post(this.url,
       user);
   }
+
+  getPdfFile(fileName: string) {
+    this.url = `http://localhost:8080/getPdfFile/${fileName}`;
+    return this.http.get(this.url);
+  }
 }
