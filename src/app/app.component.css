@@ -15,10 +15,17 @@
     width: 25%;
 }
 .buttonHome {
-    height: 25%;
+    height: 50%;
     font-size: large;
 }
 .example-tab-icon {
     margin-right: 10%;
     color:white;
+}
+.left-header {
+    font-size: xx-large;
+    color: darkcyan;
+}
+.toolbar {
+    justify-content:space-between;
 }

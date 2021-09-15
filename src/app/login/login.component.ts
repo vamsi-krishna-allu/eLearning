@@ -2,7 +2,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { NEVER } from 'rxjs';
 import { ConnectionService } from '../connection.service';
+import { LocalstorageService } from '../localstorage.service';
 import { LoginDetails } from '../LoginDetails';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,8 @@ export class LoginComponent implements OnInit {
   enableLogInSignupSection : boolean = true;
   loginDetails: LoginDetails = new LoginDetails();
   contactForm!: FormGroup;
-  constructor(private connectionService : ConnectionService) { 
+  constructor(private connectionService : ConnectionService, private localStorageService: LocalstorageService,
+    private matSnackBar: MatSnackBar) { 
   }
 
   ngOnInit(): void {
@@ -55,9 +58,28 @@ export class LoginComponent implements OnInit {
     this.enableResetPwd = false;
     this.enableLogInSignupSection = false;
   }
-  userLogin(action : string) {
-    this.connectionService.sendMessage(this.loginDetails, action).subscribe(() => {
-      alert('Your message has been sent.');
+  userLogin() {
+    this.connectionService.authenticateUser(this.loginDetails).subscribe((response: any) => {
+      this.localStorageService.set("TOKEN", response.jwttoken);
+      this.matSnackBar.open("Logged in Succesfully", "Cool");
+      this.contactForm.reset();
+    }, (error: any) => {
+      console.log('Error', error);
+    });
+  }
+
+  userSignUp() {
+    this.connectionService.registerUser(this.loginDetails).subscribe((response: any) => {
+      this.matSnackBar.open("Registered Succesfully", "Awesome");
+      this.contactForm.reset();
+    }, (error: any) => {
+      console.log('Error', error);
+    });
+  }
+
+  resetPassword() {
+    this.connectionService.resetPassword(this.loginDetails).subscribe((response) => {
+      this.matSnackBar.open("Password changed Succesfully", "Great");
       this.contactForm.reset();
     }, (error: any) => {
       console.log('Error', error);
