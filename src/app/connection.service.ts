@@ -11,19 +11,27 @@ export class ConnectionService {
   sendMessage(messageContent: any, action: string) {
     console.log(JSON.stringify(messageContent));
     if(action === 'sendMessage') {
-      this.url = 'http://localhost:8080/eLearningBackend/sendMessage';
-    }
-    else if(action === 'login') {
-      this.url = 'http://localhost:8080/eLearningBackend/login';
-    }
-    else if(action === 'signUp') {
-      this.url = 'http://localhost:8080/eLearningBackend/signUp';
-    }
-    else if(action === 'resetPassword') {
-      this.url = 'http://localhost:8080/eLearningBackend/resetPassword';
+      this.url = 'http://localhost:8080/sendMessage';
     }
     return this.http.post(this.url,
-    JSON.stringify(messageContent),
-    { headers: new HttpHeaders({ 'Content-Type': 'application/json' }), responseType: 'json' });
+    messageContent, { responseType: 'text' });
+  }
+
+  authenticateUser(user: any) {
+    this.url = 'http://localhost:8080/authenticate';
+    return this.http.post(this.url,
+      user);
+  }
+
+  registerUser(user: any) {
+    this.url = 'http://localhost:8080/register';
+    return this.http.post(this.url,
+      user);
+  }
+
+  resetPassword(user: any) {
+    this.url = 'http://localhost:8080/resetPassword';
+    return this.http.post(this.url,
+      user);
   }
 }

@@ -16,7 +16,7 @@
                         <mat-label class="label-text">E-mail</mat-label>
                         <mat-icon matPrefix class="input-icon">email</mat-icon>
                         <input class="username-text" type="text" formControlName="emailId" matInput
-                            [(ngModel)]='loginDetails.userName' placeholder="E-mail" required>
+                            [(ngModel)]='loginDetails.username' placeholder="E-mail" required>
                         <mat-error class="error-text" *ngIf="f.emailId.errors?.email && !f.emailId.errors?.required">
                             <strong>Please enter a valid email address</strong>
                         </mat-error>
@@ -38,9 +38,9 @@
                         <a (click)='forgotPassword()'>Forgot Password</a>
                     </div>
                     <div>
-                        <button mat-raised-button class="btn-login" (click)="userLogin('login')"
+                        <button mat-raised-button class="btn-login" (click)="userLogin()"
                             [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required">Login</button>
-                    </div>
+                       </div>
                 </form>
             </section>
             <section id="content2" *ngIf='enableSignUpSection'>
@@ -49,7 +49,7 @@
                         <mat-label class="label-text">E-mail</mat-label>
                         <mat-icon matPrefix class="input-icon">email</mat-icon>
                         <input class="username-text" type="text" formControlName="emailId" matInput
-                            [(ngModel)]='loginDetails.userName' placeholder="E-mail" required>
+                            [(ngModel)]='loginDetails.username' placeholder="E-mail" required>
                         <mat-error class="error-text"
                             *ngIf="f.emailId.errors?.email && !f.emailId.errors?.required">
                             <strong>Please enter a valid email address</strong>
@@ -71,7 +71,7 @@
                     <br>
                     <br>
                     <div>
-                        <button mat-raised-button class="btn-login" (click)="userLogin('signUp')"
+                        <button mat-raised-button class="btn-login" (click)="userSignUp()"
                             [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required">Sign Up</button>
                     </div>
                 </form>
@@ -92,7 +92,7 @@
                         <mat-label class="label-text">Email</mat-label>
                         <mat-icon matPrefix class="input-icon">email</mat-icon>
                         <input class="username-text" type="text" formControlName="emailId" matInput placeholder="E-mail"
-                            [(ngModel)]='loginDetails.userName' required>
+                            [(ngModel)]='loginDetails.username' required>
                         <mat-error class="error-text" *ngIf="f.emailId.errors?.email && !f.emailId.errors?.required">
                             <strong>Please enter a valid email address</strong>
                         </mat-error>
@@ -127,7 +127,7 @@
                         <a (click)='backToLogin()'>Back to Login</a>
                     </div>
                     <div>
-                        <button mat-button class="btn-login" (click)="userLogin('resetPassword')"
+                        <button mat-button class="btn-login" (click)="resetPassword()"
                             [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required ||
                             f.confirm_password.errors?.required">Reset Password</button>
                     </div>
