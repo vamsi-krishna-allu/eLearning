@@ -29,3 +29,6 @@
 .toolbar {
     justify-content:space-between;
 }
+.menu-padding {
+    padding: 0px;
+}

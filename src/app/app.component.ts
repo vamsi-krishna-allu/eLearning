@@ -10,6 +10,9 @@ import { LoginComponent } from './login/login.component';
 })
 export class AppComponent implements OnInit {
 
+  courseMenu : boolean = false;
+  selectedCourse : string = '';
+
   colorToggle = {
     colorValue: "primary",
     bgValue: "accent",
@@ -24,6 +27,13 @@ export class AppComponent implements OnInit {
     });
   }
 
+  courseDialog(action : string) {
+    this.courseMenu = true;
+    this.selectedCourse = action;
+  }
+  menuDialog() {
+    this.courseMenu = false;
+  }
   ngOnInit() {
     
   }

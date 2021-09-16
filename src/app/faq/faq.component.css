@@ -1,12 +1,13 @@
 .faq-header {
-    color: #027095;
+    color: #292f33;
     background: #fff;
-    font-family: Source Sans Pro,sans-serif;
+    font-family: Lora,serif;
     position: relative;
     line-height: 2.1em;
     font-size: 12px;
     font-weight: 400;
     margin-top: 2%;
+    box-shadow: none !important;
 }
 .faq-text {
     padding-left: 5%;
