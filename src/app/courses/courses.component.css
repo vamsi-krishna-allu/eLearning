@@ -10,9 +10,11 @@
     margin-top: 5%;
 }
 .courses-div {
-    margin: 3% 20% 0% 20%;
+    margin: 3% 10% 0% 10%;
 }
 .module-div {
     width: 50%;
     color: #292f33;
+    background: powderblue;
+    border-radius: 0px;
 }
