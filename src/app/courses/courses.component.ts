@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ConnectionService } from '../connection.service';
 
 @Component({
   selector: 'app-courses',
@@ -8,9 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CoursesComponent implements OnInit {
 
   @Input() selectedCourse : string = '';
-  constructor() { }
+  constructor(private connectionService : ConnectionService) { }
 
   ngOnInit(): void {
+    this.connectionService.getPdfFile('Aadharfront').subscribe(response => {
+      console.log('response');
+    });
   }
 
 }
