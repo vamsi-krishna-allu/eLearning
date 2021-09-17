@@ -12,8 +12,8 @@
         <mat-icon class="example-tab-icon">library_books</mat-icon>
         <button class="menu-padding" (click)="menuDialog()" mat-button [matMenuTriggerFor]="menu">Courses</button>
           <mat-menu #menu="matMenu">
-            <button (click)="courseDialog('course1')" mat-menu-item>Course 1</button>
-            <button (click)="courseDialog('course2')" mat-menu-item>Course 2 </button>
+            <button (click)="courseDialog('realestate')" mat-menu-item>REAL ESTATE</button>
+            <button (click)="courseDialog('mortgage')" mat-menu-item>MORTGAGE</button>
           </mat-menu>
       </ng-template>
       <div *ngIf="courseMenu"><app-courses [selectedCourse]="selectedCourse"></app-courses></div>
