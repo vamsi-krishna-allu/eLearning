@@ -1,3 +1,4 @@
+<mat-progress-spinner class="progress-spinner" [mode]="'indeterminate'" [diameter]="50" *ngIf="showSpinner"></mat-progress-spinner>
 <mat-toolbar class="toolbar">
   <div class="left-header">No Books</div>
   <button class="buttonHome" mat-button color="primary" (click)="signInDialog()">Login/Register</button>
@@ -34,12 +35,5 @@
         Contact Us
       </ng-template> <app-contacts></app-contacts> </mat-tab>
 </mat-tab-group>
-<!-- <mat-toolbar color="accent">
-    <div class="toolbarLabel">Home</div>
-    <div class="toolbarLabel">Courses</div>
-    <div class="toolbarLabel">FAQ</div>
-    <div class="toolbarLabel">About</div>
-    <div class="toolbarLabel">Credits</div>
-</mat-toolbar>  -->
 
 <router-outlet></router-outlet>

@@ -1,27 +1,34 @@
+<mat-progress-bar
+          class="example-margin"
+          color="accent"
+          mode="determinate"
+          [value]="progressBarValue">
+</mat-progress-bar>
 <mat-card class="example-card">
     <mat-card-header>
-        <mat-card-title class="card-title">Question 1 of 70</mat-card-title>
+        <mat-card-title class="card-title">Question {{currentIndex + 1}} of {{maximumIndex}}</mat-card-title>
     </mat-card-header>
     <div class="question-and-answer">
         <mat-card-content class="question">
             <div>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                {{mockQuestionData?.question}}
             </div>
         </mat-card-content>
         <div class="answer">
             <label class="example-radio-group-label">Choose an option from below</label>
             <mat-radio-group class="example-radio-group" color="primary">
-                <mat-radio-button color="primary" class="example-radio-button" *ngFor="let option of options"
+                <mat-radio-button color="primary" class="example-radio-button" *ngFor="let option of mockQuestionData?.options"
                     [value]="option">
                     {{option}}
                 </mat-radio-button>
             </mat-radio-group>
         </div>
     </div>
-    <mat-card-actions class="card-actions">
-        <button mat-raised-button class="prev-button">PREV</button>
-        <button mat-raised-button class="next-button">NEXT</button>
-    </mat-card-actions>
+    <div class="button-container">
+        <button mat-raised-button class="submit-button" (click)="onSubmit()">SUBMIT</button>
+    <div class="card-actions">
+        <button mat-raised-button (click)="onPrevious()" [disabled] = "currentIndex === 0" color="primary">PREV</button>
+        <button mat-raised-button (click)="onNext()" [disabled] = "currentIndex === maximumIndex - 1" color="accent">NEXT</button>
+    </div>
+    </div>
 </mat-card>

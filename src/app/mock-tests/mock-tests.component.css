@@ -6,7 +6,6 @@
     margin-right: auto;
     vertical-align: middle;
     margin-top: 5%;
-    background-color: #69f0ae;
   }
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
@@ -27,14 +26,16 @@
     padding-bottom: 1%;
 }
 .example-radio-group {
-    display: flex;
+  display: flex;
   flex-direction: column;
   padding-top: 1%;
 }
 .card-actions {
-    position: absolute;
-    bottom: 10%;
-    right: 5%;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 20%;
 }
 .question {
     color: indigo;
@@ -56,6 +57,20 @@
 .question-and-answer {
     display: flex;
     flex-direction: row;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.example-margin {
+  margin: 3% 0%;
+  width: 80%;
+  margin-left: 10%;
+}
+.submit-button {
+  color: white;
+  background-color: green;
 }
 /* .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
     border-color: rgb(66, 134, 244);
