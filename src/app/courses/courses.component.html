@@ -1,15 +1,15 @@
 <h1 class="courses-header">Available {{selectedCourse}} modules</h1>
 <div class="courses-div" *ngIf="selectedCourse === 'realestate'">
     <div class="matcard-module" *ngFor="let course of realestateCourses">
-        <mat-card class="module-div">{{course.courseName}}</mat-card>
-        <mat-card style="background: white;" class="module-div">Module 1</mat-card>
+        <mat-card class="course-text">{{course.courseName}}</mat-card>
+        <mat-card class="module-text">{{course.courseDesc}}</mat-card>
     </div>
 </div>
 
 <div class="courses-div" *ngIf="selectedCourse === 'mortgage'">
     <div class="matcard-module" *ngFor="let course of mortgageCourses">
-        <mat-card class="module-div">{{course.courseName}}</mat-card>
-        <mat-card style="background: white;" class="module-div">Module 1</mat-card>
+        <mat-card class="course-text">{{course.courseName}}</mat-card>
+        <mat-card class="module-text">{{course.courseDesc}}</mat-card>
     </div>
 </div>
 

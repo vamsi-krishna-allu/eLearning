@@ -12,9 +12,20 @@
 .courses-div {
     margin: 3% 10% 0% 10%;
 }
-.module-div {
+.course-text {
     width: 50%;
     color: #292f33;
     background: powderblue;
     border-radius: 0px;
+    text-align: left;
 }
+.module-text {
+    width: 50%;
+    color: #292f33;
+    background: white !important;
+    border-radius: 0px;
+    text-align: left;
+}
+.mat-card:hover {
+    background-color: springgreen;
+  }
