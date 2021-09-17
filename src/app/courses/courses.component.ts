@@ -18,6 +18,9 @@ export class CoursesComponent implements OnInit {
       console.log('response');
     });
   }
+  subscribeNow(course : any) {
+    console.log(course);
+  }
 
 }
 export interface Courses {

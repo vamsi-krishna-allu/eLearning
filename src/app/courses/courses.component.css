@@ -5,6 +5,7 @@
     font-weight: 500;
     text-transform: uppercase;
     font-family: serif;
+    color: brown;
 }
 .matcard-module {
     display: flex;
@@ -12,10 +13,10 @@
     margin-top: 5%;
 }
 .courses-div {
-    margin: 3% 10% 0% 10%;
+    margin: 3% 7% 0% 7%;
 }
 .course-text {
-    width: 50%;
+    width: 30%;
     color: #292f33;
     background: powderblue;
     border-radius: 0px;
@@ -24,7 +25,7 @@
     line-height: 1.5em;
 }
 .module-text {
-    width: 50%;
+    width: 75%;
     color: #292f33;
     background: white !important;
     border-radius: 0px;
@@ -33,4 +34,11 @@
 }
 .mat-card:hover {
     background-color: springgreen;
-  }
+}
+.image-div {
+    margin-left: 2%;
+    margin-top: 1%;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: chocolate;
+}
