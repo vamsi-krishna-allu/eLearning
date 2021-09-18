@@ -12,11 +12,17 @@ export class ConnectionService {
 
   sendMessage(messageContent: any, action: string) {
     console.log(JSON.stringify(messageContent));
-    if(action === 'sendMessage') {
+    const token = this.localStorageService.get("TOKEN");
+    if (action === 'sendMessage') {
       this.url = 'http://localhost:8080/sendMessage';
     }
     return this.http.post(this.url,
-    messageContent, { responseType: 'text' });
+      messageContent, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+        responseType: 'text',
+      })
+    });
   }
 
   authenticateUser(user: any) {
@@ -38,14 +44,26 @@ export class ConnectionService {
   }
 
   getPdfFile(fileName: string) {
-    this.url = `http://localhost:8080/getPdfFile/${fileName}`;
-    return this.http.get(this.url);
+    const token = this.localStorageService.get("TOKEN");
+    this.url = `http://localhost:8080/getPdfFile`;
+    return this.http.get(this.url, {
+      headers:  new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+        'Content-Type':  'application/pdf',
+        responseType : 'blob',
+        Accept : 'application/pdf'
+      }),
+      params: {fileName: fileName}
+    });
   }
 
   getMockTest(tesType: string): Observable<any> {
     const token = this.localStorageService.get("TOKEN");
     this.url = `http://localhost:8080/questions`;
     return this.http.get(this.url, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
       params: {testType: tesType}
     });
   }

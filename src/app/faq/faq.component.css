@@ -1,6 +1,4 @@
 .faq-header {
-    color: #292f33;
-    background: #fff;
     font-family: Lora,serif;
     position: relative;
     line-height: 2.1em;
@@ -16,6 +14,11 @@
     font-size: 45px;
     font-weight: 700;
     line-height: 1.1;
+    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 .faq-qa-text {
     padding-left: 5%;
@@ -26,4 +29,9 @@
     font-family: Source Sans Pro;
     display: flex;
     flex-direction: column;
+    background-image: linear-gradient(to left, rgb(86 10 86), rgb(50 1 86), rgb(3 103 3), rgb(3 3 111), rgb(90 99 4), rgb(109 72 3), rgb(156 7 7));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }

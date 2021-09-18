@@ -1,17 +1,29 @@
 .title-header{
     font: bold 24px/34px Ubuntu;
-    color: #292f33;
     text-transform: uppercase;
     font-size : 40px;
     font-family: Lora,serif;
     padding-left: 40%;
     padding-top: 3%;
+    background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.title-header-down {
+    font: bold 24px/34px Ubuntu;
+    text-transform: uppercase;
+    font-size : 40px;
+    font-family: Lora,serif;
+    padding-left: 40%;
+    padding-top: 3%;
+    color: white;
 }
 .example-form {
-    background: #eee;
     margin: 15px 0;
-    border-radius: 3px;
-    background: #fff;
+    border-radius: 50%;
+    background: #294c65;
   }
   
   .example-full-width {
@@ -31,7 +43,6 @@
     line-height: 1.5em;
   }
   .has-text-color1 {
-    color: #292f33;
     font: bold;
     font-weight: 550;
     font-family: Lora,serif;
@@ -43,6 +54,11 @@
     padding-right: 5%;
     padding-top: 0%;
     line-height: 1.5em;
+    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 .has-contact-text-align {
     font-size: 1.15rem;
@@ -54,6 +70,7 @@
     font-size: 1.5rem;
     line-height: 1.3;
     padding-left: 8%;
+    color:white;
 }
 .btn-primary {
     color: #fff;
@@ -85,20 +102,28 @@
     line-height: 1.3em;
 }
 .support-hours-text {
-    color: #292f33;
     font-size: 40px;
     font-weight: bold;
     font-family: Lora,serif;
     padding-left: 37.5%;
     line-height: 2em;
+    background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 .support-holidays-text {
     font-size: 2rem;
-    color: #292f33;
     font-family: Lora,serif;
     text-align: center;
     font-weight: 600;
     line-height: 2.9em;
+    background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 .hours-text {
     color: #292f33;
@@ -115,5 +140,5 @@
     padding-right: 10%;
     margin-left: 15%;
     margin-right: 15%;
-    background : rgb(253, 253, 204);
+    background : white;
 }

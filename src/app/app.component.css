@@ -15,19 +15,26 @@
     width: 25%;
 }
 .buttonHome {
-    height: 50%;
-    font-size: large;
+    height: 60%;
+}
+.image-logo-home {
+    width: 13%;
+    margin-right: 2%;
+    margin-top: 1%;
 }
 .example-tab-icon {
     margin-right: 10%;
     color:white;
 }
 .left-header {
-    font-size: xx-large;
+    font-size: xxx-large;
     color: darkcyan;
+    margin-left: 5%;
 }
 .toolbar {
     justify-content:space-between;
+    height: 16%;
+    background-color: white;
 }
 .menu-padding {
     padding: 0px;
@@ -38,4 +45,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
+}
+.image-logo {
+    width: 24%;
+    height: 24%;
+    margin: 0 !important;
+}
+.left-header-logo {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: flex-start;
+    align-items: center;
 }

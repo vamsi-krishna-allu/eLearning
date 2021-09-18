@@ -1,7 +1,10 @@
 <mat-progress-spinner class="progress-spinner" [mode]="'indeterminate'" [diameter]="50" *ngIf="showSpinner"></mat-progress-spinner>
 <mat-toolbar class="toolbar">
-  <div class="left-header">No Books</div>
-  <button class="buttonHome" mat-button color="primary" (click)="signInDialog()">Login/Register</button>
+  <div class="left-header-logo">
+  <img mat-card-image class="image-logo" src="../../assets/no-books.PNG" alt="">
+  <div class="left-header">NO BOOKS</div>
+  </div>
+  <img mat-card-image class="image-logo-home" (click)="signInDialog()" src="../../assets/login-register.PNG" alt="">
 </mat-toolbar> 
 <mat-tab-group mat-align-tabs="center" color="primary" backgroundColor="accent">
     <mat-tab label="Home"><ng-template mat-tab-label>
