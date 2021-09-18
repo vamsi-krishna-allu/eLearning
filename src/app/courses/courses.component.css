@@ -36,8 +36,8 @@
 }
 .course-text {
     width: 30%;
-    color: #292f33;
-    background: powderblue;
+    color: #000000;
+    font-weight: 700;
     border-radius: 0px;
     text-align: left;
     font-size: 20px;
@@ -47,6 +47,7 @@
     align-content: stretch;
     flex-direction: column;
     align-items: flex-start;
+    background-image: linear-gradient(to right, red, white);
 }
 .module-text {
     width: 75%;

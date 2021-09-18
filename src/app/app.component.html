@@ -4,7 +4,7 @@
   <img mat-card-image class="image-logo" src="../../assets/no-books.PNG" alt="">
   <div class="left-header">NO BOOKS</div>
   </div>
-  <img mat-card-image class="image-logo-home" (click)="signInDialog()" src="../../assets/login-register.PNG" alt="">
+  <img mat-card-image class="image-logo-home" (click)="signInDialog()" src="../../assets/login-register.png" alt="">
 </mat-toolbar> 
 <mat-tab-group mat-align-tabs="center" color="primary" backgroundColor="accent">
     <mat-tab label="Home"><ng-template mat-tab-label>
@@ -31,12 +31,16 @@
       </ng-template> <app-about></app-about> </mat-tab>
     <mat-tab><ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-        Credits
-      </ng-template> <app-credits></app-credits> </mat-tab>
+        FAQ
+      </ng-template> <app-faq></app-faq> </mat-tab>
       <mat-tab><ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">call</mat-icon>
         Contact Us
       </ng-template> <app-contacts></app-contacts> </mat-tab>
+      <mat-tab><ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+        Credits
+      </ng-template> <app-credits></app-credits> </mat-tab>
 </mat-tab-group>
 
 <router-outlet></router-outlet>
