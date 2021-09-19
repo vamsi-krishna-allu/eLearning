@@ -7,15 +7,17 @@ import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { MockTestsComponent } from './mock-tests/mock-tests.component';
+import { TestListComponent } from './mock-tests/test-list/test-list.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },  
   { path: 'courses', component: CoursesComponent },  
-  { path: 'mockTests', component: MockTestsComponent },  
+  { path: 'openTest', component: MockTestsComponent },  
   { path: 'about', component: AboutComponent },  
   { path: 'faq', component: FaqComponent },  
   { path: 'contact', component: ContactsComponent }, 
   { path: 'credits', component: CreditsComponent},
+  { path: 'mockTests', component: TestListComponent},
   { path: '*', component: HomeComponent} 
 ];
 

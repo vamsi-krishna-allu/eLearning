@@ -4,5 +4,36 @@
     margin-left: 25%;
 }
 .home-background {
+    display: flex;
+    height: 100%;
     background-image: linear-gradient(to bottom, black, white, black);
+    position: fixed;
+    margin-left: 6%;
+    overflow: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.contact-header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.course-header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.header-text {
+    display: flex;
+    font-size: x-large;
+    font-weight: 600;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    width: 20%;
+    padding: 2%;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    justify-content: center;
 }

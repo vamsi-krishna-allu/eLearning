@@ -79,6 +79,7 @@
 .login-button {
     width: 20%;
     color: white;
+    font-size: xx-large;
 }
 .sidebar {
     display: flex;
@@ -87,8 +88,10 @@
     padding-left: 2%;
     padding-right: 2%;
     align-items: center;
+    position: fixed;
+    overflow: auto;
+    height: 100%;
     padding-top: 15%;
-    padding-bottom: 3.3%;
 }
 .sidebar-routlet {
     display: flex;

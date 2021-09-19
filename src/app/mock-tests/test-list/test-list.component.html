@@ -1,0 +1,17 @@
+<div class="courses-div">
+    <div *ngFor="let test of mockTests">
+        <div class="matcard-module">
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{test.testName}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <button mat-raised-button class="subscribe-button">SUBSCRIBE NOW</button>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{test.testDesc}}</p>
+            </mat-expansion-panel>
+        </div>
+    </div>
+</div>

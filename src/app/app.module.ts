@@ -17,6 +17,7 @@ import { MockTestsComponent } from './mock-tests/mock-tests.component';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpInterceptorService } from './http-interceptor.service';
+import { TestListComponent } from './mock-tests/test-list/test-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { HttpInterceptorService } from './http-interceptor.service';
     ContactsComponent,
     MockTestsComponent,
     LoginComponent,
+    TestListComponent,
   ],
   imports: [
     BrowserModule,

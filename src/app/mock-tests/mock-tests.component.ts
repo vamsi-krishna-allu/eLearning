@@ -75,6 +75,7 @@ export class MockTestsComponent implements OnInit {
   onSubmit() {
     console.log("submitted");
   }
+  
 
 }
 
