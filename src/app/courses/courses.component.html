@@ -1,27 +1,49 @@
-<div *ngIf="selectedCourse === 'realestate'" class="course-header">
+<div class="course-header">
     <img mat-card-image class="image-logo" src="../../assets/real-estate.png" alt="">
     <h1 class="courses-header">REAL ESTATE</h1>
 </div>
 
-<div class="courses-div" *ngIf="selectedCourse === 'realestate'">
+<div class="courses-div">
     <div *ngFor="let course of realestateCourses">
         <div class="matcard-module">
-            <mat-card class="course-text">{{course.courseName}}</mat-card>
-            <mat-card class="module-text">{{course.courseDesc}}</mat-card>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{course.courseName}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <button mat-raised-button class="subscribe-button">SUBSCRIBE NOW</button>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{course.courseDesc}}</p>
+            </mat-expansion-panel>
+            <!-- <mat-card class="course-text">{{course.courseName}}</mat-card>
+            <mat-card class="module-text">{{course.courseDesc}}</mat-card> -->
         </div>
         <!-- <img mat-card-image (click)="subscribeNow(course.courseName)" src="../../assets/subscribe.jpg" alt="Subscribe"> -->
     </div>
 </div>
 
-<div *ngIf="selectedCourse === 'mortgage'" class="course-header">
+<div class="course-header">
     <img mat-card-image class="mortgage-image-logo" src="../../assets/mortgage.png" alt="">
     <h1 class="courses-header">MORTGAGE BROKER</h1>
 </div>
-    <div class="courses-div" *ngIf="selectedCourse === 'mortgage'">
+    <div class="courses-div">
     <div *ngFor="let course of mortgageCourses">
         <div class="matcard-module">
-            <mat-card class="course-text">{{course.courseName}}</mat-card>
-            <mat-card class="module-text">{{course.courseDesc}}</mat-card>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{course.courseName}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <button mat-raised-button class="subscribe-button">SUBSCRIBE NOW</button>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p>{{course.courseDesc}}</p>
+            </mat-expansion-panel>
+            <!-- <mat-card class="course-text">{{course.courseName}}</mat-card>
+            <mat-card class="module-text">{{course.courseDesc}}</mat-card> -->
         </div>
         <!-- <div class="image-div">
             <img mat-card-image src="../../assets/subscribe.jpg" alt="subscribe">

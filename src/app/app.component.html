@@ -1,12 +1,12 @@
 <mat-progress-spinner class="progress-spinner" [mode]="'indeterminate'" [diameter]="50" *ngIf="showSpinner"></mat-progress-spinner>
-<mat-toolbar class="toolbar">
+<!-- <mat-toolbar class="toolbar">
   <div class="left-header-logo">
   <img mat-card-image class="image-logo" src="../../assets/no-books.PNG" alt="">
   <div class="left-header">NO BOOKS</div>
   </div>
   <img mat-card-image class="image-logo-home" (click)="signInDialog()" src="../../assets/login-register.png" alt="">
-</mat-toolbar> 
-<mat-tab-group mat-align-tabs="center" color="primary" backgroundColor="accent">
+</mat-toolbar>  -->
+<!-- <mat-tab-group mat-align-tabs="center" color="primary" backgroundColor="accent">
     <mat-tab label="Home"><ng-template mat-tab-label>
         <mat-icon class="example-tab-icon">home</mat-icon>
         Home
@@ -41,6 +41,37 @@
         <mat-icon class="example-tab-icon">thumb_up</mat-icon>
         Credits
       </ng-template> <app-credits></app-credits> </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->
 
-<router-outlet></router-outlet>
+<mat-toolbar class="toolbar">
+  <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let routeInfo of routeData">
+      <button mat-menu-item (click)="navigateTo(routeInfo.link)">
+        <mat-icon>{{routeInfo.icon}}</mat-icon>
+        <span>{{routeInfo.label}}</span>
+      </button>
+    </div>
+  </mat-menu>
+  <div class="login-button">
+    login/register
+  </div>
+  <div class="header-right">
+    <div *ngFor="let routeInfo of routeData">
+      <div (click)="navigateTo(routeInfo.link)" class="icon-label">
+        <mat-icon class="example-tab-icon">{{routeInfo.icon}}</mat-icon>
+        <div>{{routeInfo.label}}</div>
+      </div>
+    </div>
+  </div>
+</mat-toolbar> 
+<div class= "sidebar-routlet">
+  <div class="sidebar">
+    <div *ngFor="let info of title">
+      <div class="info-title">{{info}}</div>
+    </div>
+  </div>
+    <router-outlet></router-outlet>
+</div>

@@ -9,6 +9,7 @@ import { ConnectionService } from '../connection.service';
 export class CoursesComponent implements OnInit {
 
   @Input() selectedCourse : string = '';
+  panelOpenState = false;
   realestateCourses = REALESTATE_COURSES;
   mortgageCourses = MORTGAGE_COURSES;
   constructor(private connectionService : ConnectionService) { }
