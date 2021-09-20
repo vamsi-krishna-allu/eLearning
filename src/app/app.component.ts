@@ -12,7 +12,7 @@ import { SpinnerService } from './spinner.service';
 export class AppComponent implements OnInit {
 
   courseMenu : boolean = false;
-  selectedCourse : string = '';
+  //selectedCourse : string = '';
   title = ["N", "O", " ", "B", "O", "O", "K", "S"];
   routeData = [
     {
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
 
   courseDialog(action : string) {
     this.courseMenu = true;
-    this.selectedCourse = action;
+    //this.selectedCourse = action;
   }
   menuDialog() {
     this.courseMenu = false;

@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: row;
     margin-top: 5%;
+    margin-left: 10%;
 }
 .courses-div {
     margin: 3% 7% 0% 7%;
@@ -73,4 +74,7 @@
 .subscribe-button {
     color: white;
     background-color: red;
+    margin-left: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }

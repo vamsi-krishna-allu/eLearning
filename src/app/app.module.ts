@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpInterceptorService } from './http-interceptor.service';
 import { TestListComponent } from './mock-tests/test-list/test-list.component';
+import { SubscribeComponent } from './subscribe/subscribe.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { TestListComponent } from './mock-tests/test-list/test-list.component';
     MockTestsComponent,
     LoginComponent,
     TestListComponent,
+    SubscribeComponent,
   ],
   imports: [
     BrowserModule,

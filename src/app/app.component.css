@@ -32,9 +32,9 @@
     margin-left: 5%;
 }
 .toolbar {
-    justify-content: space-between;
-    height: 10%;
-    background-color: black;
+    /*justify-content: space-between;
+    height: 10%;*/
+    background-color: darkcyan;
 }
 .menu-padding {
     padding: 0px;
@@ -84,14 +84,14 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    background-color: black;
-    padding-left: 2%;
-    padding-right: 2%;
-    align-items: center;
+    background-color: darkcyan;
+    padding-left: 1%;
+    padding-right: 1%;
+    /*align-items: center;*/
     position: fixed;
     overflow: auto;
     height: 100%;
-    padding-top: 15%;
+    padding-top: 8%;
 }
 .sidebar-routlet {
     display: flex;

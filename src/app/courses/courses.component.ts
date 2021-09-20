@@ -8,7 +8,7 @@ import { ConnectionService } from '../connection.service';
 })
 export class CoursesComponent implements OnInit {
 
-  @Input() selectedCourse : string = '';
+  //@Input() selectedCourse : string = '';
   panelOpenState = false;
   realestateCourses = REALESTATE_COURSES;
   mortgageCourses = MORTGAGE_COURSES;
@@ -20,6 +20,7 @@ export class CoursesComponent implements OnInit {
     });
   }
   subscribeNow(course : any) {
+
     console.log(course);
   }
 

@@ -11,12 +11,16 @@
                     <mat-panel-title>
                         {{course.courseName}}
                     </mat-panel-title>
-                    <mat-panel-description>
+                    <!--<mat-panel-description>
                         <button mat-raised-button class="subscribe-button">SUBSCRIBE NOW</button>
-                    </mat-panel-description>
+                    </mat-panel-description>-->
                 </mat-expansion-panel-header>
                 <p>{{course.courseDesc}}</p>
             </mat-expansion-panel>
+            <div>
+                <button mat-raised-button class="subscribe-button" (click)="subscribeNow(course.courseName)">SUBSCRIBE
+                    NOW</button>
+            </div>
             <!-- <mat-card class="course-text">{{course.courseName}}</mat-card>
             <mat-card class="module-text">{{course.courseDesc}}</mat-card> -->
         </div>
@@ -28,7 +32,7 @@
     <img mat-card-image class="mortgage-image-logo" src="../../assets/mortgage.png" alt="">
     <h1 class="courses-header">MORTGAGE BROKER</h1>
 </div>
-    <div class="courses-div">
+<div class="courses-div">
     <div *ngFor="let course of mortgageCourses">
         <div class="matcard-module">
             <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -36,12 +40,16 @@
                     <mat-panel-title>
                         {{course.courseName}}
                     </mat-panel-title>
-                    <mat-panel-description>
+                    <!--<mat-panel-description>
                         <button mat-raised-button class="subscribe-button">SUBSCRIBE NOW</button>
-                    </mat-panel-description>
+                    </mat-panel-description>-->
                 </mat-expansion-panel-header>
                 <p>{{course.courseDesc}}</p>
             </mat-expansion-panel>
+            <div>
+                <button mat-raised-button class="subscribe-button" (click)="subscribeNow(course.courseName)">SUBSCRIBE
+                    NOW</button>
+            </div>
             <!-- <mat-card class="course-text">{{course.courseName}}</mat-card>
             <mat-card class="module-text">{{course.courseDesc}}</mat-card> -->
         </div>
@@ -49,5 +57,4 @@
             <img mat-card-image src="../../assets/subscribe.jpg" alt="subscribe">
         </div> -->
     </div>
-    </div>
-
+</div>
