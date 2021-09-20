@@ -1,0 +1,61 @@
+.subscribe-button {
+    color: white;
+    background-color: red;
+    margin-left: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    border-radius: 50%;
+    width: 50%;
+}
+.subscribe-background {
+    display: flex;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #607f8b, #a8ceda, #a8dad3);
+    position: fixed;
+    margin-left: 5%;
+    overflow: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95%;
+    padding-top: 5%;
+}
+.plans-background {
+    background: whitesmoke;
+    margin-left: 11%;
+    margin-top: 10%;
+    padding-top: 3%;
+    border-radius: 10%;
+    width: 18%;
+    height: 50%;
+}
+.plans-div {
+    text-align: center;
+    font-size: x-large;
+    text-transform: uppercase;
+    color: red;
+}
+.features-div {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.circle-icon {
+    color: green;
+}
+.feature-text {
+    margin-left: 5%;
+}
+.button-div {
+    margin-top: 83%;
+    margin-left: 28%;
+}
+.button-div1 {
+    margin-top: 65%;
+    margin-left: 28%;
+}
+.button-div2 {
+    margin-top: 47%;
+    margin-left: 28%;
+}
+.plans-background:hover {
+    background-color: springgreen;
+}

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConnectionService } from '../connection.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class CoursesComponent implements OnInit {
   panelOpenState = false;
   realestateCourses = REALESTATE_COURSES;
   mortgageCourses = MORTGAGE_COURSES;
-  constructor(private connectionService : ConnectionService) { }
+  constructor(private connectionService : ConnectionService, private route: Router) { }
 
   ngOnInit(): void {
     this.connectionService.getPdfFile('Aadharfront').subscribe(response => {
@@ -20,7 +21,7 @@ export class CoursesComponent implements OnInit {
     });
   }
   subscribeNow(course : any) {
-
+    this.route.navigateByUrl('/subscribe');
     console.log(course);
   }
 

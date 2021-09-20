@@ -91,14 +91,14 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    background-color: darkcyan;
+    background-color: black;
     padding-left: 1%;
-    padding-right: 1%;
+    padding-right: 2%;
     /*align-items: center;*/
     position: fixed;
     overflow: auto;
     height: 100%;
-    padding-top: 8%;
+    padding-top: 13%;
 }
 .sidebar-routlet {
     display: flex;
