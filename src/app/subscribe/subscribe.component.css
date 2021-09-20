@@ -56,6 +56,12 @@
     margin-top: 47%;
     margin-left: 28%;
 }
-.plans-background:hover {
-    background-color: springgreen;
+#basic:hover {
+    background-color: rgb(227, 236, 102);
+}
+#standard:hover {
+    background-color: rgb(52, 188, 230);
+}
+#premeium:hover {
+    background-color: rgb(58, 219, 131);
 }
