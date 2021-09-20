@@ -6,13 +6,14 @@
 .home-background {
     display: flex;
     height: 100%;
-    background-image: linear-gradient(to bottom, black, white, black);
+    background-image: linear-gradient(to bottom, black, rgb(59, 58, 58), white, rgb(59, 58, 58), black);
     position: fixed;
     margin-left: 6%;
     overflow: auto;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    padding-top: 5%;
 }
 .contact-header {
     display:flex;
