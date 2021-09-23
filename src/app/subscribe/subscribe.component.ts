@@ -11,8 +11,8 @@ export class SubscribeComponent implements OnInit {
   premeiumFeatures : Array<any> = [];
   
   basicPlan : boolean = true;
-  standardPlan : boolean = true;
-  premeiumPlan : boolean = true;
+  /*standardPlan : boolean = false;
+  premeiumPlan : boolean = false;*/
 
 
   constructor() { }
