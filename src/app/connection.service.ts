@@ -49,11 +49,8 @@ export class ConnectionService {
     return this.http.get(this.url, {
       headers:  new HttpHeaders({
         Authorization: `Bearer ${token}`,
-        'Content-Type':  'application/pdf',
         responseType : 'blob',
-        Accept : 'application/pdf'
       }),
-      params: {fileName: fileName}
     });
   }
 

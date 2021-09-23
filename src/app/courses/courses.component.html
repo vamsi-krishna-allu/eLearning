@@ -1,3 +1,19 @@
+<div *ngIf="doesFileExist" class="course-header">
+<div  class="file-viewer">
+    <button mat-raised-button class="pdf-button" (click)="prevPage()" [disabled]="page === 1">Prev</button>
+    <span class="mr-2 ml-2">{{ page }} / {{ totalPages }}</span>
+    <button mat-raised-button class="pdf-button" (click)="nextPage()" [disabled]="page === totalPages">Next</button>
+</div>
+
+<pdf-viewer [src]="pdfDocumentSrc"
+            [show-all]="false"
+            [page]="page"
+            [original-size]="true"
+            (after-load-complete)="afterLoadComplete($event)"
+            style="display:flex; flex-direction: row; justify-content: center;"
+></pdf-viewer>
+</div>
+<div *ngIf="!doesFileExist">
 <div class="course-header">
     <img mat-card-image class="image-logo" src="../../assets/real-estate.png" alt="">
     <h1 class="courses-header">REAL ESTATE</h1>
@@ -20,6 +36,8 @@
             <div>
                 <button mat-raised-button class="subscribe-button" (click)="subscribeNow(course.courseName)">SUBSCRIBE
                     NOW</button>
+                <button mat-raised-button class="subscribe-button" (click)="viewFile(course.courseName)">View File
+                    </button>
             </div>
             <!-- <mat-card class="course-text">{{course.courseName}}</mat-card>
             <mat-card class="module-text">{{course.courseDesc}}</mat-card> -->
@@ -57,4 +75,5 @@
             <img mat-card-image src="../../assets/subscribe.jpg" alt="subscribe">
         </div> -->
     </div>
+</div>
 </div>

@@ -10,7 +10,7 @@
 .subscribe-background {
     display: flex;
     height: 100%;
-    background-image: linear-gradient(to bottom, #607f8b, #a8ceda, #a8dad3);
+    background-image: linear-gradient(160deg, #301e37, #0b000c, #d36791);
     position: fixed;
     margin-left: 5%;
     overflow: auto;

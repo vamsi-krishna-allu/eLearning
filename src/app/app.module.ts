@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { CreditsComponent } from './credits/credits.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MockTestsComponent } from './mock-tests/mock-tests.component';
 import { LoginComponent } from './login/login.component';
@@ -41,7 +42,8 @@ import { SubscribeComponent } from './subscribe/subscribe.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    PdfViewerModule
   ],
   providers: [
     {

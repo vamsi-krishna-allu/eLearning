@@ -78,3 +78,9 @@
 .page-data {
     margin-top: 10%;
 }
+.file-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

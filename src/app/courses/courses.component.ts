@@ -10,19 +10,45 @@ import { ConnectionService } from '../connection.service';
 export class CoursesComponent implements OnInit {
 
   //@Input() selectedCourse : string = '';
+  content: any;
   panelOpenState = false;
   realestateCourses = REALESTATE_COURSES;
   mortgageCourses = MORTGAGE_COURSES;
+  pdfDocumentSrc: any;
+  page: number = 1;
+  totalPages: number = 0;
+  isLoaded: boolean = false;
+  doesFileExist: boolean = false;
   constructor(private connectionService : ConnectionService, private route: Router) { }
 
   ngOnInit(): void {
-    this.connectionService.getPdfFile('Aadharfront').subscribe(response => {
-      console.log('response');
-    });
   }
   subscribeNow(course : any) {
     this.route.navigateByUrl('/subscribe');
     console.log(course);
+  }
+
+  afterLoadComplete(pdfData: any) {
+    this.totalPages = pdfData.numPages;
+    this.isLoaded = true;
+  }
+
+  nextPage() {
+    this.page++;
+  }
+
+  prevPage() {
+    this.page--;
+  }
+
+  viewFile(course: string) {
+    this.pdfDocumentSrc = "http://localhost:8080/getPdfFile";
+    this.doesFileExist = true;
+    // this.connectionService.getPdfFile('Aadharfront').subscribe((res: any) => {
+    //   let file =new Blob([res], {type: 'application/pdf'});
+    //   let fileUrl = URL.createObjectURL(file);
+    //   this.content = fileUrl;
+    // });
   }
 
 }
