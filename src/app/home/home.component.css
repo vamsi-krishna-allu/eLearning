@@ -6,14 +6,15 @@
 .home-background {
     display: flex;
     height: 100%;
-    background-image: linear-gradient(160deg, #301e37, #0b000c, #d36791);
+    background-image: linear-gradient(
+160deg, #301e37, #0b000c, #d36791);
     position: fixed;
-    margin-left: 5%;
+    margin-left: 3%;
     overflow: auto;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 .contact-header {
     display:flex;
@@ -33,8 +34,9 @@
     margin-bottom: 10%;
     width: 20%;
     padding: 4%;
-    border-radius: 50%;
-    background-color: darkseagreen;
-    color: black;
+    color: white;
     justify-content: center;
+    padding: 10px;
+    border: 1px solid white;
+    box-shadow: -1px 1px white, -2px 2px white, -3px 3px white, -4px 4px white, -5px 5px white;
 }

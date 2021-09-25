@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { SpinnerService } from './spinner.service';
+import { LocalstorageService } from './localstorage.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,9 @@ export class AppComponent implements OnInit {
 
   courseMenu : boolean = false;
   //selectedCourse : string = '';
+  isUserLoggedIn: boolean = false;
+  showTabs: boolean = true;
+
   title = ["N", "O", " ", "B", "O", "O", "K", "S"];
   routeData = [
     {
@@ -57,7 +61,7 @@ export class AppComponent implements OnInit {
     colorValue: "primary",
     bgValue: "accent",
   }
-  constructor(private route: Router,private dialog: MatDialog, private spinnerService: SpinnerService) {
+  constructor(private route: Router,private dialog: MatDialog, private spinnerService: SpinnerService, private localStorageService: LocalstorageService) {
   }
   signInDialog() {
     const dialogRef = this.dialog.open(LoginComponent);
@@ -65,6 +69,11 @@ export class AppComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  logoutUser() {
+    this.localStorageService.remove("TOKEN");
+    this.route.navigateByUrl('/home');
   }
 
   courseDialog(action : string) {
@@ -77,11 +86,24 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.spinnerService.visibility.subscribe(flag => {
       this.showSpinner = flag;
-    })
+    });
+    this.localStorageService.isAuthenticated.subscribe( isLoggedIn => {
+      this.isUserLoggedIn = isLoggedIn;
+    });
+    if(window.innerWidth < 800){
+      this.showTabs = false;
+    }
   }
 
   navigateTo(link: string) {
     this.route.navigateByUrl(link);
   }
+
+@HostListener('window:resize', ['$event'])
+onResize() {
+   if(window.innerWidth < 800){
+    this.showTabs = false;
+   }
+}
 
 }

@@ -1,48 +1,4 @@
 <mat-progress-spinner class="progress-spinner" [mode]="'indeterminate'" [diameter]="50" *ngIf="showSpinner"></mat-progress-spinner>
-<!-- <mat-toolbar class="toolbar">
-  <div class="left-header-logo">
-  <img mat-card-image class="image-logo" src="../../assets/no-books.PNG" alt="">
-  <div class="left-header">NO BOOKS</div>
-  </div>
-  <img mat-card-image class="image-logo-home" (click)="signInDialog()" src="../../assets/login-register.png" alt="">
-</mat-toolbar>  -->
-<!-- <mat-tab-group mat-align-tabs="center" color="primary" backgroundColor="accent">
-    <mat-tab label="Home"><ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">home</mat-icon>
-        Home
-      </ng-template> <app-home></app-home> </mat-tab>
-    <mat-tab><ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">library_books</mat-icon>
-        <button class="menu-padding" (click)="menuDialog()" mat-button [matMenuTriggerFor]="menu">Courses</button>
-          <mat-menu #menu="matMenu">
-            <button (click)="courseDialog('realestate')" mat-menu-item>REAL ESTATE</button>
-            <button (click)="courseDialog('mortgage')" mat-menu-item>MORTGAGE</button>
-          </mat-menu>
-      </ng-template>
-      <div *ngIf="courseMenu"><app-courses [selectedCourse]="selectedCourse"></app-courses></div>
-      </mat-tab>
-    <mat-tab><ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">question_answer</mat-icon>
-        Mock Tests
-      </ng-template> <app-mock-tests></app-mock-tests> </mat-tab>
-    <mat-tab><ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">contact_support</mat-icon>
-        About
-      </ng-template> <app-about></app-about> </mat-tab>
-    <mat-tab><ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-        FAQ
-      </ng-template> <app-faq></app-faq> </mat-tab>
-      <mat-tab><ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">call</mat-icon>
-        Contact Us
-      </ng-template> <app-contacts></app-contacts> </mat-tab>
-      <mat-tab><ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">thumb_up</mat-icon>
-        Credits
-      </ng-template> <app-credits></app-credits> </mat-tab>
-</mat-tab-group> -->
-
 <mat-toolbar class="toolbar">
   <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
@@ -55,10 +11,13 @@
       </button>
     </div>
   </mat-menu>
-  <div class="login-button" (click)="signInDialog()">
+  <div *ngIf="!isUserLoggedIn" class="login-button" (click)="signInDialog()">
     login/register
   </div>
-  <div class="header-right">
+  <div *ngIf="isUserLoggedIn" class="login-button" (click)="logoutUser()">
+    logout
+  </div>
+  <div *ngIf="showTabs" class="header-right">
     <div *ngFor="let routeInfo of routeData">
       <div (click)="navigateTo(routeInfo.link)" class="icon-label">
         <mat-icon class="example-tab-icon">{{routeInfo.icon}}</mat-icon>
@@ -69,9 +28,11 @@
 </mat-toolbar> 
 <div class= "sidebar-routlet">
   <div class="sidebar">
+    <div class="sidebar-text">
     <div *ngFor="let info of title">
       <div class="info-title">{{info}}</div>
     </div>
+  </div>
   </div>
     <router-outlet></router-outlet>
 </div>

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,15 +8,19 @@ export class LocalstorageService {
 
   constructor() { }
 
+  isAuthenticated = new BehaviorSubject(false);
+
   set(key: string, value: string) {
-    localStorage.setItem(key, value);
+    sessionStorage.setItem(key, value);
+    this.isAuthenticated.next(true);
   }
 
   get(key: string) {
-    return localStorage.getItem(key);
+    return sessionStorage.getItem(key);
   }
 
   remove(key: string) {
-    localStorage.removeItem(key);
+    sessionStorage.removeItem(key);
+    this.isAuthenticated.next(false);
   }
 }

@@ -64,4 +64,24 @@ export class ConnectionService {
       params: {testType: tesType}
     });
   }
+
+  getAvailableCourses() {
+    const token = this.localStorageService.get("TOKEN");
+    this.url = `http://localhost:8080/availableCourses`;
+    return this.http.get(this.url, {
+      headers:  new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
+    });
+  }
+
+  getAvailableMockTests() {
+    const token = this.localStorageService.get("TOKEN");
+    this.url = `http://localhost:8080/availableTests`;
+    return this.http.get(this.url, {
+      headers:  new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
+    });
+  }
 }

@@ -78,6 +78,17 @@
     padding-top: 4%;
     padding-bottom: 4%;
 }
+.view-button {
+    color: white;
+    background-color: blue;
+    margin-left: 5%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
 .page-data {
     margin-top: 12%;
+}
+.expansion-panel {
+    border: 1px solid black;
+    box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
 }

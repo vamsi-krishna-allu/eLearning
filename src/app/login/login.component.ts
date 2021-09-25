@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   enableResetPwd : boolean = false;
   enableLogInSignupSection : boolean = true;
   loginDetails: LoginDetails = new LoginDetails();
-  contactForm!: FormGroup;
+  contactForm: FormGroup | undefined;
   form: FormGroup = new FormGroup({});
   constructor(private connectionService : ConnectionService, private fb: FormBuilder,  private localStorageService: LocalstorageService,
     private matSnackBar: MatSnackBar) { 
@@ -42,17 +42,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
- /* username = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-  password = new FormControl('', [
-    Validators.required
-  ]);
-  confirm_password = new FormControl('', [
-    Validators.required
-  ]);*/
   logIn() {
     this.enableLoginSection = true;
     this.enableSignUpSection = false;
@@ -82,7 +71,7 @@ export class LoginComponent implements OnInit {
     this.connectionService.authenticateUser(this.loginDetails).subscribe((response: any) => {
       this.localStorageService.set("TOKEN", response.jwttoken);
       this.matSnackBar.open("Logged in Succesfully", "Cool");
-      this.contactForm.reset();
+      this.contactForm?.reset();
     }, (error: any) => {
       console.log('Error', error);
     });
@@ -91,7 +80,7 @@ export class LoginComponent implements OnInit {
   userSignUp() {
     this.connectionService.registerUser(this.loginDetails).subscribe((response: any) => {
       this.matSnackBar.open("Registered Succesfully", "Awesome");
-      this.contactForm.reset();
+      this.contactForm?.reset();
     }, (error: any) => {
       console.log('Error', error);
     });
@@ -100,7 +89,7 @@ export class LoginComponent implements OnInit {
   resetPassword() {
     this.connectionService.resetPassword(this.loginDetails).subscribe((response) => {
       this.matSnackBar.open("Password changed Succesfully", "Great");
-      this.contactForm.reset();
+      this.contactForm?.reset();
     }, (error: any) => {
       console.log('Error', error);
     });
