@@ -1,12 +1,12 @@
 <div class="subscribe-background">
-    <div class="plans-background" id="basic" *ngIf="basicPlan"> 
-        <div class="plans-div">Basic</div>
-        <div class="features-div" *ngFor="let feature of basicFeatures">
+    <div class="plans-background" id="basic" *ngFor="let plan of planDetails">
+        <div class="plans-div">{{plan.planType}}</div>
+        <div class="features-div" *ngFor="let feature of plan.features">
             <mat-icon class="circle-icon">check_circle</mat-icon>
             <mat-label class="feature-text">{{feature}}</mat-label>
         </div>
         <div class="button-div">
-            <button mat-raised-button class="subscribe-button" (click)="payNow()">$100</button>
+            <button mat-raised-button class="subscribe-button" (click)="payNow()">{{plan.planPrice}}</button>
         </div>
     </div>
 </div>

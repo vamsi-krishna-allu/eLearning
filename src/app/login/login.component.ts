@@ -4,7 +4,7 @@ import { NEVER } from 'rxjs';
 import { ConfirmedValidator } from '../confirmed.validator';
 import { ConnectionService } from '../connection.service';
 import { LocalstorageService } from '../localstorage.service';
-import { LoginDetails } from '../LoginDetails';
+import { LoginDetails } from '../loginDetails';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 

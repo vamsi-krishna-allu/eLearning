@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-subscribe',
@@ -9,11 +9,8 @@ export class SubscribeComponent implements OnInit {
   basicFeatures : Array<any> = [];
   standardFeatures : Array<any> = [];
   premeiumFeatures : Array<any> = [];
-  
-  basicPlan : boolean = true;
-  /*standardPlan : boolean = false;
-  premeiumPlan : boolean = false;*/
 
+  @Input() planDetails : any;
 
   constructor() { }
 
