@@ -21,11 +21,20 @@ export class LoginComponent implements OnInit {
   enableLogInSignupSection : boolean = true;
   loginDetails: LoginDetails = new LoginDetails();
   contactForm: FormGroup | undefined;
-  form: FormGroup = new FormGroup({});
+  loginForm: FormGroup = new FormGroup({});
+  signupForm: FormGroup = new FormGroup({});
+  forgotForm: FormGroup = new FormGroup({});
   constructor(private connectionService : ConnectionService, private fb: FormBuilder,  private localStorageService: LocalstorageService,
     private matSnackBar: MatSnackBar) { 
-    this.form = fb.group({
-      username: ['',[Validators.required]],
+    this.loginForm = fb.group({
+      emailId: ['',[Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
+    })
+    this.signupForm = fb.group({
+      emailId: ['',[Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
+    })
+    this.forgotForm = fb.group({
       emailId: ['',[Validators.required, Validators.email]],
       password: ['', [Validators.required]],
       confirm_password: ['', [Validators.required]]
@@ -35,7 +44,13 @@ export class LoginComponent implements OnInit {
   }
 
   get f(){
-    return this.form.controls;
+    return this.loginForm.controls;
+  }
+  get f1(){
+    return this.signupForm.controls;
+  }
+  get f2(){
+    return this.forgotForm.controls;
   }
  
 

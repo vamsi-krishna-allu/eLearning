@@ -1,102 +1,107 @@
 <mat-card class="login-modal-div" *ngIf='enableLogInSignupSection'>
     <div class="close-div">
-        <button class="close" title="close" mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+        <button class="close" title="close" mat-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
-    <!-- <div class="modal-content"> -->
-        <div class="modal-header">
-            <div class="login-register-div">
-                <input id="tab1" type="radio" name="tabs" checked>
-                <label class="tab-label" for="tab1" (click)="logIn()">Login</label>
-                <input id="tab2" type="radio" name="tabs">
-                <label class="tab-label" for="tab2" (click)="signUp()">Sign Up</label>
-            </div>
-            <section id="content1" *ngIf='enableLoginSection'>
-                <form [formGroup]="form" class="login-form" id="Login">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label class="label-text">E-mail</mat-label>
-                        <mat-icon matPrefix class="input-icon">email</mat-icon>
-                        <input class="username-text" type="text" formControlName="emailId" matInput
-                            [(ngModel)]='loginDetails.username' placeholder="E-mail" required>
-                        <mat-error class="error-text" *ngIf="f.emailId.errors?.email && !f.emailId.errors?.required">
-                            <strong>Please enter a valid email address</strong>
-                        </mat-error>
-                        <mat-error class="error-text" *ngIf="f.emailId.errors?.required">
-                            <strong>Field can not be empty.</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label class="label-text">Password</mat-label>
-                        <mat-icon matPrefix class="input-icon">lock</mat-icon>
-                        <input class="username-text" type="password" formControlName="password" matInput
-                            [(ngModel)]='loginDetails.password' placeholder="Password" required minlength="6">
-                        <mat-error class="error-text" *ngIf="f.password.touched && f.password.invalid">
-                            <div *ngIf="f.password.errors?.required"><strong>Field is required.</strong></div>
-                            <div *ngIf="f.password.errors?.minlength"><strong>Password minlength 6 is required.</strong></div>
-                        </mat-error>
-                    </mat-form-field>
-                    <div class="forgotPwdText">
-                        <a (click)='forgotPassword()'>Forgot Password</a>
-                    </div>
-                    <div>
-                        <button mat-raised-button class="btn-login" (click)="userLogin()"
-                            [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required">Login</button>
-                       </div>
-                </form>
-            </section>
-            <section id="content2" *ngIf='enableSignUpSection'>
-                <form [formGroup]="form" class="login-form" id="signUp">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label class="label-text">E-mail</mat-label>
-                        <mat-icon matPrefix class="input-icon">email</mat-icon>
-                        <input class="username-text" type="text" formControlName="emailId" matInput
-                            [(ngModel)]='loginDetails.username' placeholder="E-mail" required>
-                        <mat-error class="error-text"
-                            *ngIf="f.emailId.errors?.email && !f.emailId.errors?.required">
-                            <strong>Please enter a valid email address</strong>
-                        </mat-error>
-                        <mat-error class="error-text" *ngIf="f.emailId.errors?.required">
-                            <strong>Field can not be empty.</strong>
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="example-full-width" appearance="outline">
-                        <mat-label class="label-text">Password</mat-label>
-                        <mat-icon matPrefix class="input-icon">lock</mat-icon>
-                        <input class="username-text" type="password" formControlName="password" matInput
-                            [(ngModel)]='loginDetails.password' placeholder="Password" required minlength="6">
-                        <mat-error class="error-text" *ngIf="f.password.touched && f.password.invalid">
-                            <div *ngIf="f.password.errors?.required"><strong>Password is required.</strong></div>
-                            <div *ngIf="f.password.errors?.minlength"><strong>Password minlength 6 is required.</strong></div>
-                        </mat-error>
-                    </mat-form-field>
-                    <br>
-                    <br>
-                    <div>
-                        <button mat-raised-button class="btn-login" (click)="userSignUp()"
-                            [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required">Sign Up</button>
-                    </div>
-                </form>
-            </section>
-
+    <div class="modal-header">
+        <div class="login-register-div">
+            <input id="tab1" type="radio" name="tabs" checked>
+            <label class="tab-label" for="tab1" (click)="logIn()">Login</label>
+            <input id="tab2" type="radio" name="tabs">
+            <label class="tab-label" for="tab2" (click)="signUp()">Sign Up</label>
         </div>
+        <section id="content1" *ngIf='enableLoginSection'>
+            <form [formGroup]="loginForm" class="login-form" id="Login">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label class="label-text">E-mail</mat-label>
+                    <mat-icon matPrefix class="input-icon">email</mat-icon>
+                    <input class="username-text" type="text" formControlName="emailId" matInput
+                        [(ngModel)]='loginDetails.username' placeholder="E-mail" required>
+                    <mat-error class="error-text" *ngIf="f.emailId.errors?.email && !f.emailId.errors?.required">
+                        <strong>Please enter a valid email address</strong>
+                    </mat-error>
+                    <mat-error class="error-text" *ngIf="f.emailId.errors?.required">
+                        <strong>Field can not be empty.</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label class="label-text">Password</mat-label>
+                    <mat-icon matPrefix class="input-icon">lock</mat-icon>
+                    <input class="username-text" type="password" formControlName="password" matInput
+                        [(ngModel)]='loginDetails.password' placeholder="Password" required minlength="6">
+                    <mat-error class="error-text" *ngIf="f.password.touched && f.password.invalid">
+                        <div *ngIf="f.password.errors?.required"><strong>Field is required.</strong></div>
+                        <div *ngIf="f.password.errors?.minlength"><strong>Password minlength 6 is required.</strong>
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+                <div class="forgotPwdText">
+                    <a (click)='forgotPassword()'>Forgot Password</a>
+                </div>
+                <div>
+                    <button mat-raised-button class="btn-login" (click)="userLogin()"
+                        [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required">Login</button>
+                </div>
+            </form>
+        </section>
+        <section id="content2" *ngIf='enableSignUpSection'>
+            <form [formGroup]="signupForm" class="login-form" id="signUp">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label class="label-text">E-mail</mat-label>
+                    <mat-icon matPrefix class="input-icon">email</mat-icon>
+                    <input class="username-text" type="text" formControlName="emailId" matInput
+                        [(ngModel)]='loginDetails.username' placeholder="E-mail" required>
+                    <mat-error class="error-text" *ngIf="f1.emailId.errors?.email && !f1.emailId.errors?.required">
+                        <strong>Please enter a valid email address</strong>
+                    </mat-error>
+                    <mat-error class="error-text" *ngIf="f1.emailId.errors?.required">
+                        <strong>Field can not be empty.</strong>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label class="label-text">Password</mat-label>
+                    <mat-icon matPrefix class="input-icon">lock</mat-icon>
+                    <input class="username-text" type="password" formControlName="password" matInput
+                        [(ngModel)]='loginDetails.password' placeholder="Password" required minlength="6">
+                    <mat-error class="error-text" *ngIf="f1.password.touched && f1.password.invalid">
+                        <div *ngIf="f1.password.errors?.required"><strong>Password is required.</strong></div>
+                        <div *ngIf="f1.password.errors?.minlength"><strong>Password minlength 6 is required.</strong>
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+                <br>
+                <br>
+                <div>
+                    <button mat-raised-button class="btn-login" (click)="userSignUp()"
+                        [disabled]="f1.emailId.errors?.email || f1.emailId.errors?.required || f1.password.errors?.required">Sign
+                        Up</button>
+                </div>
+            </form>
+        </section>
+
+    </div>
     <!-- </div> -->
 </mat-card>
 <mat-card class="login-modal-div" *ngIf='enableResetPwd'>
     <div class="close-div">
-        <button class="close" title="close" mat-button mat-dialog-close><mat-icon>close</mat-icon></button>
+        <button class="close" title="close" mat-button mat-dialog-close>
+            <mat-icon>close</mat-icon>
+        </button>
     </div>
     <div class="modal-content">
         <div class="modal-header">
             <section id="content2">
-                <form [formGroup]="form" class="login-form" id="signUp">
+                <form [formGroup]="forgotForm" class="login-form" id="signUp">
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label class="label-text">Email</mat-label>
                         <mat-icon matPrefix class="input-icon">email</mat-icon>
                         <input class="username-text" type="text" formControlName="emailId" matInput placeholder="E-mail"
                             [(ngModel)]='loginDetails.username' required>
-                        <mat-error class="error-text" *ngIf="f.emailId.errors?.email && !f.emailId.errors?.required">
+                        <mat-error class="error-text" *ngIf="f2.emailId.errors?.email && !f2.emailId.errors?.required">
                             <strong>Please enter a valid email address</strong>
                         </mat-error>
-                        <mat-error class="error-text" *ngIf="f.emailId.errors?.required">
+                        <mat-error class="error-text" *ngIf="f2.emailId.errors?.required">
                             <strong>Field can not be empty.</strong>
                         </mat-error>
                     </mat-form-field>
@@ -105,31 +110,35 @@
                         <mat-icon matPrefix class="input-icon">lock</mat-icon>
                         <input class="username-text" type="password" formControlName="password" matInput
                             [(ngModel)]='loginDetails.password' placeholder="New Password" required minlength="6">
-                        <mat-error class="error-text" *ngIf="f.password.touched && f.password.invalid">
-                            <div *ngIf="f.password.errors?.required"><strong>Password is required.</strong></div>
-                            <div *ngIf="f.password.errors?.minlength"><strong>Password minlength 6 is required.</strong></div>
+                        <mat-error class="error-text" *ngIf="f2.password.touched && f2.password.invalid">
+                            <div *ngIf="f2.password.errors?.required"><strong>Password is required.</strong></div>
+                            <div *ngIf="f2.password.errors?.minlength"><strong>Password minlength 6 is
+                                    required.</strong></div>
                         </mat-error>
                     </mat-form-field>
                     <mat-form-field class="example-full-width" appearance="outline">
                         <mat-label class="label-text">Confirm Password</mat-label>
                         <mat-icon matPrefix class="input-icon">lock</mat-icon>
                         <input class="username-text" type="password" formControlName="confirm_password" matInput
-                            [(ngModel)]='loginDetails.confirm_password' placeholder="Confirm Password"  required>
-                        <div *ngIf="!f.confirm_password.errors?.required && !f.confirm_password.errors?.confirmedValidator">
+                            [(ngModel)]='loginDetails.confirm_password' placeholder="Confirm Password" required>
+                        <div
+                            *ngIf="!f2.confirm_password.errors?.required && !f2.confirm_password.errors?.confirmedValidator">
                             <mat-icon class="input-icon1">done_all</mat-icon>
                         </div>
-                        <mat-error class="error-text" *ngIf="f.confirm_password.touched && f.confirm_password.invalid">
-                            <div *ngIf="f.confirm_password.errors?.required"><strong>Password is required.</strong></div>
-                            <div *ngIf="f.confirm_password.errors?.confirmedValidator"><strong>Password and Confirm Password must be match.</strong></div>
+                        <mat-error class="error-text"
+                            *ngIf="f2.confirm_password.touched && f2.confirm_password.invalid">
+                            <div *ngIf="f2.confirm_password.errors?.required"><strong>Password is required.</strong>
+                            </div>
+                            <div *ngIf="f2.confirm_password.errors?.confirmedValidator"><strong>Password and Confirm
+                                    Password must be match.</strong></div>
                         </mat-error>
                     </mat-form-field>
                     <div class="backToLoginText">
                         <a (click)='backToLogin()'>Back to Login</a>
                     </div>
                     <div>
-                        <button mat-button class="btn-login" (click)="resetPassword()"
-                            [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required ||
-                            f.confirm_password.errors?.required">Reset Password</button>
+                        <button mat-button class="btn-login" (click)="resetPassword()" [disabled]="f2.emailId.errors?.email || f2.emailId.errors?.required || f2.password.errors?.required ||
+                            f2.confirm_password.errors?.required">Reset Password</button>
                     </div>
                 </form>
             </section>

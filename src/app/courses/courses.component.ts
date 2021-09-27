@@ -37,7 +37,6 @@ export class CoursesComponent implements OnInit {
   }
   subscribeNow(course: any) {
     this.route.navigateByUrl('/subscribe');
-    console.log(course);
   }
 
   afterLoadComplete(pdfData: any) {

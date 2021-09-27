@@ -84,4 +84,14 @@ export class ConnectionService {
       }),
     });
   }
+
+  payNow(planPrice : any) {
+    const token = this.localStorageService.get("TOKEN");
+    this.url = `http://localhost:8080/pay`;
+    return this.http.post(this.url, planPrice,{
+      headers:  new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
+    });
+  }
 }

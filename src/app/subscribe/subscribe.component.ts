@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ConnectionService } from '../connection.service';
 
 @Component({
   selector: 'app-subscribe',
@@ -12,14 +14,20 @@ export class SubscribeComponent implements OnInit {
 
   @Input() planDetails : any;
 
-  constructor() { }
+  constructor(private connectionService : ConnectionService, private route: Router) { }
 
   ngOnInit(): void {
-    this.basicFeatures = ['Basic Feature Name1','Basic Feature Name2'];
-    this.standardFeatures = ['Standard Feature Name1', 'Standard Feature Name2', 'Standard Feature Name3'];
-    this.premeiumFeatures = ['Premium Feature Name1', 'Premium Feature Name2', 'Premium Feature Name3', 'Premium Feature Name4'];
+    
   }
-  payNow() {
+  payNow(planPrice : any) {
+    this.connectionService.payNow(planPrice).subscribe(resp =>{
+      if(resp === 'success') {
+        this.route.navigateByUrl('/paymentSuccess');
+      }
+      else {
+        this.route.navigateByUrl('/paymentFail');
+      }
+    });
 
   }
 
