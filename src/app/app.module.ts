@@ -21,6 +21,7 @@ import { HttpInterceptorService } from './http-interceptor.service';
 import { TestListComponent } from './mock-tests/test-list/test-list.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { CoursepriceComponent } from './courseprice/courseprice.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { CoursepriceComponent } from './courseprice/courseprice.component';
     TestListComponent,
     SubscribeComponent,
     CoursepriceComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

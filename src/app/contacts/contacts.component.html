@@ -1,75 +1,81 @@
 <!-- Default form contact -->
 <div class="page-data">
-<div>
-    <h1 class="title-header"> CONTACT US</h1>
-</div>
-<div class="has-text-color">
-    <mat-label>Your Learning Support Team is available to answer your questions about our
-        various course study tool on-line offerings, assist you in placing your orders if you encounter difficulties
-        or do not understand the process, help you resolve a challenge that you might have viewing the on-line study
-        tools, replace a missing payment receipt or login information after placing your order, and much more.
-    </mat-label>
-</div>
-<div class="has-text-color1">
-    <mat-label> Get in touch with the experts of Learning and open the doors to new career and life.</mat-label>
-</div>
-<!--<div class="telephone-div">
+    <div>
+        <h1 class="title-header"> CONTACT US</h1>
+    </div>
+    <div class="has-text-color">
+        <mat-label>Your Learning Support Team is available to answer your questions about our
+            various course study tool on-line offerings, assist you in placing your orders if you encounter difficulties
+            or do not understand the process, help you resolve a challenge that you might have viewing the on-line study
+            tools, replace a missing payment receipt or login information after placing your order, and much more.
+        </mat-label>
+    </div>
+    <div class="has-text-color1">
+        <mat-label> Get in touch with the experts of Learning and open the doors to new career and life.</mat-label>
+    </div>
+    <!--<div class="telephone-div">
     <mat-label class="telephone-text"> Telephone Toll-Free</mat-label>
     <mat-label class="telephone1">1-888-999-0000</mat-label>
     <mat-label class="telephone1">1-888-999-0001</mat-label>
 </div>-->
-<div class="telephone-div">
-    <mat-label class="support-hours-text"> SUPPORT HOURS </mat-label>
-    <mat-label class="hours-text">9:00 a.m. to 9:30 p.m. Eastern Time, Monday-Wednesday</mat-label>
-    <mat-label class="hours-text">9:00 a.m. to 5:00 p.m. Eastern Time, Thursday-Friday</mat-label>
-    <mat-label class="hours-text">Due to our high volume of calls, if you receive our voice mail,</mat-label>
-    <mat-label class="hours-text">please leave a clear and detailed message and we will reply as soon as we can.
-    </mat-label>
-    <mat-label class="hours-text">You can also use our online Support Request form for best response time.</mat-label>
-</div>
-<div class="telephone-div">
-    <mat-label class="support-holidays-text">Support After hours, Holidays, and Weekends</mat-label>
-    <mat-label class="hours-text">Telephone – leave message and we will reply by either telephone or email.</mat-label>
-    <mat-label class="hours-text">Please use our online Support Request form for best response time,</mat-label>
-    <mat-label class="hours-text">both during and after hours.</mat-label>
-    <mat-label class="hours-text">We are located in Ontario and in Eastern Time Zone</mat-label>
-</div>
-<form class="example-form" [formGroup]="contactForm">
-    <div>
-        <h1 class="title-header-down"> CONTACT US</h1>
-        <div class="has-contact-text-align">
-            <mat-label>We will reply as soon as we can during regular support hours</mat-label>
-        </div>
+    <div class="telephone-div">
+        <mat-label class="support-hours-text"> SUPPORT HOURS </mat-label>
+        <mat-label class="hours-text">9:00 a.m. to 9:30 p.m. Eastern Time, Monday-Wednesday</mat-label>
+        <mat-label class="hours-text">9:00 a.m. to 5:00 p.m. Eastern Time, Thursday-Friday</mat-label>
+        <mat-label class="hours-text">Due to our high volume of calls, if you receive our voice mail,</mat-label>
+        <mat-label class="hours-text">please leave a clear and detailed message and we will reply as soon as we can.
+        </mat-label>
+        <mat-label class="hours-text">You can also use our online Support Request form for best response time.
+        </mat-label>
     </div>
-    <mat-card class="contactsProfileGrid">
-        <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Full Name</mat-label>
-            <input matInput placeholder="Full Name" [(ngModel)]="emailMessage.username" [formControl]="nameFormControl" required>
-            <mat-error *ngIf="nameFormControl.hasError('required')">
-                Please enter name
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>E-mail</mat-label>
-            <input matInput [formControl]="emailFormControl" [(ngModel)]="emailMessage.mailId" placeholder="Ex. pat@example.com" required>
-            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
-            </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Message</mat-label>
-            <textarea matInput placeholder="Ex. 100 Main St" rows="10" cols="50" [(ngModel)]="emailMessage.message" [formControl]="messageFormControl" required></textarea>
-            <mat-error *ngIf="messageFormControl.hasError('required')">
-                Please enter message
-            </mat-error>
-        </mat-form-field>
+    <div class="telephone-div">
+        <mat-label class="support-holidays-text">Support After hours, Holidays, and Weekends</mat-label>
+        <mat-label class="hours-text">Telephone – leave message and we will reply by either telephone or email.
+        </mat-label>
+        <mat-label class="hours-text">Please use our online Support Request form for best response time,</mat-label>
+        <mat-label class="hours-text">both during and after hours.</mat-label>
+        <mat-label class="hours-text">We are located in Ontario and in Eastern Time Zone</mat-label>
+    </div>
+    <form class="example-form" [formGroup]="contactForm">
         <div>
-            <button mat-button class="btn-primary" (click)="onSubmit('sendMessage')">SUMBIT</button>
+            <h1 class="title-header-down"> CONTACT US</h1>
+            <div class="has-contact-text-align">
+                <mat-label>We will reply as soon as we can during regular support hours</mat-label>
+            </div>
         </div>
-    </mat-card>
+        <mat-card class="contactsProfileGrid">
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Full Name" [(ngModel)]="emailMessage.username"
+                    [formControl]="nameFormControl" required>
+                <mat-error *ngIf="nameFormControl.hasError('required')">
+                    Please enter name
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>E-mail</mat-label>
+                <input matInput [formControl]="emailFormControl" [(ngModel)]="emailMessage.mailId"
+                    placeholder="Ex. pat@example.com" required>
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput placeholder="Ex. 100 Main St" rows="10" cols="50" [(ngModel)]="emailMessage.message"
+                    [formControl]="messageFormControl" required></textarea>
+                <mat-error *ngIf="messageFormControl.hasError('required')">
+                    Please enter message
+                </mat-error>
+            </mat-form-field>
+            <div>
+                <button mat-button class="btn-primary" (click)="onSubmit('sendMessage')">SUMBIT</button>
+            </div>
+        </mat-card>
 
-</form>
+    </form>
 </div>
+<app-footer></app-footer>

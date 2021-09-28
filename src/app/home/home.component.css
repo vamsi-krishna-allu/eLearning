@@ -12,9 +12,9 @@
     margin-left: 3%;
     overflow: auto;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 100%;
-    padding-top: 3%;
+    justify-content: center;
+    width: 97%;
+    padding-top: 3.3%;
 }
 .contact-header {
     display:flex;
