@@ -1,11 +1,10 @@
 .footer-header {
     display: flex;
-    flex-direction: column;
-    align-content: flex-end;
+    flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
     color: white;
     font-family: sans-serif;
     font-size: small;
     background: black;
+    line-height: 4.5;
 }
