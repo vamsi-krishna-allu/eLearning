@@ -87,7 +87,7 @@
 .login-button {
     width: 20%;
     color: white;
-    font-size: xx-large;
+    font-size: 2.5vw;
     font-family: fantasy;
 }
 .sidebar {
@@ -109,7 +109,7 @@
     color: white;
 }
 .info-title {
-    font-size: xxx-large;
+    font-size: 3vw;
     color: white;
     padding-top: 100%;
     font-family: cursive;

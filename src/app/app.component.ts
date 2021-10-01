@@ -49,11 +49,6 @@ export class AppComponent implements OnInit {
       link: '/contact',
       icon: 'call',
     },
-    {
-      label: 'credits',
-      link: '/credits',
-      icon: 'thumb_up',
-    }
   ]
   showSpinner: boolean | undefined;
 

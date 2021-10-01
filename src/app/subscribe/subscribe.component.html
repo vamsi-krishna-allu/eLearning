@@ -1,12 +1,14 @@
 <div class="subscribe-background">
     <div class="plans-background" id="basic" *ngFor="let plan of planDetails">
-        <div class="plans-div">{{plan.planType}}</div>
+        <div class="plans-div" [ngStyle]="{'background-color': plan.color}">{{plan.planType}}</div>
+        <div class="features">
         <div class="features-div" *ngFor="let feature of plan.features">
             <mat-icon class="circle-icon">check_circle</mat-icon>
             <mat-label class="feature-text">{{feature}}</mat-label>
         </div>
+        </div>
         <div class="button-div">
-            <button mat-raised-button class="subscribe-button" (click)="payNow(plan.planPrice)">{{plan.planPrice}}</button>
+            <button mat-raised-button class="subscribe-button" [ngStyle]="{'background-color': plan.color}" (click)="payNow(plan.planPrice)">{{plan.planPrice}}</button>
         </div>
     </div>
 

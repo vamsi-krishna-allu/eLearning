@@ -1,14 +1,13 @@
 .subscribe-button {
     color: white;
     background-color: red;
-    margin-top: 25%;
-    width: 90%;
-    font-size: x-large;
+    width: 30vh;
+    font-size: 4vh;
 }
 .subscribe-background {
     display: flex;
     height: 100%;
-    background-image: linear-gradient(160deg, #301e37, #0b000c, #d36791);
+    background-image: url('../../assets/payment.jpg');
     position: fixed;
     margin-left: 5%;
     overflow: auto;
@@ -16,41 +15,51 @@
     justify-content: flex-start;
     width: 95%;
     padding-top: 5%;
+    background-size: 100%;
 }
 .plans-background {
-    background: whitesmoke;
     margin-left: 11%;
     margin-top: 5%;
-    padding-top: 2%;
-    border-radius: 3%;
     width: 18%;
     height: 65%;
-    border-style: solid;
-    border-color: royalblue;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: white;
 }
 .plans-div {
     text-align: center;
-    font-size: x-large;
+    font-size: 4vh;
     text-transform: uppercase;
-    color: red;
-    line-height: 2em;
+    color: white;
+    background-color: red;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .features-div {
     margin-left: 10%;
     margin-top: 5%;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
 }
 .circle-icon {
     color: green;
+    height: auto;
+    width: auto;
 }
 .feature-text {
     margin-left: 5%;
 }
 .button-div {
-    margin-top: 70%;
-    margin-left: 10%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .button-div1 {
     margin-top: 65%;
@@ -65,9 +74,9 @@
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
 }
-/*#standard:hover {
-    background-color: rgb(52, 188, 230);
+.features {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    justify-content: center;
 }
-#premeium:hover {
-    background-color: rgb(58, 219, 131);
-}*/

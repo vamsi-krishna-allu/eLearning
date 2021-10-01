@@ -4,7 +4,6 @@ import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CoursepriceComponent } from './courseprice/courseprice.component';
 import { CoursesComponent } from './courses/courses.component';
-import { CreditsComponent } from './credits/credits.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { MockTestsComponent } from './mock-tests/mock-tests.component';
@@ -17,7 +16,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },  
   { path: 'faq', component: FaqComponent },  
   { path: 'contact', component: ContactsComponent }, 
-  { path: 'credits', component: CreditsComponent},
   { path: 'mockTests', component: TestListComponent},
   { path: 'subscribe', component: CoursepriceComponent},
   { path: '*', component: HomeComponent} 
