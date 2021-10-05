@@ -4,15 +4,15 @@
     font-family: Source Sans Pro,sans-serif;
     position: relative;
     line-height: 2.1em;
-    font-size: 12px;
-    font-weight: 400;
+    font-size: x-large;
     margin-top: 2%;
+    margin-bottom: 5.63%;
 }
 .about-text {
     padding-left: 5%;
     border: 0;
     font-family: Bebas Neue;
-    font-size: 45px;
+    font-size: 6.5vh;
     font-weight: 700;
     line-height: 1.1;
     background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
@@ -24,7 +24,7 @@
 .about-div-text {
     padding-left: 5%;
     padding-right: 5%;
-    font-size: 21px;
+    font-size: 3.2vh;
     line-height: 1.3em;
     text-align: left;
     font-family: Source Sans Pro;
@@ -41,5 +41,5 @@
 .page-data {
     width:90%;
     margin-left: 8%;
-    margin-top: 12%;
+    margin-top: 9%;
 }

@@ -11,7 +11,7 @@
     padding-left: 5%;
     border: 0;
     font-family: Bebas Neue;
-    font-size: 45px;
+    font-size: 6.5vh;
     font-weight: 700;
     line-height: 1.1;
     background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
@@ -23,7 +23,7 @@
 .faq-qa-text {
     padding-left: 5%;
     padding-right: 5%;
-    font-size: 21px;
+    font-size: 3.2vh;
     line-height: 1.3em;
     text-align: left;
     font-family: Source Sans Pro;
@@ -38,5 +38,5 @@
 .page-data {
     width:90%;
     margin-left: 8%;
-    margin-top: 12%;
+    margin-top: 8%;
 }
