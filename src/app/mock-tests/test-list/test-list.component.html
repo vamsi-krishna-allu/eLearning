@@ -6,16 +6,23 @@
                     (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            {{test.testName}}
+                            {{test.courseName}}
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <p>{{test.testDesc}}</p>
+                    <div class = "course-header">
+                        <div class = "header-text"> MOCK TEST 1</div>
+                        <div class="header-text"> MOCK TEST 2 </div>
+                    </div> 
+                    <div class="contact-header">
+                        <div class="header-text"> MOCK TEST 3 </div>
+                        <div class="header-text"> MOCK TEST 4 </div>
+                    </div>
                 </mat-expansion-panel>
-                <div *ngIf="!test.isTestAllowed">
-                    <button mat-raised-button class="subscribe-button">SUBSCRIBE NOW</button>
+                <div *ngIf="!test.isCourseAllowed">
+                    <button mat-raised-button class="subscribe-button" (click)="subscribeNow(test.courseName)">SUBSCRIBE NOW</button>
                 </div>
-                <div *ngIf="test.isTestAllowed">
-                    <button mat-raised-button class="view-button">VIEW TEST</button>
+                <div *ngIf="test.isCourseAllowed">
+                    <button mat-raised-button class="view-button">START THE TEST</button>
                 </div>
             </div>
         </div>

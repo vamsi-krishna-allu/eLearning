@@ -7,4 +7,6 @@
     font-size: small;
     background: black;
     line-height: 4.5;
+    width: 100%;
+    position: absolute;
 }

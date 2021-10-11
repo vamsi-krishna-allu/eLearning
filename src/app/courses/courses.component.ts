@@ -73,7 +73,7 @@ const REALESTATE_COURSES: Courses[] = [
       '' + 'This isn’t the opinion of a buyer or seller—it’s the considered conclusion award-winning realtor P. Johan Sekovski has come to after years in the industry. In Real Estate Essentials, Sekovski aims his biting wit at the inadequacies of the industry while offering buyers, sellers, realtors, and brokers a road map to navigate real estate’s perilous waters and come out on top.' +
       '' + 'Sekovski artfully skewers and deconstructs the problems within the industry with an honest guide through the real estate quagmire—including realty techniques already proven to work well. He explains how to figure out who benefits from what and how to use such knowledge to your advantage. He covers everything from buying and selling to running a brokerage (and whether you should), managing rental properties, and flipping homes for profit.' +
       '' + 'Discover the advice you need to thrive in real estate, whether you’re buying, selling, or working within the exciting, often tumultuous industry.',
-    isCourseAllowed: false
+    isCourseAllowed: true
   },
   {
     courseId: 'residential-real-estate-transactions',

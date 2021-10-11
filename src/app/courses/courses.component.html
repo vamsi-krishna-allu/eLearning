@@ -5,9 +5,9 @@
         <button mat-raised-button class="pdf-button" (click)="nextPage()" [disabled]="page === totalPages">Next</button>
     </div>
 
-    <pdf-viewer [src]="pdfDocumentSrc" [show-all]="false" [page]="page" [original-size]="true"
-        (after-load-complete)="afterLoadComplete($event)"
-        style="display:flex; flex-direction: row; justify-content: center;"></pdf-viewer>
+    <pdf-viewer [src]="pdfDocumentSrc" [show-all]="false" [page]="page"
+    [autoresize]="true" [original-size]="false"
+        (after-load-complete)="afterLoadComplete($event)"></pdf-viewer>
 </div>
 <div *ngIf="!doesFileExist">
     <div class="course-header">
@@ -33,7 +33,7 @@
                         NOW</button>
                 </div>
                 <div *ngIf="course.isCourseAllowed">
-                    <button mat-raised-button class="view-button" (click)="viewFile(course.courseName)">VIEW COURSE
+                    <button mat-raised-button class="view-button" (click)="viewFile(course.courseName)"> VIEW MATERIAL
                     </button>
                 </div>
             </div>

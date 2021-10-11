@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConnectionService } from 'src/app/connection.service';
 import { LocalstorageService } from 'src/app/localstorage.service';
 
@@ -13,44 +14,71 @@ export class TestListComponent implements OnInit {
 
   mockTests = [
     {
-      testId: 'test1',
-      testName: 'MOCK TEST 1',
-     testDesc: 'Real estate is a complex industry, often mired by low standards and greed. Many agents are poorly trained and lack an in-depth understanding of the intricacies of sales, business, and negotiation. Much of the established realty thinking and the accepted strategies are outdated, deceptive, or just plain ineffective.'+
-    ''+'This isn’t the opinion of a buyer or seller—it’s the considered conclusion award-winning realtor P. Johan Sekovski has come to after years in the industry. In Real Estate Essentials, Sekovski aims his biting wit at the inadequacies of the industry while offering buyers, sellers, realtors, and brokers a road map to navigate real estate’s perilous waters and come out on top.'+
-    ''+'Sekovski artfully skewers and deconstructs the problems within the industry with an honest guide through the real estate quagmire—including realty techniques already proven to work well. He explains how to figure out who benefits from what and how to use such knowledge to your advantage. He covers everything from buying and selling to running a brokerage (and whether you should), managing rental properties, and flipping homes for profit.'+
-    ''+'Discover the advice you need to thrive in real estate, whether you’re buying, selling, or working within the exciting, often tumultuous industry.',
-    isTestAllowed: false},
+      courseId: 'real-estate-essentials',
+      courseName: 'REAL ESTATE ESSENTIALS',
+      isCourseAllowed: true
+    },
     {
-      testId: 'test2',
-      testName: 'MOCK TEST 2',
-     testDesc: 'A real estate transaction is the process whereby rights in a unit of property (or designated real estate) is transferred between two or more parties, e.g. in case of conveyance one party being the seller(s) and the other being the buyer(s). It can often be quite complicated due to the complexity of the property rights being transferred, the amount of money being exchanged, and government regulations. Conventions and requirements also vary considerably among different countries of the world and among smaller legal entities (jurisdictions).',
-     isTestAllowed: false},
+      courseId: 'residential-real-estate-transactions',
+      courseName: 'RESIDENTIAL REAL ESTATE TRANSACTIONS',
+      isCourseAllowed: false
+    },
     {
-      testId: 'test3',
-      testName: 'MOCK TEST 3',
-     testDesc: 'This course expands on the content presented in the Residential Real Estate Transaction course, exploring how key concepts are applied in other types of residential transactions, including: condominiums; new construction; rural properties; residential multi-family dwellings; and residential leasing.',
-     isTestAllowed: false},
+      courseId: 'additional-residential-real-estate-transactions',
+      courseName: 'ADDITIONAL RESIDENTIAL REAL ESTATE TRANSACTIONS',
+      isCourseAllowed: false
+    },
     {
-      testId: 'test4',
-      testName: 'MOCK TEST 4',
-     testDesc: ' In this simulation session, learners will spend 5 days practicing core activities and tasks related to residential real estate transactions with an experienced real estate professional acting as a coach. The simulation and related assessments will work through all stages of a typical transaction and will cover various property types (for example, single-family homes and condominiums). The experience will let learners apply knowledge and skills gained from the eLearning portion of the program in realistic simulated interactions.',
-     isTestAllowed: false},
+      courseId: 'simulation-residential-real-estate-transactions',
+      courseName: 'SIMULATION FOR RESIDENTIAL REAL ESTAE TRANSACTION',
+      isCourseAllowed: false
+    },
+    {
+      courseId: 'commercial-real-estate-transactions',
+      courseName: 'COMMERCIAL REAL ESTATE TRANSACTIONS',
+      isCourseAllowed: false
+    },
+    {
+      courseId: 'simulation-commercial-real-estate-transactions',
+      courseName: 'SIMULATION FOR COMMERCIAL REAL ESTATE TRANSACTIONS',
+      courseDesc: 'The prices of real-estate market influence the welfare of citizens and the business of real-estate investors. A well-known open challenge is to understand the repercussions of different combinations of individual buying/selling strategies on this market. The current approach is aimed at simulating these repercussions. For this purpose, a novel agent-based simulation tool includes common known strategies. This tool simulates the real-estate transactions from these strategies, showing the evolution of average prices and the results of each strategy (i.e. their success ratio, average price of their transactions and average waiting time). The underlying framework is extensible so that users can easily define and simulate new strategies. The experimentation of this work includes micro-validation of each kind of strategy',
+      isCourseAllowed: false
+    },
+    {
+      courseId: 'broker-qualifying-exam',
+      courseName: 'BROKER QUALIFYING EXAM',
+      isCourseAllowed: false
+    },
+    {
+      courseId: 'broker-exam',
+      courseName: 'BROKER EXAM',
+      isCourseAllowed: false
+    },
+    {
+      courseId: 'mortage-exam',
+      courseName: 'MORTGAGE EXAM',
+      isCourseAllowed: false
+    },
   ];
 
-  constructor(private localStorageService: LocalstorageService, private connectionService: ConnectionService) { }
+  constructor(private localStorageService: LocalstorageService, private route: Router, private connectionService: ConnectionService) { }
   
   ngOnInit(): void {
     if(this.localStorageService.get('TOKEN')) {
       this.connectionService.getAvailableMockTests().subscribe((response: any) => {
         let availablemockTests = response.availableMockTests;
         for(let mockTest of this.mockTests) {
-          let testIndex = availablemockTests.indexOf(mockTest.testId);
+          let testIndex = availablemockTests.indexOf(mockTest.courseId);
           if( testIndex !== -1) {
-            mockTest.isTestAllowed = true;
+            mockTest.isCourseAllowed = true;
           }
         }
       });
     }
+  }
+
+  subscribeNow(course: any) {
+    this.route.navigateByUrl('/subscribe');
   }
 
 }
