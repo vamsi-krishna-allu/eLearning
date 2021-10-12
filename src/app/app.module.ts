@@ -21,6 +21,8 @@ import { TestListComponent } from './mock-tests/test-list/test-list.component';
 import { SubscribeComponent } from './subscribe/subscribe.component';
 import { CoursepriceComponent } from './courseprice/courseprice.component';
 import { FooterComponent } from './footer/footer.component';
+import { TestResultComponent } from './test-result/test-result.component';
+import { GaugeChartModule } from 'angular-gauge-chart';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +37,7 @@ import { FooterComponent } from './footer/footer.component';
     SubscribeComponent,
     CoursepriceComponent,
     FooterComponent,
+    TestResultComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
-    PdfViewerModule
+    PdfViewerModule,
+    GaugeChartModule
   ],
   providers: [
     {

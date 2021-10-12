@@ -8,6 +8,7 @@ import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { MockTestsComponent } from './mock-tests/mock-tests.component';
 import { TestListComponent } from './mock-tests/test-list/test-list.component';
+import { TestResultComponent } from './test-result/test-result.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },  
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactsComponent }, 
   { path: 'mockTests', component: TestListComponent},
   { path: 'subscribe', component: CoursepriceComponent},
+  { path: 'result', component: TestResultComponent},
   { path: '*', component: HomeComponent} 
 ];
 
