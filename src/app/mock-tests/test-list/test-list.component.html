@@ -22,7 +22,7 @@
                     <button mat-raised-button class="subscribe-button" (click)="subscribeNow(test.courseName)">SUBSCRIBE NOW</button>
                 </div>
                 <div *ngIf="test.isCourseAllowed">
-                    <button mat-raised-button class="view-button">START THE TEST</button>
+                    <button mat-raised-button class="view-button" (click)="startTest(test.courseName)">START THE TEST</button>
                 </div>
             </div>
         </div>

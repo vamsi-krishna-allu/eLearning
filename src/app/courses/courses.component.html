@@ -6,8 +6,8 @@
     </div>
 
     <pdf-viewer [src]="pdfDocumentSrc" [show-all]="false" [page]="page"
-    [autoresize]="true" [original-size]="false"
-        (after-load-complete)="afterLoadComplete($event)"></pdf-viewer>
+        (after-load-complete)="afterLoadComplete($event)"
+        style="display: block; height: 100vh;"></pdf-viewer>
 </div>
 <div *ngIf="!doesFileExist">
     <div class="course-header">

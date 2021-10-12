@@ -1,14 +1,13 @@
 .example-card {
-    width: 80%;
-    height: 400px;
-    display: block;
-    vertical-align: middle;
-    margin-top: 5%;
-  }
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
+  width: 64vw;
+  height: 64vh;
+  display: block;
+  vertical-align: middle;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
 .card-title {
     padding-top: 5%;
     font-size: x-large;
@@ -57,24 +56,19 @@
     flex-direction: row;
 }
 .button-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  bottom: 2vw;
+  position: absolute;
+  width: 65vw;
 }
 .example-margin {
-  margin: 3% 0%;
-  width: 80%;
+  width: 66vw;
 }
 .submit-button {
   color: white;
   background-color: green;
 }
-/* .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-    border-color: rgb(66, 134, 244);
-  }
-  .mat-radio-button.mat-accent .mat-radio-inner-circle {
-    background-color: rgb(66, 134, 244);
-  }
-  .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-    background-color:rgba(66, 134, 244,.26);
-  } */
+.page-data {
+  width: 80vw;
+  margin-left: 18vw;
+  margin-top: 10vw;
+}

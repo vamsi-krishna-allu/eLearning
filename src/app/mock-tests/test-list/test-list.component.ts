@@ -81,4 +81,8 @@ export class TestListComponent implements OnInit {
     this.route.navigateByUrl('/subscribe');
   }
 
+  startTest(course: any) {
+    this.route.navigateByUrl('/openTest');
+  }
+
 }
