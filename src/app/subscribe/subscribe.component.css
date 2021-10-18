@@ -41,7 +41,8 @@
     align-items: center;
 }
 .features-div {
-    margin-left: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 5%;
     font-size: 1vw;
     display: flex;

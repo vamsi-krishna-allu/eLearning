@@ -6,30 +6,31 @@
           [value]="progressBarValue">
 </mat-progress-bar>
 <mat-card class="example-card">
-    <mat-card-header>
+    <mat-card-header class="mat-header">
         <mat-card-title class="card-title">Question {{currentIndex + 1}} of {{maximumIndex}}</mat-card-title>
+        <app-auto-refresh></app-auto-refresh>
     </mat-card-header>
+    
     <div class="question-and-answer">
         <mat-card-content class="question">
             <div>
                 {{mockQuestionData?.question}}
             </div>
-        </mat-card-content>
-        <div class="answer">
-            <label class="example-radio-group-label">Choose an option from below</label>
-            <mat-radio-group class="example-radio-group" color="primary">
-                <mat-radio-button color="primary" class="example-radio-button" *ngFor="let option of mockQuestionData?.options"
-                    [value]="option">
-                    {{option}}
-                </mat-radio-button>
-            </mat-radio-group>
-        </div>
+            <div class="answer">
+                <label class="example-radio-group-label">Choose an option from below</label>
+                <mat-radio-group class="example-radio-group" color="primary" [(ngModel)]="selectedOption">
+                    <mat-radio-button color="primary" class="example-radio-button" *ngFor="let option of mockQuestionData?.options; let i = index" [value]="i" [checked]="i === currentAnswer">
+                        {{option}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </mat-card-content> 
     </div>
     <div class="button-container">
-        <button mat-raised-button class="submit-button" (click)="onSubmit()">SUBMIT</button>
+        <button mat-raised-button class="submit-button" (click)="onSubmit(selectedOption)">SUBMIT</button>
     <div class="card-actions">
         <button mat-raised-button (click)="onPrevious()" [disabled] = "currentIndex === 0" color="primary">PREV</button>
-        <button mat-raised-button (click)="onNext()" [disabled] = "currentIndex === maximumIndex - 1" color="accent">NEXT</button>
+        <button mat-raised-button (click)="onNext(selectedOption)" [disabled] = "currentIndex === maximumIndex - 1" color="accent">NEXT</button>
     </div>
     </div>
 </mat-card>

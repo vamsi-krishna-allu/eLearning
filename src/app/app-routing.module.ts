@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CoursepriceComponent } from './courseprice/courseprice.component';
+import { CourseViewComponent } from './courses/course-view/course-view.component';
 import { CoursesComponent } from './courses/courses.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'mockTests', component: TestListComponent},
   { path: 'subscribe', component: CoursepriceComponent},
   { path: 'result', component: TestResultComponent},
+  { path: 'view-course', component: CourseViewComponent},
   { path: '*', component: HomeComponent} 
 ];
 

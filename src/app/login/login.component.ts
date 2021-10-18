@@ -85,6 +85,7 @@ export class LoginComponent implements OnInit {
   userLogin() {
     this.connectionService.authenticateUser(this.loginDetails).subscribe((response: any) => {
       this.localStorageService.set("TOKEN", response.jwttoken);
+      this.localStorageService.set("USERNAME", this.loginDetails.username);
       this.matSnackBar.open("Logged in Succesfully", "Cool");
       this.contactForm?.reset();
     }, (error: any) => {

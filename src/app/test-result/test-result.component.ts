@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConnectionService } from '../connection.service';
+import { LocalstorageService } from '../localstorage.service';
 
 @Component({
   selector: 'app-test-result',
@@ -37,16 +39,32 @@ public options = {
 }
 
 
-  constructor() { }
+  constructor( private connectionService: ConnectionService, private localStorageService: LocalstorageService) { }
 
   ngOnInit(): void {
-    this.marks_scored = 38;
-    this.percentage = ((this.marks_scored/this.total_marks) * 100).toFixed(2)+'%';
-    this.bottomLabel = this.percentage;
-    this.attempted_questions = 55;
-    this.time_taken = '28min';
-    let date = new Date();
-    this.start_time = date.toString().substring(0,24);
+    if(this.localStorageService.get('TOKEN')) {
+      this.evaluateAnswers(history.state.data);
+    } else {
+      this.marks_scored = 38;
+      this.percentage = ((this.marks_scored/this.total_marks) * 100).toFixed(2)+'%';
+      this.bottomLabel = this.percentage;
+      this.attempted_questions = 55;
+      this.time_taken = '28min';
+      let date = new Date();
+      this.start_time = date.toString().substring(0,24);
+    }
+  }
+
+  evaluateAnswers(data: any) {
+    this.connectionService.evaluate(data).subscribe((res: any) => {
+      this.marks_scored = res.marksScored;
+      this.percentage = ((this.marks_scored/res.totalMarks) * 100).toFixed(2)+'%';
+      this.bottomLabel = this.percentage;
+      this.attempted_questions = res.attemptedQuestions;
+      this.time_taken = res.time_taken;
+      let date = new Date();
+      this.start_time = date.toString().substring(0,24);
+    })
   }
 
 }

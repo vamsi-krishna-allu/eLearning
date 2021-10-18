@@ -1,0 +1,26 @@
+.viewpdf {
+    margin-top: 5vw;
+}
+.buttons-pdf {
+    display: flex;
+    width: 88vw;
+    position: fixed;
+    flex-direction: row;
+    bottom: 20vw;
+    margin-left: 8vw;
+    justify-content: space-between;
+}
+.pdf-button {
+    color: white;
+    background-color: green;
+    width: 10vw;
+}
+.faq-header {
+    font-family: Lora,serif;
+    position: relative;
+    line-height: 2.1em;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 2%;
+    box-shadow: none !important;
+}

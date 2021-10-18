@@ -68,6 +68,7 @@ export class AppComponent implements OnInit {
 
   logoutUser() {
     this.localStorageService.remove("TOKEN");
+    this.localStorageService.remove("USERNAME");
     this.route.navigateByUrl('/home');
   }
 

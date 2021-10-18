@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectionService } from '../connection.service';
 import { Subject } from "rxjs";
+import { Router } from '@angular/router';
+import { LocalstorageService } from '../localstorage.service';
 
 @Component({
   selector: 'app-mock-tests',
@@ -9,9 +11,10 @@ import { Subject } from "rxjs";
 })
 export class MockTestsComponent implements OnInit {
 
-  constructor(private connectionService: ConnectionService) { }
+  constructor(private connectionService: ConnectionService, private route: Router, private localStorageService: LocalstorageService) { }
 
   testSubject = new Subject();
+  selectedOption: string = '';
   mockQuestionData: {
     question: string;
     options: string[],
@@ -27,18 +30,18 @@ export class MockTestsComponent implements OnInit {
 
   currentIndex = 0;
   maximumIndex = 0;
-  userAnswers: any[] = [];
+  userAnswers: any[] = Array(75).fill(-1);
   progressBarValue = 0;
+  currentAnswer = 5;
 
   ngOnInit(): void {
     this.testSubject.subscribe((value: any) => {
       this.mockQuestionData = value;
     });
-    this.onTestSelection();
+    this.onTestSelection(history.state.data);
   }
 
-  onTestSelection() {
-    let testType = "MockTest1";
+  onTestSelection(testType: string) {
     this.mockQuestions = [];
     this.connectionService.getMockTest(testType).subscribe((response: Array<any>) => {
       if (response) {
@@ -57,23 +60,30 @@ export class MockTestsComponent implements OnInit {
     });
   }
 
-  onNext() {
-    this.userAnswers[this.currentIndex] = "first";
+  onNext(selectedOption: any) {
+    this.userAnswers[this.currentIndex] = selectedOption;
     this.currentIndex += 1;
     this.testSubject.next(this.mockQuestions[this.currentIndex]);
-    console.log(this.userAnswers);
     this.progressBarValue = this.userAnswers.length * (100 / this.mockQuestions.length);
+    this.currentAnswer = this.userAnswers[this.currentIndex];
   }
 
   onPrevious() {
     if(this.currentIndex!==0){
       this.currentIndex -=1;
       this.testSubject.next(this.mockQuestions[this.currentIndex]);
+      this.currentAnswer = this.userAnswers[this.currentIndex];
     }
   }
 
-  onSubmit() {
-    console.log("submitted");
+  onSubmit(selectedOption: any) {
+    this.userAnswers[this.currentIndex] = selectedOption;
+    let answers = {
+      username: this.localStorageService.get("USERNAME"),
+      testName: history.state.data,
+      answer: this.userAnswers,
+    }
+    this.route.navigateByUrl('/result', {state: {data: answers}});
   }
   
 

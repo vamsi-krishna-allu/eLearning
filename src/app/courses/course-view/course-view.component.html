@@ -1,0 +1,9 @@
+<div class="viewpdf">
+        <pdf-viewer [src]="pdfDocumentSrc" [show-all]="false" [page]="page"
+        (after-load-complete)="afterLoadComplete($event)"
+        style="display: block; height: 100vh;"></pdf-viewer>
+        <div class="buttons-pdf">
+        <button mat-raised-button class="pdf-button" (click)="prevPage()" [disabled]="page === 1">Prev</button>
+        <button mat-raised-button class="pdf-button" (click)="nextPage()" [disabled]="page === totalPages">Next</button>
+        </div>
+</div>

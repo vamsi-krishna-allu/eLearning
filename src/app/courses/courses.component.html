@@ -1,15 +1,4 @@
-<div *ngIf="doesFileExist" class="course-header">
-    <div class="file-viewer">
-        <button mat-raised-button class="pdf-button" (click)="prevPage()" [disabled]="page === 1">Prev</button>
-        <span class="mr-2 ml-2">{{ page }} / {{ totalPages }}</span>
-        <button mat-raised-button class="pdf-button" (click)="nextPage()" [disabled]="page === totalPages">Next</button>
-    </div>
-
-    <pdf-viewer [src]="pdfDocumentSrc" [show-all]="false" [page]="page"
-        (after-load-complete)="afterLoadComplete($event)"
-        style="display: block; height: 100vh;"></pdf-viewer>
-</div>
-<div *ngIf="!doesFileExist">
+<div>
     <div class="course-header">
         <img mat-card-image class="image-logo" src="../../assets/real-estate.png" alt="">
         <h1 class="courses-header">REAL ESTATE</h1>
@@ -29,11 +18,11 @@
                 </mat-expansion-panel>
                 <div *ngIf="!course.isCourseAllowed">
                     <button mat-raised-button class="subscribe-button"
-                        (click)="subscribeNow(course.courseName)">SUBSCRIBE
+                        (click)="subscribeNow(course.courseName, course.courseId)">SUBSCRIBE
                         NOW</button>
                 </div>
                 <div *ngIf="course.isCourseAllowed">
-                    <button mat-raised-button class="view-button" (click)="viewFile(course.courseName)"> VIEW MATERIAL
+                    <button mat-raised-button class="view-button" (click)="viewFile(course.courseId)"> VIEW MATERIAL
                     </button>
                 </div>
             </div>
@@ -61,7 +50,7 @@
                 </mat-expansion-panel>
                 <div>
                     <button mat-raised-button class="subscribe-button"
-                        (click)="subscribeNow(course.courseName)">SUBSCRIBE
+                        (click)="subscribeNow(course.courseName, course.courseId)">SUBSCRIBE
                         NOW</button>
                 </div>
             </div>

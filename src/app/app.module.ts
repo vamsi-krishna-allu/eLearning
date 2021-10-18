@@ -23,6 +23,8 @@ import { CoursepriceComponent } from './courseprice/courseprice.component';
 import { FooterComponent } from './footer/footer.component';
 import { TestResultComponent } from './test-result/test-result.component';
 import { GaugeChartModule } from 'angular-gauge-chart';
+import { CourseViewComponent } from './courses/course-view/course-view.component';
+import { AutoRefreshComponent } from './auto-refresh/auto-refresh.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +40,8 @@ import { GaugeChartModule } from 'angular-gauge-chart';
     CoursepriceComponent,
     FooterComponent,
     TestResultComponent,
+    CourseViewComponent,
+    AutoRefreshComponent,
   ],
   imports: [
     BrowserModule,
