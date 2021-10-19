@@ -45,13 +45,11 @@ export class ConnectionService {
 
   getPdfFile(fileName: string) {
     const token = this.localStorageService.get("TOKEN");
-    this.url = `http://localhost:8080/getPdfFile`;
-    return this.http.get(this.url, {
+    this.url = `http://localhost:8080/getPdfFile/${fileName}`;
+    return this.http.get<any>(this.url, { 
       headers:  new HttpHeaders({
         Authorization: `Bearer ${token}`,
-        responseType : 'blob',
-      }),
-    });
+      })});
   }
 
   getMockTest(tesType: string): Observable<any> {
@@ -62,6 +60,16 @@ export class ConnectionService {
         Authorization: `Bearer ${token}`,
       }),
       params: {testType: tesType}
+    });
+  }
+
+  evaluate(data: any) {
+    const token = this.localStorageService.get("TOKEN");
+    this.url = `http://localhost:8080/evaluateAnswer`;
+    return this.http.post(this.url, data, {
+      headers:  new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
     });
   }
 
@@ -85,10 +93,15 @@ export class ConnectionService {
     });
   }
 
-  payNow(planPrice : any) {
+  payNow(planPrice : any, courseName: any, type: any) {
     const token = this.localStorageService.get("TOKEN");
+    let requestBody = {
+      type: type,
+      course: courseName,
+      price: planPrice,
+    }
     this.url = `http://localhost:8080/pay`;
-    return this.http.post(this.url, planPrice,{
+    return this.http.post(this.url, requestBody, {
       headers:  new HttpHeaders({
         Authorization: `Bearer ${token}`,
       }),

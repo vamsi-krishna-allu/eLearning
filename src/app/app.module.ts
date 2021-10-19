@@ -24,6 +24,8 @@ import { FooterComponent } from './footer/footer.component';
 import { TestResultComponent } from './test-result/test-result.component';
 import { GaugeChartModule } from 'angular-gauge-chart';
 import { TestInstructionsComponent } from './test-instructions/test-instructions.component';
+import { CourseViewComponent } from './courses/course-view/course-view.component';
+import { AutoRefreshComponent } from './auto-refresh/auto-refresh.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { TestInstructionsComponent } from './test-instructions/test-instructions
     FooterComponent,
     TestResultComponent,
     TestInstructionsComponent,
+    CourseViewComponent,
+    AutoRefreshComponent,
   ],
   imports: [
     BrowserModule,

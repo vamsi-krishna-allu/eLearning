@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courseprice',
@@ -8,14 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class CoursepriceComponent implements OnInit {
  
   planDetails : any;
+  courseName : any;
+  type: any;
 
-  constructor() { }
+  constructor(private route: Router) { 
+  }
 
   ngOnInit(): void {
-    this.planDetails = [{planType : 'basic', color:'red',   planPrice  : '$150', features : ['Basic Feature Name1','Basic Feature Name2', 'Basic Feature Name3']},
-                        {planType : 'standard', color: 'green', planPrice  : '$200', features : ['Standard Feature Name1', 'Standard Feature Name2', 'Standard Feature Name3']},
-                        {planType : 'premium', color: 'blue', planPrice  : '$300', features : ['Premium Feature Name1', 'Premium Feature Name2', 'Premium Feature Name3']}               
-                      ];
+    this.planDetails = history.state.data.planDetails;
+    this.courseName = history.state.data.courseName;
+    this.type = history.state.data.type;
   }
 
 }

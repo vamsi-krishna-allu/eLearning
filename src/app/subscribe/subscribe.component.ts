@@ -13,14 +13,16 @@ export class SubscribeComponent implements OnInit {
   premeiumFeatures : Array<any> = [];
 
   @Input() planDetails : any;
+  @Input() courseName : any;
+  @Input() type: any;
 
   constructor(private connectionService : ConnectionService, private route: Router) { }
 
   ngOnInit(): void {
-    
   }
-  payNow(planPrice : any) {
-    this.connectionService.payNow(planPrice).subscribe(resp =>{
+
+  payNow(plan : any) {
+    this.connectionService.payNow(plan, this.courseName, this.type).subscribe(resp =>{
       if(resp === 'success') {
         this.route.navigateByUrl('/paymentSuccess');
       }

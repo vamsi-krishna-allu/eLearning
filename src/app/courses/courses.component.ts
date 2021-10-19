@@ -10,16 +10,11 @@ import { LocalstorageService } from '../localstorage.service';
 })
 export class CoursesComponent implements OnInit {
 
-  //@Input() selectedCourse : string = '';
   content: any;
   panelOpenState = false;
   realestateCourses = REALESTATE_COURSES;
   mortgageCourses = MORTGAGE_COURSES;
-  pdfDocumentSrc: any;
-  page: number = 1;
-  totalPages: number = 0;
-  isLoaded: boolean = false;
-  doesFileExist: boolean = false;
+
   constructor(private connectionService: ConnectionService, private route: Router,private localStorageService: LocalstorageService) { }
 
   ngOnInit(): void {
@@ -35,26 +30,16 @@ export class CoursesComponent implements OnInit {
       });
     }
   }
-  subscribeNow(course: any) {
-    this.route.navigateByUrl('/subscribe');
-  }
-
-  afterLoadComplete(pdfData: any) {
-    this.totalPages = pdfData.numPages;
-    this.isLoaded = true;
-  }
-
-  nextPage() {
-    this.page++;
-  }
-
-  prevPage() {
-    this.page--;
+  subscribeNow(course: any, courseId: any) {
+    let planData = {courseId: courseId, courseName: course, type: 'course', planDetails: [{planType : 'basic', color:'red',   planPrice  : '$100', features : [`${course} is available`,'Validity of the test - 30 days']},
+    {planType : 'standard', color: 'green', planPrice  : '$150', features : [`${course} and any 2 tests of ${course} available`,'Validity of the test - 45 days']},
+    {planType : 'premium', color: 'blue', planPrice  : '$250', features : [`${course} and all tests of ${course} available`,'Validity of the test - 60 days']}               
+    ]};
+    this.route.navigateByUrl('/subscribe', { state: { data: planData } });
   }
 
   viewFile(course: string) {
-    this.pdfDocumentSrc = "http://localhost:8080/getPdfFile";
-    this.doesFileExist = true;
+    this.route.navigateByUrl('/view-course', {state: {data: course}});
   }
 
 }

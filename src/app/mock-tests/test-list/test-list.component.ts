@@ -118,9 +118,17 @@ export class TestListComponent implements OnInit {
   }
 
   subscribeNow(course: any) {
-    this.route.navigateByUrl('/subscribe');
+    let planData = {courseName: course, type: 'course', planDetails: [{planType : 'basic', color:'red',   planPrice  : '$100', features : [`Any 1 mock test of ${course} available`,'Validity of the test - 30 days']},
+                        {planType : 'standard', color: 'green', planPrice  : '$150', features : [`Any 2 mock tests of ${course} available`,'Validity of the test - 45 days']},
+                        {planType : 'premium', color: 'blue', planPrice  : '$250', features : [`All 4 mock tests of ${course} available`,'Validity of the test - 60 days']}               
+    ]};
+    this.route.navigateByUrl('/subscribe', { state: { data: planData } });
   }
-  startTest() {
+
+  /*startTest(course: any) {
+    this.route.navigateByUrl('/openTest', {state: {data: `${course}-test-1`}});
+  }*/
+  startTest(course: any) {
     this.testEnable = false;
     const dialogRef = this.dialog.open(TestInstructionsComponent);
 

@@ -2,3 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:host ::ng-deep .ng2-pdf-viewer-container {
+    overflow-x: auto;
+    position: absolute;
+    width: 100%;
+}
