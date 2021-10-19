@@ -1,4 +1,4 @@
-<div class="page-data">
+<div class="page-data" *ngIf='testEnable'>
     <div class="courses-div">
         <div *ngFor="let test of mockTests">
             <div class="matcard-module">
@@ -22,7 +22,7 @@
                     <button mat-raised-button class="subscribe-button" (click)="subscribeNow(test.courseName)">SUBSCRIBE NOW</button>
                 </div>
                 <div *ngIf="test.isCourseAllowed">
-                    <button mat-raised-button class="view-button">START THE TEST</button>
+                    <button mat-raised-button class="view-button" (click)="startTest()">START THE TEST</button>
                 </div>
             </div>
         </div>

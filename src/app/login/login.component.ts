@@ -6,6 +6,7 @@ import { ConnectionService } from '../connection.service';
 import { LocalstorageService } from '../localstorage.service';
 import { LoginDetails } from '../loginDetails';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class LoginComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({});
   forgotForm: FormGroup = new FormGroup({});
   constructor(private connectionService : ConnectionService, private fb: FormBuilder,  private localStorageService: LocalstorageService,
-    private matSnackBar: MatSnackBar) { 
+    private matSnackBar: MatSnackBar, private route : Router) { 
     this.loginForm = fb.group({
       emailId: ['',[Validators.required, Validators.email]],
       password: ['', [Validators.required]]
@@ -87,6 +88,7 @@ export class LoginComponent implements OnInit {
       this.localStorageService.set("TOKEN", response.jwttoken);
       this.matSnackBar.open("Logged in Succesfully", "Cool");
       this.contactForm?.reset();
+      this.route.navigateByUrl('/home');
     }, (error: any) => {
       console.log('Error', error);
     });

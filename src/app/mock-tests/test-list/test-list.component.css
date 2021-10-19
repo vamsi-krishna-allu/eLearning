@@ -61,21 +61,21 @@
 .subscribe-button {
     color: white;
     background-color: red;
-    margin-left: 5%;
+    margin-left: 10%;
     padding-top: 4%;
     padding-bottom: 4%;
 }
 .view-button {
     color: white;
     background-color: blue;
-    margin-left: 5%;
+    margin-left: 10%;
     padding-top: 4%;
     padding-bottom: 4%;
 }
 .page-data {
     margin-top: 8%;
     width: 80vw;
-    margin-left: 5%;
+    margin-left: 10%;
 }
 .expansion-panel {
     width: 100%;
