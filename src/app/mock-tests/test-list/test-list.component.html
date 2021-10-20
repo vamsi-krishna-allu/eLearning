@@ -10,12 +10,12 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class = "course-header">
-                        <div class = "header-text"> MOCK TEST 1</div>
-                        <div class="header-text"> MOCK TEST 2 </div>
+                        <div class = "header-text" (click)="mockTest(test.courseId,test.test1.id, test.test1.status)"> MOCK TEST 1</div>
+                        <div class="header-text" (click)="mockTest(test.courseId,test.test2.id, test.test1.status)"> MOCK TEST 2 </div>
                     </div> 
                     <div class="contact-header">
-                        <div class="header-text"> MOCK TEST 3 </div>
-                        <div class="header-text"> MOCK TEST 4 </div>
+                        <div class="header-text" (click)="mockTest(test.courseId,test.test3.id, test.test1.status)"> MOCK TEST 3 </div>
+                        <div class="header-text" (click)="mockTest(test.courseId,test.test4.id, test.test1.status)"> MOCK TEST 4 </div>
                     </div>
                 </mat-expansion-panel>
                 <div *ngIf="!test.isCourseAllowed">

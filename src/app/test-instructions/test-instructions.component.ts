@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,12 +12,12 @@ export class TestInstructionsComponent implements OnInit {
   checked : boolean = false;
   indeterminate : boolean = false;
 
-  constructor(private route : Router) { }
+  constructor(private route : Router, @Inject(MAT_DIALOG_DATA) public data: string) { }
 
   ngOnInit(): void {
   }
   startTest() {
-    this.route.navigateByUrl('/openTest');
+    this.route.navigateByUrl('/openTest',{state: {data: this.data}});
   }
 
 }

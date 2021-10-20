@@ -8,6 +8,7 @@ import { LocalstorageService } from './localstorage.service';
 })
 export class ConnectionService {
   url : string = '';
+  username : any;
   constructor(private http: HttpClient, private localStorageService: LocalstorageService) { }
 
   sendMessage(messageContent: any, action: string) {
@@ -107,4 +108,17 @@ export class ConnectionService {
       }),
     });
   }
+
+  viewTestResult(testId: string) {
+    const token = this.localStorageService.get("TOKEN");
+    this.url = `http://localhost:8080/showResults`;
+    this.username = this.localStorageService.get('USERNAME');
+    return this.http.get(this.url, {
+      headers:  new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
+      params: {username: this.username, testName: testId}
+    });
+  }
+  
 }

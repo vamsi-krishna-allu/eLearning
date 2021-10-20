@@ -7,3 +7,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     position: absolute;
     width: 100%;
 }
+
+.mat-dialog-container {
+    display: block;
+    border-radius: 0.5vh;
+    box-sizing: border-box;
+    overflow: auto;
+    outline: 0;
+    height: 88vh !important;
+    width: 60vw !important;
+    min-height: inherit;
+    max-height: inherit;
+    margin-top: 11vh;
+    margin-left: 5vw;
+    margin-bottom: 0.5vh;
+}
