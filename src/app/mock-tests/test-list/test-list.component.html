@@ -10,16 +10,16 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class = "course-header">
-                        <div class = "header-text" (click)="mockTest(test.courseId,test.test1.id, test.test1.status)"> MOCK TEST 1</div>
-                        <div class="header-text" (click)="mockTest(test.courseId,test.test2.id, test.test1.status)"> MOCK TEST 2 </div>
+                        <div class = "header-text" (click)="mockTest(test.courseId,test[0].id, test[0].status)"> MOCK TEST 1</div>
+                        <div class="header-text" (click)="mockTest(test.courseId,test[1].id, test[1].status)"> MOCK TEST 2 </div>
                     </div> 
                     <div class="contact-header">
-                        <div class="header-text" (click)="mockTest(test.courseId,test.test3.id, test.test1.status)"> MOCK TEST 3 </div>
-                        <div class="header-text" (click)="mockTest(test.courseId,test.test4.id, test.test1.status)"> MOCK TEST 4 </div>
+                        <div class="header-text" (click)="mockTest(test.courseId,test[2].id, test[2].status)"> MOCK TEST 3 </div>
+                        <div class="header-text" (click)="mockTest(test.courseId,test[3].id, test[3].status)"> MOCK TEST 4 </div>
                     </div>
                 </mat-expansion-panel>
                 <div *ngIf="!test.isCourseAllowed">
-                    <button mat-raised-button class="subscribe-button" (click)="subscribeNow(test.courseName)">SUBSCRIBE NOW</button>
+                    <button mat-raised-button class="subscribe-button" (click)="subscribeNow(test.courseName, test.courseId)">SUBSCRIBE NOW</button>
                 </div>
                 <div *ngIf="test.isCourseAllowed">
                     <button mat-raised-button class="view-button" (click)="startTest(test.courseId)">START THE TEST</button>
