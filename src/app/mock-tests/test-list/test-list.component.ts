@@ -22,17 +22,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: true,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -41,17 +45,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -60,17 +68,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -79,17 +91,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -98,17 +114,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -118,17 +138,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -137,17 +161,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -156,17 +184,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
     {
@@ -175,17 +207,21 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: false,
       test:[{
         id: 'test-1',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 1'
       },
       {
         id: 'test-2',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 2'
       },{
         id: 'test-3',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 3'
       },{
         id: 'test-4',
-        status: 'unavailable'
+        status: 'unavailable',
+        name:'MOCK TEST 4'
       }]
     },
   ];
