@@ -17,7 +17,7 @@ export class CoursepriceComponent implements OnInit {
 
   ngOnInit(): void {
     this.planDetails = history.state.data.planDetails;
-    this.courseName = history.state.data.courseName;
+    this.courseName = history.state.data.courseId;
     this.type = history.state.data.type;
   }
 

@@ -21,16 +21,10 @@ export class SubscribeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  payNow(plan : any) {
+  payNow(plan : string) {
     this.connectionService.payNow(plan, this.courseName, this.type).subscribe(resp =>{
-      if(resp === 'success') {
-        this.route.navigateByUrl('/paymentSuccess');
-      }
-      else {
-        this.route.navigateByUrl('/paymentFail');
-      }
+      this.route.navigateByUrl('/home');
     });
-
   }
 
 }
