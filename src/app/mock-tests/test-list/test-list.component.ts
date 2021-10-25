@@ -22,7 +22,7 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: true,
       test:[{
         id: 'test-1',
-        status: 'available',
+        status: 'unavailable',
         name:'MOCK TEST 1'
       },
       {
@@ -236,16 +236,25 @@ export class TestListComponent implements OnInit {
         let mockTestListCourseId = [];
         if(availablemockTests && availablemockTests.length > 0){
           for(let availableTest of availablemockTests) {
-            mockTestListCourseId.push(availableTest.substring(0, availableTest.length - 6));
+            mockTestListCourseId.push(availableTest.substring(0, availableTest.length - 7));
           }
   
           for(let mockTest of this.mockTests) {
-            let testIndex = mockTestListCourseId.indexOf(mockTest.courseId);
+            let index = 0;
+            for(let courseId of mockTestListCourseId) {
+              if(mockTest.courseId === courseId) {
+                let selectedTest = availablemockTests[index];
+                let testNumber = selectedTest.substring(selectedTest.length-1);
+                mockTest.test[testNumber-1].status = 'available';
+                index++;
+              }
+            }
+            /*let testIndex = mockTestListCourseId.indexOf(mockTest.courseId);
             if( testIndex !== -1) {
               let selectedTest = availablemockTests[testIndex];
               let testNumber = selectedTest.substring(selectedTest.length-1);
-              mockTest.test[testNumber].status = 'available';
-            }
+              mockTest.test[testNumber-1].status = 'available';
+            }*/
           }
         }
         
@@ -254,16 +263,25 @@ export class TestListComponent implements OnInit {
 
         if(submitmockTests && submitmockTests.length > 0) {
           for(let availableTest of submitmockTests) {
-            submitTestListCourseId.push(availableTest.substring(0, availableTest.length - 6));
+            submitTestListCourseId.push(availableTest.substring(0, availableTest.length - 7));
           }
   
           for(let mockTest of this.mockTests) {
-            let testIndex = submitTestListCourseId.indexOf(mockTest.courseId);
+            let index = 0;
+            for(let courseId of submitTestListCourseId) {
+              if(mockTest.courseId === courseId) {
+                let selectedTest = submitmockTests[index];
+                let testNumber = selectedTest.substring(selectedTest.length-1);
+                mockTest.test[testNumber-1].status = 'submitted';
+                index++;
+              }
+            }
+            /*let testIndex = submitTestListCourseId.indexOf(mockTest.courseId);
             if( testIndex !== -1) {
               let selectedTest = submitmockTests[testIndex];
               let testNumber = selectedTest.substring(selectedTest.length-1);
-              mockTest.test[testNumber].status = 'submitted';
-            }
+              mockTest.test[testNumber-1].status = 'submitted';
+            }*/
           }
         }
       });

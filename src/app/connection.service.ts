@@ -39,7 +39,7 @@ export class ConnectionService {
   }
 
   resetPassword(user: any) {
-    this.url = 'http://localhost:5000/resetPassword';
+    this.url = 'http://localhost:5000/changePassword';
     return this.http.post(this.url,
       user);
   }
@@ -86,11 +86,13 @@ export class ConnectionService {
 
   getAvailableMockTests() {
     const token = this.localStorageService.get("TOKEN");
-    this.url = `http://localhost:5000/availableTests`;
+    this.url = `http://localhost:5000/authenticatedTests`;
+    this.username = this.localStorageService.get('USERNAME');
     return this.http.get(this.url, {
       headers:  new HttpHeaders({
         Authorization: `Bearer ${token}`,
       }),
+      params: {username: this.username}
     });
   }
 
@@ -117,7 +119,7 @@ export class ConnectionService {
       headers:  new HttpHeaders({
         Authorization: `Bearer ${token}`,
       }),
-      params: {username: this.username, testName: testId}
+      params: {username: this.username, testType: testId}
     });
   }
   

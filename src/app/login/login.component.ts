@@ -9,6 +9,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { I18nPluralPipe } from '@angular/common';
+import { duration } from 'moment';
 
 
 @Component({
@@ -89,31 +90,37 @@ export class LoginComponent implements OnInit {
     this.connectionService.authenticateUser(this.loginDetails).subscribe((response: any) => {
       this.localStorageService.set("TOKEN", response.jwttoken);
       this.localStorageService.set("USERNAME", this.loginDetails.username);
-      this.matSnackBar.open("Logged in Succesfully", "Cool");
+      this.matSnackBar.open("Logged in Succesfully", "Cool",{duration : 3000});
       this.contactForm?.reset();
       this.dialogRef.close();
       this.route.navigateByUrl('/home');
     }, (error: any) => {
+      this.matSnackBar.open(error.error.text,'failure',{duration : 3000});
+      this.contactForm?.reset();
       console.log('Error', error);
     });
   }
 
   userSignUp() {
     this.connectionService.registerUser(this.loginDetails).subscribe((response: any) => {
-      this.matSnackBar.open("Registered Succesfully", "Awesome");
+      this.matSnackBar.open("Registered Succesfully", "Awesome",{duration : 3000});
       this.contactForm?.reset();
       this.backToLogin();
     }, (error: any) => {
+      this.matSnackBar.open(error.error.text,'failure',{duration : 3000});
+      this.contactForm?.reset();
       console.log('Error', error);
     });
   }
 
   resetPassword() {
     this.connectionService.resetPassword(this.loginDetails).subscribe((response) => {
-      this.matSnackBar.open("Password changed Succesfully", "Great");
+      this.matSnackBar.open("Password changed Succesfully", "Great",{duration : 3000});
       this.contactForm?.reset();
       this.backToLogin();
     }, (error: any) => {
+      this.matSnackBar.open(error.error.text,'failure',{duration : 3000});
+      this.contactForm?.reset();
       console.log('Error', error);
     });
   }
