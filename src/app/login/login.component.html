@@ -37,10 +37,10 @@
                     </mat-error>
                 </mat-form-field>
                 <div class="forgotPwdText">
-                    <a (click)='forgotPassword()'>Forgot Password</a>
+                    <a (click)='forgotPassword()'><u>Forgot Password</u></a>
                 </div>
                 <div>
-                    <button mat-raised-button mat-dialog-close class="btn-login" (click)="userLogin()"
+                    <button mat-raised-button class="btn-login" (click)="userLogin()"
                         [disabled]="f.emailId.errors?.email || f.emailId.errors?.required || f.password.errors?.required || f.password.errors?.minlength">Login</button>
                 </div>
             </form>
@@ -73,7 +73,7 @@
                 <br>
                 <br>
                 <div>
-                    <button mat-raised-button mat-dialog-close class="btn-login" (click)="userSignUp()"
+                    <button mat-raised-button class="btn-login" (click)="userSignUp()"
                         [disabled]="f1.emailId.errors?.email || f1.emailId.errors?.required || f1.password.errors?.required || 
                         f1.password.errors?.minlength">Sign
                         Up</button>
@@ -135,10 +135,10 @@
                         </mat-error>
                     </mat-form-field>
                     <div class="backToLoginText">
-                        <a (click)='backToLogin()'>Back to Login</a>
+                        <a (click)='backToLogin()'><u>Back to Login</u></a>
                     </div>
                     <div>
-                        <button mat-button mat-dialog-close class="btn-login" (click)="resetPassword()" [disabled]="f2.emailId.errors?.email || f2.emailId.errors?.required || f2.password.errors?.required ||
+                        <button mat-button class="btn-login" (click)="resetPassword()" [disabled]="f2.emailId.errors?.email || f2.emailId.errors?.required || f2.password.errors?.required ||
                             f2.confirm_password.errors?.required || f2.password.errors?.minlength || f2.confirm_password.errors?.confirmedValidator">Reset Password</button>
                     </div>
                 </form>

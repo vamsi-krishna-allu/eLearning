@@ -7,6 +7,7 @@ import { LocalstorageService } from '../localstorage.service';
 import { LoginDetails } from '../loginDetails';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
   signupForm: FormGroup = new FormGroup({});
   forgotForm: FormGroup = new FormGroup({});
   constructor(private connectionService : ConnectionService, private fb: FormBuilder,  private localStorageService: LocalstorageService,
-    private matSnackBar: MatSnackBar, private route : Router) { 
+    private matSnackBar: MatSnackBar, private route : Router, private dialogRef: MatDialogRef<LoginComponent>) { 
     this.loginForm = fb.group({
       emailId: ['',[Validators.required, Validators.email]],
       password: ['', [Validators.required]]
@@ -89,6 +90,7 @@ export class LoginComponent implements OnInit {
       this.localStorageService.set("USERNAME", this.loginDetails.username);
       this.matSnackBar.open("Logged in Succesfully", "Cool");
       this.contactForm?.reset();
+      this.dialogRef.close();
       this.route.navigateByUrl('/home');
     }, (error: any) => {
       console.log('Error', error);
@@ -99,6 +101,8 @@ export class LoginComponent implements OnInit {
     this.connectionService.registerUser(this.loginDetails).subscribe((response: any) => {
       this.matSnackBar.open("Registered Succesfully", "Awesome");
       this.contactForm?.reset();
+      this.dialogRef.close();
+      this.route.navigateByUrl('/home');
     }, (error: any) => {
       console.log('Error', error);
     });
@@ -108,6 +112,7 @@ export class LoginComponent implements OnInit {
     this.connectionService.resetPassword(this.loginDetails).subscribe((response) => {
       this.matSnackBar.open("Password changed Succesfully", "Great");
       this.contactForm?.reset();
+      this.backToLogin();
     }, (error: any) => {
       console.log('Error', error);
     });

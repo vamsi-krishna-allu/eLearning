@@ -72,14 +72,14 @@
 .input-icon {
     z-index: 1;
     color: #979faf;
-    font-size: 25px;
+    font-size: 1.3vw;
     margin-top: 50%;
     font-style: normal;
 }
 .input-icon1 {
     z-index: 1;
     color: green;
-    font-size: 25px;
+    font-size: 1.3vw;
     margin-top: -50%;
     font-style: normal;
 }
@@ -108,8 +108,8 @@
     margin-top: 5%;
 }
 .forgotPwdText {
-    color: black;
-    font-size: 15px;
+    color: blue;
+    font-size: 1.1vw;;
     font-weight: bold;
     padding-left: 7%;
     width: 86%;
@@ -118,8 +118,8 @@
     line-height: 1.5em;
 }
 .backToLoginText {
-    color: black;
-    font-size: 15px;
+    color: blue;
+    font-size: 1.1vw;
     font-weight: bold;
     padding-left: 7%;
     width: 86%;

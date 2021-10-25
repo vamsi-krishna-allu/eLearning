@@ -22,7 +22,7 @@ export class TestListComponent implements OnInit {
       isCourseAllowed: true,
       test:[{
         id: 'test-1',
-        status: 'unavailable',
+        status: 'available',
         name:'MOCK TEST 1'
       },
       {
@@ -294,6 +294,7 @@ export class TestListComponent implements OnInit {
     let testId = `${courseName}-${testName}`;
     if(testStatus === 'submitted') {
       this.connectionService.viewTestResult(testId).subscribe((response: any) => {
+        this.route.navigateByUrl('/result',{state: {data: response}});
         let availablemockTests = response.availableMockTests;
         for(let mockTest of this.mockTests) {
           let testIndex = availablemockTests.indexOf(mockTest.courseId);

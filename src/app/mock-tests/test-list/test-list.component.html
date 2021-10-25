@@ -10,43 +10,43 @@
                         </mat-panel-title>
                     </mat-expansion-panel-header>
                     <div class = "course-header">
-                        <div *ngIf="test[0].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test[0].id, test[0].status)">{{test[0].name}}</div>
+                        <div *ngIf="test.test[0].status==='available'">
+                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[0].id, test.test[0].status)">{{test.test[0].name}}</div>
                         </div>
-                        <div *ngIf="test[0].status==='unavailable'">
-                            <div class = "header-text">{{test[0].name}}</div>
+                        <div *ngIf="test.test[0].status==='unavailable'">
+                            <div class = "header-text">{{test.test[0].name}}</div>
                         </div>
-                        <div *ngIf="test[0].status==='submitted'">
-                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test[0].id, test[0].status)">VIEW RESULT</div>
+                        <div *ngIf="test.test[0].status==='submitted'">
+                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test.test[0].id, test.test[0].status)">VIEW RESULT</div>
                         </div>
-                        <div *ngIf="test[1].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test[1].id, test[1].status)">{{test[1].name}}</div>
+                        <div *ngIf="test.test[1].status==='available'">
+                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[1].id, test.test[1].status)">{{test.test[1].name}}</div>
                         </div>
-                        <div *ngIf="test[1].status==='unavailable'">
-                            <div class = "header-text">{{test[1].name}}</div>
+                        <div *ngIf="test.test[1].status==='unavailable'">
+                            <div class = "header-text">{{test.test[1].name}}</div>
                         </div>
-                        <div *ngIf="test[1].status==='submitted'">
-                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test[1].id, test[1].status)">VIEW RESULT</div>
+                        <div *ngIf="test.test[1].status==='submitted'">
+                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test.test[1].id, test.test[1].status)">VIEW RESULT</div>
                         </div>
                     </div> 
                     <div class="contact-header">
-                        <div *ngIf="test[2].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test[2].id, test[2].status)">{{test[2].name}}</div>
+                        <div *ngIf="test.test[2].status==='available'">
+                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[2].id, test.test[2].status)">{{test.test[2].name}}</div>
                         </div>
-                        <div *ngIf="test[2].status==='unavailable'">
-                            <div class = "header-text">{{test[2].name}}</div>
+                        <div *ngIf="test.test[2].status==='unavailable'">
+                            <div class = "header-text">{{test.test[2].name}}</div>
                         </div>
-                        <div *ngIf="test[2].status==='submitted'">
-                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test[2].id, test[2].status)">VIEW RESULT</div>
+                        <div *ngIf="test.test[2].status==='submitted'">
+                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test.test[2].id, test.test[2].status)">VIEW RESULT</div>
                         </div>
-                        <div *ngIf="test[3].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test[3].id, test[3].status)">{{test[3].name}}</div>
+                        <div *ngIf="test.test[3].status==='available'">
+                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[3].id, test.test[3].status)">{{test.test[3].name}}</div>
                         </div>
-                        <div *ngIf="test[3].status==='unavailable'">
-                            <div class = "header-text">{{test[3].name}}</div>
+                        <div *ngIf="test.test[3].status==='unavailable'">
+                            <div class = "header-text">{{test.test[3].name}}</div>
                         </div>
-                        <div *ngIf="test[3].status==='submitted'">
-                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test[3].id, test[3].status)">VIEW RESULT</div>
+                        <div *ngIf="test.test[3].status==='submitted'">
+                            <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test.test[3].id, test.test[3].status)">VIEW RESULT</div>
                         </div>
                     </div>
                 </mat-expansion-panel>
