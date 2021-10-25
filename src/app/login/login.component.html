@@ -8,7 +8,7 @@
         <div class="login-register-div">
             <input id="tab1" type="radio" name="tabs" checked>
             <label class="tab-label" for="tab1" (click)="logIn()">Login</label>
-            <input id="tab2" type="radio" name="tabs">
+            <input id="tab2" type="radio" name="tabs" unchecked>
             <label class="tab-label" for="tab2" (click)="signUp()">Sign Up</label>
         </div>
         <section id="content1" *ngIf='enableLoginSection'>

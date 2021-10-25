@@ -8,6 +8,7 @@ import { LoginDetails } from '../loginDetails';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { I18nPluralPipe } from '@angular/common';
 
 
 @Component({
@@ -101,8 +102,7 @@ export class LoginComponent implements OnInit {
     this.connectionService.registerUser(this.loginDetails).subscribe((response: any) => {
       this.matSnackBar.open("Registered Succesfully", "Awesome");
       this.contactForm?.reset();
-      this.dialogRef.close();
-      this.route.navigateByUrl('/home');
+      this.backToLogin();
     }, (error: any) => {
       console.log('Error', error);
     });
