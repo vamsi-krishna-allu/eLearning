@@ -13,7 +13,7 @@ marks_scored : number = 0;
 total_marks : number = 60;
 
 attempted_questions : number = 0;
-total_questions : number = 60;
+total_questions : number = 0;
 
 percentage : string = '';
 
@@ -24,7 +24,7 @@ start_time : string = '';
 end_time : string = '';
 
 public canvasWidth = 600;
-public needleValue = 65;
+public needleValue : number = 0;
 public centralLabel = '';
 public name ='';
 public bottomLabel = '';
@@ -43,11 +43,22 @@ public options = {
 
   ngOnInit(): void {
     if(this.localStorageService.get('TOKEN')) {
-      this.evaluateAnswers(history.state.data);
-    } else {
+      var data = history.state.data;
+      this.marks_scored = data.marksScored;
+      this.total_marks = data.totalMarks;
+      this.percentage = ((this.marks_scored/this.total_marks) * 100).toFixed(2)+'%';
+      this.bottomLabel = this.percentage;
+      this.needleValue = ((this.marks_scored/this.total_marks) * 100);
+      this.attempted_questions = data.attemptedQuestions;
+      this.time_taken = data.time_taken;
+      let date = new Date();
+      this.start_time = date.toString().substring(0,24);
+      /*this.evaluateAnswers(history.state.data);*/
+    } /*else {
       this.marks_scored = 38;
       this.percentage = ((this.marks_scored/this.total_marks) * 100).toFixed(2)+'%';
       this.bottomLabel = this.percentage;
+      this.needleValue = ((this.marks_scored/this.total_marks) * 100);
       this.attempted_questions = 55;
       this.time_taken = '28min';
       let date = new Date();
@@ -58,13 +69,15 @@ public options = {
   evaluateAnswers(data: any) {
     this.connectionService.evaluate(data).subscribe((res: any) => {
       this.marks_scored = res.marksScored;
+      this.total_marks = res.totalMarks;
       this.percentage = ((this.marks_scored/res.totalMarks) * 100).toFixed(2)+'%';
       this.bottomLabel = this.percentage;
+      this.needleValue = ((this.marks_scored/this.total_marks) * 100);
       this.attempted_questions = res.attemptedQuestions;
       this.time_taken = res.time_taken;
       let date = new Date();
       this.start_time = date.toString().substring(0,24);
     })
+  }*/
   }
-
 }

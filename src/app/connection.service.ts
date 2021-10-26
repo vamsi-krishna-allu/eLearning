@@ -66,7 +66,7 @@ export class ConnectionService {
 
   evaluate(data: any) {
     const token = this.localStorageService.get("TOKEN");
-    this.url = `http://localhost:5000/evaluateAnswer`;
+    this.url = `http://localhost:5000/evaluateAnswers`;
     return this.http.post(this.url, data, {
       headers:  new HttpHeaders({
         Authorization: `Bearer ${token}`,

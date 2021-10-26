@@ -313,13 +313,13 @@ export class TestListComponent implements OnInit {
     if(testStatus === 'submitted') {
       this.connectionService.viewTestResult(testId).subscribe((response: any) => {
         this.route.navigateByUrl('/result',{state: {data: response}});
-        let availablemockTests = response.availableMockTests;
+        /*let availablemockTests = response.availableMockTests;
         for(let mockTest of this.mockTests) {
           let testIndex = availablemockTests.indexOf(mockTest.courseId);
           if( testIndex !== -1) {
             mockTest.isCourseAllowed = true;
           }
-        }
+        }*/
       });
     }
     else if(testStatus === 'available') {
