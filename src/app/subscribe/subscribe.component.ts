@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ConnectionService } from '../connection.service';
+import { LocalstorageService } from '../localstorage.service';
 
 @Component({
   selector: 'app-subscribe',
@@ -16,13 +17,15 @@ export class SubscribeComponent implements OnInit {
   @Input() courseName : any;
   @Input() type: any;
 
-  constructor(private connectionService : ConnectionService, private route: Router) { }
+  constructor(private connectionService : ConnectionService, private route: Router,
+    private localStorageService: LocalstorageService) { }
 
   ngOnInit(): void {
   }
 
-  payNow(plan : string) {
-    this.connectionService.payNow(plan, this.courseName, this.type).subscribe(resp =>{
+  payNow(planType : string, planPririce : string) {
+    var userName = this.localStorageService.get('USERNAME');
+    this.connectionService.payNow(planType, this.courseName, planPririce, userName).subscribe(resp =>{
       this.route.navigateByUrl('/home');
     });
   }

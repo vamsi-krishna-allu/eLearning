@@ -8,7 +8,7 @@ export class LocalstorageService {
 
   constructor() { }
 
-  isAuthenticated = new BehaviorSubject(false);
+  isAuthenticated = new BehaviorSubject(!!sessionStorage.getItem('TOKEN'));
 
   set(key: string, value: string) {
     sessionStorage.setItem(key, value);

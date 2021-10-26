@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ConnectionService } from 'src/app/connection.service';
 import { LocalstorageService } from 'src/app/localstorage.service';
+import { LoginComponent } from 'src/app/login/login.component';
 import { TestInstructionsComponent } from 'src/app/test-instructions/test-instructions.component';
 
 @Component({
@@ -289,11 +290,19 @@ export class TestListComponent implements OnInit {
   }
 
   subscribeNow(course: any, courseid: any) {
-    let planData = {courseId: courseid, courseName: course, type: 'course', planDetails: [{planType : 'basic', color:'red',   planPrice  : '$100', features : [`Any 1 mock test of ${course} available`,'Validity of the test - 30 days']},
+    if(this.localStorageService.get('TOKEN')) {
+      let planData = {courseId: courseid, courseName: course, type: 'course', planDetails: [{planType : 'basic', color:'red',   planPrice  : '$100', features : [`Any 1 mock test of ${course} available`,'Validity of the test - 30 days']},
                         {planType : 'standard', color: 'green', planPrice  : '$150', features : [`Any 2 mock tests of ${course} available`,'Validity of the test - 45 days']},
                         {planType : 'premium', color: 'blue', planPrice  : '$250', features : [`All 4 mock tests of ${course} available`,'Validity of the test - 60 days']}               
     ]};
     this.route.navigateByUrl('/subscribe', { state: { data: planData } });
+    } else {
+      const dialogRef = this.dialog.open(LoginComponent);
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
   }
 
   startTest(course: any) {

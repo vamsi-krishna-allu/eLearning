@@ -96,12 +96,14 @@ export class ConnectionService {
     });
   }
 
-  payNow(planPrice : any, courseName: any, type: any) {
+  payNow(planType : any, courseName: any, planPririce: any, username : any) {
     const token = this.localStorageService.get("TOKEN");
     let requestBody = {
-      type: type,
-      course: courseName,
-      price: planPrice,
+      price: planPririce,
+      type: planType,
+      courseId: courseName,
+      userName: username,
+      planType: planType
     }
     this.url = `http://localhost:5000/pay`;
     return this.http.post(this.url, requestBody, {

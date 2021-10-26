@@ -83,9 +83,9 @@ export class MockTestsComponent implements OnInit {
       testName: history.state.data,
       answer: this.userAnswers,
     }
-    this.route.navigateByUrl('/result', {state: {data: answers}});
+    this.connectionService.evaluate(answers).subscribe((res: any) => {
+      this.route.navigateByUrl('/result', {state: {data: res}});
+    }) 
   }
-  
-
 }
 
