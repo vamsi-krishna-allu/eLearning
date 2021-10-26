@@ -23,10 +23,10 @@ export class SubscribeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  payNow(planType : string, planPririce : string) {
+  payNow(planType : string, planPrice : number) {
     var userName = this.localStorageService.get('USERNAME');
-    this.connectionService.payNow(planType, this.courseName, planPririce, userName).subscribe(resp =>{
-      this.route.navigateByUrl('/home');
+    this.connectionService.payNow(planType, this.courseName, planPrice, userName, this.type).subscribe((response: any) =>{
+      window.location.href = response.redirectUrl;
     });
   }
 

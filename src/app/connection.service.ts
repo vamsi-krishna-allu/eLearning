@@ -96,11 +96,11 @@ export class ConnectionService {
     });
   }
 
-  payNow(planType : any, courseName: any, planPririce: any, username : any) {
+  payNow(planType : any, courseName: any, planPrice: any, username : any, type: any) {
     const token = this.localStorageService.get("TOKEN");
     let requestBody = {
-      price: planPririce,
-      type: planType,
+      price: planPrice,
+      type: type,
       courseId: courseName,
       userName: username,
       planType: planType

@@ -291,9 +291,9 @@ export class TestListComponent implements OnInit {
 
   subscribeNow(course: any, courseid: any) {
     if(this.localStorageService.get('TOKEN')) {
-      let planData = {courseId: courseid, courseName: course, type: 'course', planDetails: [{planType : 'basic', color:'red',   planPrice  : '$100', features : [`Any 1 mock test of ${course} available`,'Validity of the test - 30 days']},
-                        {planType : 'standard', color: 'green', planPrice  : '$150', features : [`Any 2 mock tests of ${course} available`,'Validity of the test - 45 days']},
-                        {planType : 'premium', color: 'blue', planPrice  : '$250', features : [`All 4 mock tests of ${course} available`,'Validity of the test - 60 days']}               
+      let planData = {courseId: courseid, courseName: course, type: 'TEST', planDetails: [{planType : 'BASIC', color:'red',   planPrice  : 100, features : [`Any 1 mock test of ${course} available`,'Validity of the test - 30 days']},
+                        {planType : 'STANDARD', color: 'green', planPrice  : 150, features : [`Any 2 mock tests of ${course} available`,'Validity of the test - 45 days']},
+                        {planType : 'PREMIUM', color: 'blue', planPrice  : 250, features : [`All 4 mock tests of ${course} available`,'Validity of the test - 60 days']}               
     ]};
     this.route.navigateByUrl('/subscribe', { state: { data: planData } });
     } else {

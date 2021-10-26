@@ -35,9 +35,9 @@ export class CoursesComponent implements OnInit {
   }
   subscribeNow(course: any, courseId: any) {
     if(this.localStorageService.get('TOKEN')) {
-      let planData = {courseId: courseId, courseName: course, type: 'course', planDetails: [{planType : 'basic', color:'red',   planPrice  : '$100', features : [`${course} is available`,'Validity of the test - 30 days']},
-        {planType : 'standard', color: 'green', planPrice  : '$150', features : [`${course} and any 2 tests of ${course} available`,'Validity of the test - 45 days']},
-        {planType : 'premium', color: 'blue', planPrice  : '$250', features : [`${course} and all tests of ${course} available`,'Validity of the test - 60 days']}               
+      let planData = {courseId: courseId, courseName: course, type: 'COURSE', planDetails: [{planType : 'basic', color:'red',   planPrice  : 100, features : [`${course} is available`,'Validity of the test - 30 days']},
+        {planType : 'standard', color: 'green', planPrice  : 150, features : [`${course} and any 2 tests of ${course} available`,'Validity of the test - 45 days']},
+        {planType : 'premium', color: 'blue', planPrice  : 250, features : [`${course} and all tests of ${course} available`,'Validity of the test - 60 days']}               
       ]};
       this.route.navigateByUrl('/subscribe', { state: { data: planData } });
     } else {
