@@ -50,7 +50,7 @@ public options = {
       this.bottomLabel = this.percentage;
       this.needleValue = ((this.marks_scored/this.total_marks) * 100);
       this.attempted_questions = data.attemptedQuestions;
-      this.time_taken = data.time_taken;
+      this.time_taken = data.timeTaken;
       let date = new Date();
       this.start_time = date.toString().substring(0,24);
       /*this.evaluateAnswers(history.state.data);*/

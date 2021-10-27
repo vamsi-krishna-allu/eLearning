@@ -17,7 +17,7 @@ export class AutoRefreshComponent implements OnInit {
 
 	searchEndDate: moment.Moment;
 	remainingTime: number | undefined;
-	minutes: number | undefined;
+	minutes: number = 0;
 	seconds: number | undefined;
 
 	everySecond: Observable<number> = timer(0, 1000);
