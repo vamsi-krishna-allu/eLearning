@@ -13,12 +13,12 @@ marks_scored : number = 0;
 total_marks : number = 60;
 
 attempted_questions : number = 0;
-total_questions : number = 0;
+total_questions : number = 75;
 
 percentage : string = '';
 
 time_taken : string = '';
-total_time : string = '30min';
+total_time : string = '120 mins';
 
 start_time : string = '';
 end_time : string = '';

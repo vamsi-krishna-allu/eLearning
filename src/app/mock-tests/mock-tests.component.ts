@@ -36,6 +36,7 @@ export class MockTestsComponent implements OnInit {
   currentAnswer = 5;
   @ViewChild(AutoRefreshComponent)
   autoRefresh!: AutoRefreshComponent;
+  end_time: string = '';
 
   ngOnInit(): void {
     this.testSubject.subscribe((value: any) => {
@@ -81,12 +82,15 @@ export class MockTestsComponent implements OnInit {
 
   onSubmit(selectedOption: any) {
     this.userAnswers[this.currentIndex] = selectedOption;
+    let date = new Date();
+    this.end_time = date.toString().substring(0,24);
     let answers = {
       username: this.localStorageService.get("USERNAME"),
       testName: history.state.data,
       answer: this.userAnswers,
       timeTaken: 120-this.autoRefresh.minutes
     }
+    
     this.connectionService.evaluate(answers).subscribe((res: any) => {
       this.route.navigateByUrl('/result', {state: {data: res}});
     }) 
