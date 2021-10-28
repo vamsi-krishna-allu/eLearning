@@ -20,7 +20,7 @@ export class TestInstructionsComponent implements OnInit {
   startTest() {
     let date = new Date();
     this.start_time = date.toString().substring(0,24);
-    this.route.navigateByUrl('/openTest',{state: {data: this.data}});
+    this.route.navigateByUrl('/openTest',{state: {data: this.data, startTime: this.start_time}});
   }
 
 }

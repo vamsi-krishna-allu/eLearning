@@ -88,7 +88,9 @@ export class MockTestsComponent implements OnInit {
       username: this.localStorageService.get("USERNAME"),
       testName: history.state.data,
       answer: this.userAnswers,
-      timeTaken: 120-this.autoRefresh.minutes
+      timeTaken: 120-this.autoRefresh.minutes,
+      startTime: history.state.startTime,
+      endTime:this.end_time
     }
     
     this.connectionService.evaluate(answers).subscribe((res: any) => {

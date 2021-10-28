@@ -289,13 +289,25 @@ export class TestListComponent implements OnInit {
     }
   }
 
-  subscribeNow(course: any, courseid: any) {
-    if(this.localStorageService.get('TOKEN')) {
-      let planData = {courseId: courseid, courseName: course, type: 'TEST', planDetails: [{planType : 'BASIC', color:'red',   planPrice  : 100, features : [`Any 1 mock test of ${course} available`,'Validity of the test - 30 days']},
-                        {planType : 'STANDARD', color: 'green', planPrice  : 150, features : [`Any 2 mock tests of ${course} available`,'Validity of the test - 45 days']},
-                        {planType : 'PREMIUM', color: 'blue', planPrice  : 250, features : [`All 4 mock tests of ${course} available`,'Validity of the test - 60 days']}               
-    ]};
-    this.route.navigateByUrl('/subscribe', { state: { data: planData } });
+  subscribeNow(test: any) {
+    if(this.localStorageService.get('TOKEN')) { 
+      var count = 0;
+      let planData;
+      for(let course of test.test) {
+        if(course.status === 'unavailable') {
+          count++;
+        }
+      }
+      if(count === 4) {
+        planData = {courseId: test.courseId, courseName: test.courseName, type: 'TEST',planDetails: [{planType : 'BASIC', color:'red',   planPrice  : 100, features : [`Any 1 mock test of ${test.courseName} available`,'Validity of the test - 30 days']},
+                        /*{planType : 'STANDARD', color: 'green', planPrice  : 150, features : [`Any 2 mock tests of ${course} available`,'Validity of the test - 45 days']},*/
+                        {planType : 'PREMIUM', color: 'blue', planPrice  : 250, features : [`All 4 mock tests of ${test.courseName} available`,'Validity of the test - 60 days']}               
+                      ]};
+      } else if(count === 2) {
+        planData = {courseId: test.courseId, courseName: test.courseName, type: 'TEST',planDetails: [{planType : 'PREMIUM', color: 'blue', planPrice  : 250, features : [`All 4 mock tests of ${test.courseName} available`,'Validity of the test - 60 days']}]};
+      }
+
+    this.route.navigateByUrl('/subscribe', { state: { data: planData} });
     } else {
       const dialogRef = this.dialog.open(LoginComponent);
 
