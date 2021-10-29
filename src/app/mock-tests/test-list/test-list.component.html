@@ -2,7 +2,7 @@
     <div class="courses-div">
         <div *ngFor="let test of mockTests">
             <div class="matcard-module">
-                <mat-expansion-panel class="expansion-panel" (opened)="panelOpenState = true"
+                <mat-expansion-panel class="expansion-panel" [class.subscribe]="test.test[0].status!='unavailable' && test.test[1].status!='unavailable' && test.test[2].status!='unavailable' && test.test[3].status!='unavailable'" (opened)="panelOpenState = true"
                     (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
