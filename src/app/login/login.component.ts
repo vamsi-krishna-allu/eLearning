@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { I18nPluralPipe } from '@angular/common';
 import { duration } from 'moment';
-
+import { SpinnerService } from '../spinner.service';
 
 @Component({
   selector: 'app-login',
@@ -25,10 +25,11 @@ export class LoginComponent implements OnInit {
   enableLogInSignupSection : boolean = true;
   loginDetails: LoginDetails = new LoginDetails();
   contactForm: FormGroup | undefined;
+  showSpinner: boolean | undefined;
   loginForm: FormGroup = new FormGroup({});
   signupForm: FormGroup = new FormGroup({});
   forgotForm: FormGroup = new FormGroup({});
-  constructor(private connectionService : ConnectionService, private fb: FormBuilder,  private localStorageService: LocalstorageService,
+  constructor(private connectionService : ConnectionService, private spinnerService: SpinnerService, private fb: FormBuilder,  private localStorageService: LocalstorageService,
     private matSnackBar: MatSnackBar, private route : Router, private dialogRef: MatDialogRef<LoginComponent>) { 
     this.loginForm = fb.group({
       emailId: ['',[Validators.required, Validators.email]],
@@ -59,6 +60,9 @@ export class LoginComponent implements OnInit {
  
 
   ngOnInit(): void {
+    this.spinnerService.visibility.subscribe((flag: any) => {
+      this.showSpinner = flag;
+    });
   }
 
   logIn() {

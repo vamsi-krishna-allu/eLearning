@@ -26,6 +26,7 @@ import { GaugeChartModule } from 'angular-gauge-chart';
 import { TestInstructionsComponent } from './test-instructions/test-instructions.component';
 import { CourseViewComponent } from './courses/course-view/course-view.component';
 import { AutoRefreshComponent } from './auto-refresh/auto-refresh.component';
+import { PortraitModeComponent } from './portrait-mode/portrait-mode.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { AutoRefreshComponent } from './auto-refresh/auto-refresh.component';
     TestInstructionsComponent,
     CourseViewComponent,
     AutoRefreshComponent,
+    PortraitModeComponent,
   ],
   imports: [
     BrowserModule,

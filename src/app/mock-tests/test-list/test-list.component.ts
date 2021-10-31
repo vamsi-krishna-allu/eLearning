@@ -235,7 +235,7 @@ export class TestListComponent implements OnInit {
       this.connectionService.getAvailableMockTests().subscribe((response: any) => {
         let availablemockTests = response.availableMockTests;
         let mockTestListCourseId = [];
-        if(availablemockTests && availablemockTests.length > 0){
+        if(availablemockTests && availablemockTests.length > 0) {
           for(let availableTest of availablemockTests) {
             mockTestListCourseId.push(availableTest.substring(0, availableTest.length - 7));
           }
@@ -250,12 +250,6 @@ export class TestListComponent implements OnInit {
                 index++;
               }
             }
-            /*let testIndex = mockTestListCourseId.indexOf(mockTest.courseId);
-            if( testIndex !== -1) {
-              let selectedTest = availablemockTests[testIndex];
-              let testNumber = selectedTest.substring(selectedTest.length-1);
-              mockTest.test[testNumber-1].status = 'available';
-            }*/
           }
         }
         
@@ -277,12 +271,6 @@ export class TestListComponent implements OnInit {
                 index++;
               }
             }
-            /*let testIndex = submitTestListCourseId.indexOf(mockTest.courseId);
-            if( testIndex !== -1) {
-              let selectedTest = submitmockTests[testIndex];
-              let testNumber = selectedTest.substring(selectedTest.length-1);
-              mockTest.test[testNumber-1].status = 'submitted';
-            }*/
           }
         }
       });

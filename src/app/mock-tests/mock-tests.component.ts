@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConnectionService } from '../connection.service';
 import { Subject } from "rxjs";
-import { Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 import { LocalstorageService } from '../localstorage.service';
 
 @Component({
@@ -39,6 +39,16 @@ export class MockTestsComponent implements OnInit {
       this.mockQuestionData = value;
     });
     this.onTestSelection(history.state.data);
+    this.route.events.subscribe(event =>{
+      if (event instanceof NavigationStart){
+        var r = confirm("Your test will be submitted on navigating to new tab");
+        if(r == true){
+          
+        } else {
+          this.onSubmit(5);
+        }  
+      }
+   })
   }
 
   onTestSelection(testType: string) {

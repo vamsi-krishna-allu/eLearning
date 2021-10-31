@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from './login/login.component';
 import { SpinnerService } from './spinner.service';
 import { LocalstorageService } from './localstorage.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -102,4 +103,13 @@ onResize() {
    }
 }
 
+@HostListener('window:beforeunload', ['$event'])
+onWindowClose(event: any) {
+  var r = confirm("Your test will be submitted on navigating to new tab");
+  if (r == false) {
+    event.preventDefault();
+  } 
+  event.returnValue = false;  
+  // return "Your test will be submitted on navigating to new tab";
+}
 }

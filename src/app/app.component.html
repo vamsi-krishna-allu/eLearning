@@ -1,5 +1,6 @@
 <mat-progress-spinner class="progress-spinner" [mode]="'indeterminate'" [diameter]="50" *ngIf="showSpinner"></mat-progress-spinner>
-<mat-toolbar class="toolbar">
+<div id="wrapper">
+  <mat-toolbar class="toolbar">
   <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
@@ -35,4 +36,8 @@
   </div>
   </div>
     <router-outlet></router-outlet>
+</div>
+</div>
+<div id="warning-message">
+  <app-portrait-mode></app-portrait-mode>
 </div>
