@@ -1,4 +1,4 @@
-<div class="subscribe-background">
+<div class="subscribe-background" *ngIf="planDetails.length === 3">
     <div class="plans-background" id="basic" *ngFor="let plan of planDetails">
         <div class="plans-div" [ngStyle]="{'background-color': plan.color}">{{plan.planType}}</div>
         <div class="features">
@@ -11,5 +11,33 @@
             <button mat-raised-button class="subscribe-button" [ngStyle]="{'background-color': plan.color}" (click)="payNow(plan.planType,plan.planPrice)">$ {{plan.planPrice}}</button>
         </div>
     </div>
-
 </div>
+<div class="subscribe-background" *ngIf="planDetails.length === 2">
+    <div class="plans-background2" id="basic" *ngFor="let plan of planDetails">
+        <div class="plans-div" [ngStyle]="{'background-color': plan.color}">{{plan.planType}}</div>
+        <div class="features">
+        <div class="features-div" *ngFor="let feature of plan.features">
+            <mat-icon class="circle-icon">check_circle</mat-icon>
+            <mat-label class="feature-text">{{feature}}</mat-label>
+        </div>
+        </div>
+        <div class="button-div">
+            <button mat-raised-button class="subscribe-button" [ngStyle]="{'background-color': plan.color}" (click)="payNow(plan.planType,plan.planPrice)">$ {{plan.planPrice}}</button>
+        </div>
+    </div>
+</div>
+<div class="subscribe-background" *ngIf="planDetails.length === 1">
+    <div class="plans-background1" id="basic" *ngFor="let plan of planDetails">
+        <div class="plans-div" [ngStyle]="{'background-color': plan.color}">{{plan.planType}}</div>
+        <div class="features">
+        <div class="features-div" *ngFor="let feature of plan.features">
+            <mat-icon class="circle-icon">check_circle</mat-icon>
+            <mat-label class="feature-text">{{feature}}</mat-label>
+        </div>
+        </div>
+        <div class="button-div">
+            <button mat-raised-button class="subscribe-button" [ngStyle]="{'background-color': plan.color}" (click)="payNow(plan.planType,plan.planPrice)">$ {{plan.planPrice}}</button>
+        </div>
+    </div>
+</div>
+

@@ -11,13 +11,16 @@ export class TestInstructionsComponent implements OnInit {
 
   checked : boolean = false;
   indeterminate : boolean = false;
+  start_time : string = '';
 
   constructor(private route : Router, @Inject(MAT_DIALOG_DATA) public data: string) { }
 
   ngOnInit(): void {
   }
   startTest() {
-    this.route.navigateByUrl('/openTest',{state: {data: this.data}});
+    let date = new Date();
+    this.start_time = date.toString().substring(0,24);
+    this.route.navigateByUrl('/openTest',{state: {data: this.data, startTime: this.start_time}});
   }
 
 }

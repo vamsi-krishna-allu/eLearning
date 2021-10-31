@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit {
       this.dialogRef.close();
       this.route.navigateByUrl('/home');
     }, (error: any) => {
-      this.matSnackBar.open(error.error.text,'failure',{duration : 3000});
+      this.matSnackBar.open(error.error,'failure',{duration : 3000});
       this.contactForm?.reset();
       console.log('Error', error);
     });
@@ -111,7 +111,7 @@ export class LoginComponent implements OnInit {
       this.contactForm?.reset();
       this.backToLogin();
     }, (error: any) => {
-      this.matSnackBar.open(error.error.text,'failure',{duration : 3000});
+      this.matSnackBar.open(error.error,'failure',{duration : 3000});
       this.contactForm?.reset();
       console.log('Error', error);
     });
@@ -123,7 +123,7 @@ export class LoginComponent implements OnInit {
       this.contactForm?.reset();
       this.backToLogin();
     }, (error: any) => {
-      this.matSnackBar.open(error.error.text,'failure',{duration : 3000});
+      this.matSnackBar.open(error.error,'failure',{duration : 3000});
       this.contactForm?.reset();
       console.log('Error', error);
     });

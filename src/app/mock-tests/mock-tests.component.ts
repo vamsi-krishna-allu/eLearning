@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ConnectionService } from '../connection.service';
 import { Subject } from "rxjs";
 import { NavigationStart, Router } from '@angular/router';
 import { LocalstorageService } from '../localstorage.service';
+import { AutoRefreshComponent } from '../auto-refresh/auto-refresh.component';
 
 @Component({
   selector: 'app-mock-tests',
@@ -33,6 +34,9 @@ export class MockTestsComponent implements OnInit {
   userAnswers: any[] = Array(75).fill(-1);
   progressBarValue = 0;
   currentAnswer = 5;
+  @ViewChild(AutoRefreshComponent)
+  autoRefresh!: AutoRefreshComponent;
+  end_time: string = '';
 
   ngOnInit(): void {
     this.testSubject.subscribe((value: any) => {
@@ -88,11 +92,17 @@ export class MockTestsComponent implements OnInit {
 
   onSubmit(selectedOption: any) {
     this.userAnswers[this.currentIndex] = selectedOption;
+    let date = new Date();
+    this.end_time = date.toString().substring(0,24);
     let answers = {
       username: this.localStorageService.get("USERNAME"),
       testName: history.state.data,
       answer: this.userAnswers,
+      timeTaken: 120-this.autoRefresh.minutes,
+      startTime: history.state.startTime,
+      endTime:this.end_time
     }
+    
     this.connectionService.evaluate(answers).subscribe((res: any) => {
       this.route.navigateByUrl('/result', {state: {data: res}});
     }) 

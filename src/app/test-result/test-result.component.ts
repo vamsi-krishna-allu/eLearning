@@ -13,12 +13,12 @@ marks_scored : number = 0;
 total_marks : number = 60;
 
 attempted_questions : number = 0;
-total_questions : number = 0;
+total_questions : number = 75;
 
 percentage : string = '';
 
 time_taken : string = '';
-total_time : string = '30min';
+total_time : string = '120 mins';
 
 start_time : string = '';
 end_time : string = '';
@@ -50,34 +50,10 @@ public options = {
       this.bottomLabel = this.percentage;
       this.needleValue = ((this.marks_scored/this.total_marks) * 100);
       this.attempted_questions = data.attemptedQuestions;
-      this.time_taken = data.time_taken;
+      this.time_taken = data.timeTaken;
       let date = new Date();
-      this.start_time = date.toString().substring(0,24);
-      /*this.evaluateAnswers(history.state.data);*/
-    } /*else {
-      this.marks_scored = 38;
-      this.percentage = ((this.marks_scored/this.total_marks) * 100).toFixed(2)+'%';
-      this.bottomLabel = this.percentage;
-      this.needleValue = ((this.marks_scored/this.total_marks) * 100);
-      this.attempted_questions = 55;
-      this.time_taken = '28min';
-      let date = new Date();
-      this.start_time = date.toString().substring(0,24);
+      this.start_time = data.startTime;;
+      this.end_time = data.endTime;
     }
-  }
-
-  evaluateAnswers(data: any) {
-    this.connectionService.evaluate(data).subscribe((res: any) => {
-      this.marks_scored = res.marksScored;
-      this.total_marks = res.totalMarks;
-      this.percentage = ((this.marks_scored/res.totalMarks) * 100).toFixed(2)+'%';
-      this.bottomLabel = this.percentage;
-      this.needleValue = ((this.marks_scored/this.total_marks) * 100);
-      this.attempted_questions = res.attemptedQuestions;
-      this.time_taken = res.time_taken;
-      let date = new Date();
-      this.start_time = date.toString().substring(0,24);
-    })
-  }*/
   }
 }

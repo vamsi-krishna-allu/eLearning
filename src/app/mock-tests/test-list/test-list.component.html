@@ -2,7 +2,7 @@
     <div class="courses-div">
         <div *ngFor="let test of mockTests">
             <div class="matcard-module">
-                <mat-expansion-panel class="expansion-panel" (opened)="panelOpenState = true"
+                <mat-expansion-panel class="expansion-panel" [class.subscribe]="test.test[0].status!='unavailable' && test.test[1].status!='unavailable' && test.test[2].status!='unavailable' && test.test[3].status!='unavailable'" (opened)="panelOpenState = true"
                     (closed)="panelOpenState = false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
@@ -11,7 +11,7 @@
                     </mat-expansion-panel-header>
                     <div class = "course-header">
                         <div *ngIf="test.test[0].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[0].id, test.test[0].status)">{{test.test[0].name}}</div>
+                            <div class = "header-text" style="background-color:lightseagreen;" (click)="mockTest(test.courseId,test.test[0].id, test.test[0].status)">START TEST</div>
                         </div>
                         <div *ngIf="test.test[0].status==='unavailable'">
                             <div class = "header-text">{{test.test[0].name}}</div>
@@ -20,7 +20,7 @@
                             <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test.test[0].id, test.test[0].status)">VIEW RESULT</div>
                         </div>
                         <div *ngIf="test.test[1].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[1].id, test.test[1].status)">{{test.test[1].name}}</div>
+                            <div class = "header-text" style="background-color:lightseagreen;" (click)="mockTest(test.courseId,test.test[1].id, test.test[1].status)">START TEST</div>
                         </div>
                         <div *ngIf="test.test[1].status==='unavailable'">
                             <div class = "header-text">{{test.test[1].name}}</div>
@@ -31,7 +31,7 @@
                     </div> 
                     <div class="contact-header">
                         <div *ngIf="test.test[2].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[2].id, test.test[2].status)">{{test.test[2].name}}</div>
+                            <div class = "header-text" style="background-color:lightseagreen;" (click)="mockTest(test.courseId,test.test[2].id, test.test[2].status)">START TEST</div>
                         </div>
                         <div *ngIf="test.test[2].status==='unavailable'">
                             <div class = "header-text">{{test.test[2].name}}</div>
@@ -40,7 +40,7 @@
                             <div class = "header-text" style="background-color: green;" (click)="mockTest(test.courseId,test.test[2].id, test.test[2].status)">VIEW RESULT</div>
                         </div>
                         <div *ngIf="test.test[3].status==='available'">
-                            <div class = "header-text" (click)="mockTest(test.courseId,test.test[3].id, test.test[3].status)">{{test.test[3].name}}</div>
+                            <div class = "header-text" style="background-color:lightseagreen;" (click)="mockTest(test.courseId,test.test[3].id, test.test[3].status)">START TEST</div>
                         </div>
                         <div *ngIf="test.test[3].status==='unavailable'">
                             <div class = "header-text">{{test.test[3].name}}</div>
@@ -50,12 +50,12 @@
                         </div>
                     </div>
                 </mat-expansion-panel>
-                <div *ngIf="!test.isCourseAllowed">
-                    <button mat-raised-button class="subscribe-button" (click)="subscribeNow(test.courseName, test.courseId)">SUBSCRIBE NOW</button>
+                <div *ngIf="test.test[0].status==='unavailable' || test.test[1].status==='unavailable' || test.test[2].status==='unavailable' || test.test[3].status==='unavailable'">
+                    <button mat-raised-button class="subscribe-button" (click)="subscribeNow(test)">SUBSCRIBE NOW</button>
                 </div>
-                <div *ngIf="test.isCourseAllowed">
+                <!--<div *ngIf="test.isCourseAllowed">
                     <button mat-raised-button class="view-button" (click)="startTest(test.courseId)">START THE TEST</button>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>

@@ -105,3 +105,8 @@
     border: 1px solid black;
     box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
 }
+.expansion-panel.subscribe {
+    width: 79%;
+    border: 1px solid black;
+    box-shadow: -1px 1px black, -2px 2px black, -3px 3px black, -4px 4px black, -5px 5px black;
+}
