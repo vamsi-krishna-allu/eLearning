@@ -99,7 +99,11 @@ export class LoginComponent implements OnInit {
       this.dialogRef.close();
       this.route.navigateByUrl('/home');
     }, (error: any) => {
-      this.matSnackBar.open(error.error,'failure',{duration : 3000});
+      if(typeof error.error === 'object') {
+        this.matSnackBar.open(error.message,'failure',{duration : 3000});
+      } else {
+        this.matSnackBar.open(error.error,'failure',{duration : 3000});
+      }
       this.contactForm?.reset();
       console.log('Error', error);
     });
