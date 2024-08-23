@@ -1,0 +1,143 @@
+.title-header{
+    font: bold 24px/34px Ubuntu;
+    text-transform: uppercase;
+    font-size : 6vh;
+    font-family: Lora,serif;
+    padding-left: 40%;
+    background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.title-header-down {
+    font: bold 24px/34px Ubuntu;
+    text-transform: uppercase;
+    font-size : 6vh;
+    font-family: Lora,serif;
+    padding-left: 40%;
+    padding-top: 3%;
+    color: white;
+}
+.example-form {
+    margin: 15px 0;
+    border-radius: 50%;
+    background: #294c65;
+  }
+  
+  .example-full-width {
+    width: 98%;
+    color: black;
+  }
+  .has-text-color {
+    color: #292f33;
+    font-family: Lora,serif;
+    font-size: 3.3vh;
+    margin: 0vh 0vh 2vh;
+    display: block;
+    text-align: left;
+    padding-left: 6%;
+    padding-right: 5%;
+    padding-top: 2%;
+    line-height: 1.5em;
+  }
+  .has-text-color1 {
+    font-weight: 550;
+    font-family: Lora,serif;
+    font-size: 4.3vh;
+    text-align: left;
+    padding-left: 10%;
+    line-height: 1.5em;
+    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+.has-contact-text-align {
+    font-size: 1.15rem;
+    font-weight: 549;
+    display: block;
+    text-align: center;
+    margin-bottom: 1.3em;
+    font-family: Lora,serif;
+    font-size: 4vh;
+    line-height: 1.3;
+    padding-left: 8%;
+    color:white;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #292f33;
+    font-size: 100%;
+    font-weight: normal;
+    border: 1px solid #2e6da4;
+    border-radius: 8%;
+    margin-left: 45%;
+    margin-top: 2%;
+}
+.telephone-div {
+    display: flex;
+    flex-direction: column;
+}
+.telephone-text {
+    color: #292f33;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Lora,serif;
+    padding-left: 36.5%;
+    line-height: 1.3em;
+}
+.telephone1 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Lora,serif;
+    padding-left: 40%;
+    line-height: 1.3em;
+}
+.support-hours-text {
+    font-size: 6vh;
+    font-weight: bold;
+    font-family: Lora,serif;
+    padding-left: 37.5%;
+    line-height: 2em;
+    background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.support-holidays-text {
+    font-size: 2rem;
+    font-family: Lora,serif;
+    text-align: center;
+    font-weight: 600;
+    line-height: 10vh;
+    background-image: linear-gradient(to right, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.hours-text {
+    color: #292f33;
+    font-family: Lora,serif;
+    font-size: 3.6vh;
+    text-align: center;
+    line-height: 1.3em;
+}
+.contactsProfileGrid {
+    min-height: 0px;
+    position: relative;
+    box-shadow: none !important;
+    padding-left: 15%;
+    padding-right: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    background : white;
+}
+.page-data {
+    width:90%;
+    margin-left: 8%;
+    margin-top: 10%;
+}

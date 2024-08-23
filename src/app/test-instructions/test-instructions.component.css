@@ -1,0 +1,62 @@
+.example-section {
+    display: flex;
+    flex-direction: column;
+    margin-left: 7%;
+}
+  
+.btn-login {
+    background-color: steelblue;
+    color: white;
+    font-weight: normal;
+    width: 86%;
+    margin-left: 7%;
+    margin-bottom: 5%;
+    margin-top: 4%;
+}
+.instructions-div{
+    display: flex;
+    flex-direction: column;
+    line-height: 2em;
+}
+.instructions-header {
+    box-shadow: none;
+}
+.label-header {
+    font-weight: bold;
+    font-size: 4vh;
+    font-family: sans-serif;
+    text-align: center;
+}
+.label-header1 {
+    font-weight: bold;
+    font-size: 2vh;
+    font-family: sans-serif;
+}
+.label-text {
+    font-size: 2.1vh;
+    font-family: sans-serif;
+}
+.label-text1 {
+    font-size: 2.1vh;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.close-div {
+    text-align: right;
+}
+#warning-message {
+    display: none; 
+}
+@media only screen and (orientation:portrait){
+    #wrapper { 
+        display:none; 
+    }
+    #warning-message { 
+        display:block; 
+    }
+}
+@media only screen and (orientation:landscape){
+    #warning-message { 
+        display:none; 
+    }
+}

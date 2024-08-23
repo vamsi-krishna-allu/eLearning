@@ -1,0 +1,45 @@
+.about-section {
+    color: #027095;
+    background: #fff;
+    font-family: Source Sans Pro,sans-serif;
+    position: relative;
+    line-height: 2.1em;
+    font-size: x-large;
+    margin-top: 2%;
+    margin-bottom: 5.63%;
+}
+.about-text {
+    padding-left: 5%;
+    border: 0;
+    font-family: Bebas Neue;
+    font-size: 6.5vh;
+    font-weight: 700;
+    line-height: 1.1;
+    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.about-div-text {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 3.2vh;
+    line-height: 1.3em;
+    text-align: left;
+    font-family: Source Sans Pro;
+    display: block;
+    background-image: linear-gradient(to right, rgb(71, 25, 71), rgb(55, 28, 75), rgb(12, 75, 12), rgb(12, 12, 92), rgb(77, 85, 10), rgb(95, 69, 21), rgb(92, 23, 23));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.about-div-text1 {
+    line-height: 3.0em;
+}
+.page-data {
+    width:90%;
+    margin-left: 8%;
+    margin-top: 9%;
+}

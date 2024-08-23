@@ -1,0 +1,43 @@
+<mat-progress-spinner class="progress-spinner" [mode]="'indeterminate'" [diameter]="50" *ngIf="showSpinner"></mat-progress-spinner>
+<div id="wrapper">
+  <mat-toolbar class="toolbar">
+  <button mat-icon-button class="menu-button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <div *ngFor="let routeInfo of routeData">
+      <button mat-menu-item (click)="navigateTo(routeInfo.link)">
+        <mat-icon>{{routeInfo.icon}}</mat-icon>
+        <span>{{routeInfo.label}}</span>
+      </button>
+    </div>
+  </mat-menu>
+  <div *ngIf="!isUserLoggedIn" class="login-button" (click)="signInDialog()">
+    login/register
+  </div>
+  <div *ngIf="isUserLoggedIn" class="login-button" (click)="logoutUser()">
+    logout
+  </div>
+  <div *ngIf="showTabs" class="header-right">
+    <div *ngFor="let routeInfo of routeData">
+      <div (click)="navigateTo(routeInfo.link)" class="icon-label">
+        <mat-icon class="example-tab-icon">{{routeInfo.icon}}</mat-icon>
+        <div>{{routeInfo.label}}</div>
+      </div>
+    </div>
+  </div>
+</mat-toolbar> 
+<div class= "sidebar-routlet">
+  <div class="sidebar">
+    <div class="sidebar-text">
+    <div *ngFor="let info of title">
+      <div class="info-title">{{info}}</div>
+    </div>
+  </div>
+  </div>
+    <router-outlet></router-outlet>
+</div>
+</div>
+<div id="warning-message">
+  <app-portrait-mode></app-portrait-mode>
+</div>

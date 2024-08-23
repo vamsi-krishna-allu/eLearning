@@ -1,0 +1,12 @@
+.subscribe-background {
+    display: flex;
+    height: 100%;
+    background-image: url('../../assets/payment.jpg');
+    position: fixed;
+    margin-left: 5%;
+    overflow: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95%;
+    padding-top: 5%;
+}

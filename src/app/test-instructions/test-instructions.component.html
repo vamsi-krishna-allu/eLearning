@@ -1,0 +1,55 @@
+<div id="wrapper">
+<mat-card class="instructions-header">
+    <div class="instructions-div">
+        <div class="close-div" mat-dialog-close><mat-icon>close</mat-icon></div>
+        <mat-label class="label-header">Instructions</mat-label><br>
+        <mat-label class="label-text">
+            1. The duration of this exam is 120 minutes.
+        </mat-label>
+        <mat-label class="label-text">
+            2. Allow adequate time to complete this exam in one sitting before the due date and
+            time. Late submissions will not be accepted.
+        </mat-label>
+        <mat-label class="label-text">
+            3. There are 75 questions in this exam and will be presented one at a time.
+        </mat-label>
+        <mat-label class="label-text">
+            4. Each question is worth the same marks.
+        </mat-label>
+        <mat-label class="label-text">
+            5. During this exam you will be permitted to review previous questions.
+        </mat-label>
+        <mat-label class="label-text">
+            6. You must only attempt this exam once. Any additional attempts should only be used in the event where a
+            serious technical issue has occurred and supporting evidence supporting this will be required.
+        </mat-label>
+        <mat-label class="label-text">
+            7. You are not permitted to obtain assistance by improper means or ask for help from or give help to any other
+            person.
+        </mat-label>
+        <mat-label class="label-text">
+            8. You are not permitted to take screenshots, record the screen, copy and paste questions or answers or
+            otherwise attempt to take any of the content of this exam out of the exam for any purpose.
+        </mat-label>
+        <mat-label class="label-text">
+            9. Misconduct action will be taken against you if you breach exam rules.
+        </mat-label>
+        <mat-label class="label-header1">
+            DECLARATION
+        </mat-label>
+        <mat-label class="label-text1">
+            By attempting this exam, I acknowledge that
+        </mat-label><br>
+        <section class="example-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="checked"><mat-label class="label-text">I agree to be bound by the university’s rules,
+                codes of conduct, and other policies relating to examinations.</mat-label></mat-checkbox>
+            <mat-checkbox class="example-margin" [(ngModel)]="indeterminate"><mat-label class="label-text">I have read and understand the examination
+                conduct requirements for this exam.</mat-label></mat-checkbox>
+        </section>
+        <div>
+            <button mat-raised-button mat-dialog-close class="btn-login" (click)="startTest()" [disabled]="!checked || !indeterminate">Start
+                Test</button>
+        </div>
+    </div>
+</mat-card>
+</div>

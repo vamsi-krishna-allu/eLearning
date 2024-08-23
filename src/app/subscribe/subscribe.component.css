@@ -1,0 +1,103 @@
+.subscribe-button {
+    color: white;
+    background-color: red;
+    width: 30vh;
+    font-size: 4vh;
+}
+.subscribe-background {
+    display: flex;
+    height: 100%;
+    background-image: url('../../assets/payment.jpg');
+    position: fixed;
+    margin-left: 5%;
+    overflow: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95%;
+    padding-top: 5%;
+    background-size: 100%;
+}
+.plans-background {
+    margin-left: 19vh;
+    margin-top: 12vh;
+    width: 18vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+}
+.plans-background1 {
+    margin-left: 35vw;
+    margin-top: 12vh;
+    width: 18vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+}
+.plans-background2 {
+    margin-left: 19vw;
+    margin-top: 12vh;
+    width: 18vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+}
+.plans-div {
+    text-align: center;
+    font-size: 4vh;
+    text-transform: uppercase;
+    color: white;
+    background-color: red;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.features-div {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+}
+.circle-icon {
+    color: green;
+    height: auto;
+    width: auto;
+}
+.feature-text {
+    margin-left: 5%;
+}
+.button-div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-div1 {
+    margin-top: 65%;
+    margin-left: 10%;
+}
+.button-div2 {
+    margin-top: 47%;
+    margin-left: 28%;
+}
+#basic:hover {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.features {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    justify-content: center;
+}

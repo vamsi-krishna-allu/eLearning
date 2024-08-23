@@ -1,0 +1,44 @@
+.result-background {
+    display: flex;
+    height: 100%;
+    /*background-image: url('../../assets/payment.jpg');*/
+    position: fixed;
+    margin-left: 10%;
+    overflow: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 95%;
+    padding-top: 7%;
+    background-size: 100%;
+}
+.result-div {
+    display: flex;
+    height: 100%;
+    position: fixed;
+    margin-left: 10%;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 95%;
+    padding-top: 4%;
+}
+.gauge-div {
+    margin-top: 10%;
+    margin-right: 5%;
+}
+table,th,td {
+    width: 50%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    height: 55%;
+}
+th {
+    background-color: lightgrey;
+}
+tr {
+    height: 50%;
+}
+h1{
+    font-weight: 500;
+}
+

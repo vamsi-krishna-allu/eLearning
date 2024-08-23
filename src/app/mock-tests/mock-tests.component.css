@@ -1,0 +1,83 @@
+.example-card {
+  width: 64vw;
+  height: 64vh;
+  display: block;
+  vertical-align: middle;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.card-title {
+    padding-top: 5%;
+    font-size: x-large;
+    color: indigo;
+}
+.example-radio-button {
+    color: indigo;
+    padding: 0.5%;
+}
+.example-radio-group-label {
+    color:indigo;
+    padding: 1%;
+    padding-bottom: 1%;
+}
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1%;
+}
+.card-actions {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 20%;
+}
+.question {
+    color: indigo;
+    padding: 1%;
+    width: 100%;
+}
+.answer {
+    width: 100%;
+    padding: 1%;
+}
+.prev-button {
+    color: indigo;
+    background-color: white;
+}
+.next-button {
+    color: white;
+    background-color: indigo;
+}
+.question-and-answer {
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  height: 50vh;
+  width: 65vw;
+}
+.button-container {
+  bottom: 2vw;
+  position: absolute;
+  width: 65vw;
+}
+.example-margin {
+  width: 66vw;
+}
+.submit-button {
+  color: white;
+  background-color: green;
+}
+.page-data {
+  width: 80vw;
+  margin-left: 18vw;
+  margin-top: 10vw;
+}
+.mat-header {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

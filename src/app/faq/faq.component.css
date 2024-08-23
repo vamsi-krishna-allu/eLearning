@@ -1,0 +1,42 @@
+.faq-header {
+    font-family: Lora,serif;
+    position: relative;
+    line-height: 2.1em;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 2%;
+    box-shadow: none !important;
+}
+.faq-text {
+    padding-left: 5%;
+    border: 0;
+    font-family: Bebas Neue;
+    font-size: 6.5vh;
+    font-weight: 700;
+    line-height: 1.1;
+    background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.faq-qa-text {
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 3.2vh;
+    line-height: 1.3em;
+    text-align: left;
+    font-family: Source Sans Pro;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to left, rgb(86 10 86), rgb(50 1 86), rgb(3 103 3), rgb(3 3 111), rgb(90 99 4), rgb(109 72 3), rgb(156 7 7));
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.page-data {
+    width:90%;
+    margin-left: 8%;
+    margin-top: 8%;
+}
